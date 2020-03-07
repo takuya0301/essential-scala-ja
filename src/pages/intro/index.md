@@ -1,6 +1,6 @@
-# Expressions, Types, and Values
+# 式・型・値
 
-In this chapter we look at the fundamental building blocks of Scala programs: *expressions*, *types*, and *values*. Understanding these concepts is necessary to build a mental model of how Scala programs work.
+本章では Scala プログラムの基本的な構成要素である*式*・*型*・*値*について見ていきます。それらのコンセプトを理解することが Scala プログラムがどのように動くのかというメンタルモデルを形成するために必要です。
 
 ## Your First Program
 
