@@ -2,29 +2,29 @@
 
 本章では Scala プログラムの基本的な構成要素である*式*・*型*・*値*について見ていきます。それらのコンセプトを理解することが Scala プログラムがどのように動くのかというメンタルモデルを形成するために必要です。
 
-## Your First Program
+## 最初のプログラム
 
-In the Scala console or worksheet enter `"Hello world!"` and press return (in the console) or save the worksheet. You should see an interaction similar to this:
+Scala コンソールか Scala ワークシートに `"Hello world!"` と入力し、コンソールでリターンキーを押下するかワークシートを保存してください。このようなインタラクションが見られるはずです。
 
 ```tut:book
 "Hello world!"
 ```
 
-There is a lot to say about this program. It consists of a single expression, and in particular a *literal expression* or literal for short.
+このプログラムについてはいろいろ言えることがあります。それは特別に*リテラル式*もしくは略してリテラルと呼ばれる単一の式で構成されていることです。
 
-Scala runs, or *evaluates*, our program. When we evaluate a program in the Scala console or worksheet we are told two pieces of information: the *type* of the program, and the *value* it evaluates to. In this case the type is `String` and the value is `"Hello world!"`.
+Scala は私たちのプログラムを実行（評価）します。Scala コンソールや Scala ワークシートでプログラムを評価するとき、プログラムの*型*とプログラムを評価した*値*という2つの情報を受け取ります。この場合は、型が `String` で、値が `"Hello world!"` です。
 
-Although the output value "Hello world!" looks the same as the program that created it, there is a difference between the two. The literal expression is the program text we entered, while what the console prints is the result of evaluating that program. (Literals are so-named because they literally look like what they evaluate to.)
+プログラムが生成した出力値 "Hello world!" はプログラムと同じに見えますが、その2つの間には違いがあります。リテラル式は入力したプログラムテキストである一方、コンソールが表示したものはプログラムを評価した結果です。（リテラル (literal) は、評価されたものがその文字通り (literally) に見えるので名付けられました。）
 
-Let's look at a slightly more complex program
+わずかに複雑なプログラムを見てみましょう。
 
 ```tut:book
 "Hello world!".toUpperCase
 ```
 
-This program extends our first example by adding a *method call*. Evaluation in Scala proceeds left to right. First the literal `"Hello world!"` is evaluated, as in the first example. Then the method `toUpperCase` is called on the result. This method transforms a string value to its upper case equivalent and returns this new string. This is the final value we see printed by the console.
+このプログラムは*メソッド呼び出し*を加えることによって最初の例を拡張したものです。Scala における評価は左から右へ進みます。この例では、最初にリテラル `"Hello world!"` が評価されます。つぎに、その評価された結果に対しメソッド `toUpperCase` が呼ばれます。このメソッドは文字列値を大文字に変換したものを新しい文字列として返します。これがコンソールによって表示された最終的な値です。
 
-Once again the type of this program is `String`, but in this case it evaluates to `"HELLO WORLD!"`
+繰り返しになりますが、このプログラムの型は `String` で、この場合はプログラムが `"HELLO WORLD!"` に評価されます。
 
 ### Compile-time and Run-time
 
