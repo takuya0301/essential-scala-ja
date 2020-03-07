@@ -22,41 +22,41 @@ Scala は私たちのプログラムを実行（評価）します。Scala コ�
 "Hello world!".toUpperCase
 ```
 
-このプログラムは*メソッド呼び出し*を加えることによって最初の例を拡張したものです。Scala における評価は左から右へ進みます。この例では、最初にリテラル `"Hello world!"` が評価されます。つぎに、その評価された結果に対しメソッド `toUpperCase` が呼ばれます。このメソッドは文字列値を大文字に変換したものを新しい文字列として返します。これがコンソールによって表示された最終的な値です。
+このプログラムは*メソッド呼び出し*を加えることによって最初の例を拡張したものです。Scala における評価は左から右へ進みます。この例では、最初にリテラル `"Hello world!"` が評価されます。次に、その評価された結果に対しメソッド `toUpperCase` が呼ばれます。このメソッドは文字列値を大文字に変換したものを新しい文字列として返します。これがコンソールによって表示された最終的な値です。
 
 繰り返しになりますが、このプログラムの型は `String` で、この場合はプログラムが `"HELLO WORLD!"` に評価されます。
 
-### Compile-time and Run-time
+### コンパイル時と実行時
 
-There are two distinct stages that a Scala program goes through: first it is *compiled*, and if it compiles successfully it can then be *run* or evaluated. We refer to the first stage as *compile-time* and the latter as *run-time*.
+Scala プログラムが通過する明確な2つの段階があります。最初が*コンパイル*で、コンパイルが成功していれば、次が*実行*（評価）です。最初のステージを*コンパイル時*、次のステージを*実行時*と呼びます。
 
-When using the Scala console our programs are evaluated as soon as they compile, which gives the appearance that there is only one stage. It is important to understand that compile- and run-time really are distinct, as it is this distinction that allows us to properly understand the difference between types and values.
+Scala コンソールを使用しているとき、プログラムはコンパイルしてすぐに評価されるので、1つの段階だけがあるような印象を抱かせます。型と値の間における違いを正しく理解するためにも、コンパイル時と実行時がまったく異なることを理解するのは重要です。
 
-Compilation is a process of checking that a program makes sense. There are two ways in which a program must "make sense":
+コンパイルはプログラムが意味をなしているかを検証する工程です。プログラムが「意味をなす」には2つの観点が必要です。
 
-1. It must be *syntactically correct*, meaning the parts of the program must be arranged according to the grammar of the language. An example English sentence that is not syntactically correct is "on cat mat sat the". An example syntactically incorrect Scala program is
+1. プログラムは*文法的に正確*でなければなりません。それはプログラムの部分が言語の文法に従っているということを意味します。"on cat mat sat the"（猫の上敷き物座った）は文法的に正確ではない英文の例です。これは文法的に正確ではない Scala プログラムの例です。
 
 ```tut:book:fail
 toUpperCase."Hello world!"
 ```
 
-2. It must *type check*, meaning it must obey certain constraints on what a sensible program is. An example English sentence that is syntactically correct but fails to make sense is "the mat sat on the cat". A simple program that would fail to type check is trying to convert a number to uppercase.
+2. プログラムは*型検証*されなければなりません。意味をなすプログラムであるということは、プログラムがある制約に従っているということを意味します。"the mat sat on the cat"（敷き物は猫の上に座った）は文法的に正確ですが意味がわからない英文の例です。これは数値を大文字に変換しようとして型検証に失敗するシンプルなプログラムです。
 
 ```tut:book:fail
 2.toUpperCase
 ```
 
-The concept of upper and lowercase doesn't make sense for numbers, and the type system will catch this error.
+大文字小文字という概念は数値について意味をなさないので、型システムはこのエラーを捕捉します。
 
-If a program passes the checks at compile-time it may then be run. This is the process of the computer performing the instructions in the program.
+プログラムがコンパイル時の検証を通過した場合、次にプログラムは実行されるかもしれません。実行はコンピューターがプログラムにある指示を実行する工程です。
 
-Even though a program successfully compiles it can still fail at run-time. Dividing an integer by zero causes a run-time error in Scala.
+プログラムのコンパイルが成功したとしても、実行時に失敗する可能性が残っています。整数を0で割ると Scala では実行時エラーが発生します。
 
 ```tut:book:fail
 2 / 0
 ```
 
-The type of integers, `Int`, allows division so the program type checks. At run-time the program fails because there is no `Int` that can represent the result of the division.
+整数の型 `Int` はプログラムの型検証を通過すれば割り算できます。しかし、割り算の結果を表現できる `Int` が存在しないので、実行時にプログラムは失敗します。
 
 
 ### Expressions, Types, and Values
