@@ -59,29 +59,29 @@ toUpperCase."Hello world!"
 整数の型 `Int` はプログラムの型検証を通過すれば割り算できます。しかし、割り算の結果を表現できる `Int` が存在しないので、実行時にプログラムは失敗します。
 
 
-### Expressions, Types, and Values
+### 式・型・値
 
-So what exactly are expressions, types, and values?
+それでは、式・型・値とは正確には何でしょうか？
 
-Expressions are part of a program's text---what we type into a file, or the console or worksheet. They are the main components of a Scala program. We will see other components, namely *definitions* and *statements*, in due course. Expressions exist at compile-time.
+式はファイルやコンソール、ワークシートに入力したプログラムテキストの一部です。それは Scala プログラムの主要な構成要素です。のちほど、*定義*や*文*と名付けられた他の構成要素も見ていきます。式はコンパイル時に存在します。
 
-The defining characteristic of an expression is that it evaluates to a value. A value is information stored in the computer's memory. It exists at run-time. For example, the expression `2` evaluates to a particular sequence of bits in a particular location in the computer's memory.
+式の特徴を定義すると、それは値に評価されるということです。値はコンピューターのメモリに保持されます。それは実行時に存在します。例えば、式 `2` は、コンピューターのメモリの、特定の場所の、特定のビット列に評価されます。
 
-We compute with values. They are entities that our programs can pass around and manipulate. For example, to compute the minimum of two numbers we might write a program like
+私たちは値を用いて計算します。値はプログラムが受け渡したり操作したりする実体です。例えば、2つの数値の最小値を計算するために、下記のようなプログラムを書くでしょう。
 
 ```tut:book
 2.min(3)
 ```
 
-Here we have two values, `2` and `3`, and we combine them into a larger program that evaluates to `2`.
+ここに2つの値 `2` と `3` があり、それらを `2` に評価されるより大きなプログラムに結合しています。
 
-In Scala all values are *objects*, which has a particular meaning we will see shortly.
+Scala において、すべての値は*オブジェクト*で、のちほど見ていくように特定の意味を持ちます。
 
-Now let's turn to types. Types are restrictions on our programs that limit how we can manipulate objects. We have already seen two types, `String` and `Int`, and seen that we can perform different operations depending on the type.
+さて次に型のことを考えましょう。型はプログラム上の制約で、どのようにオブジェクトを操作できるかを制限します。すでに2つの型 `String` と `Int` を、そして型によって異なる操作を実行できることを見てきました。
 
-At this stage, the most important point about types is that *expressions have types but values do not*. We cannot inspect an arbitrary piece of the computer's memory and divine how to interpret it without knowing the program that created it. For example, in Scala the `Int` and `Float` types are both represented by 32-bits of memory. There are no tags or other indications that a given 32-bits should be interpreted as an `Int` or a `Float`.
+この段階で、型についてもっとも重要な点は*式は型を持つが値は持たない*ということです。私たちはコンピューターのメモリの任意の部分を検査できませんし、それを生成したプログラムを知らずして、どのようにそれが解釈されるのかを予言できません。例えば、Scala で `Int` 型と `Float` 型はどちらもメモリの32ビットによって表現されます。しかし、与えられた32ビットを `Int` や `Float` として解釈すべきというタグやその他の表示はないのです。
 
-We can show that types exist at compile-time by asking the Scala console to tell us the type of an expression that causes a run-time error.
+実行時エラーを引き起こす式の型を教えてと、Scala コンソールに尋ねることによって、コンパイル時に型が存在することを明らかにできます。
 
 ```scala
 :type 2 / 0
@@ -92,15 +92,15 @@ We can show that types exist at compile-time by asking the Scala console to tell
 2 / 0
 ```
 
-We see that the expression `2 / 0` has type `Int` even though this expression fails when we evaluate it.
+式 `2 / 0` は、それを評価したときには失敗するにも関わらず、`Int` 型を持つことを見ました。
 
-Types, which exist at compile-time, restrict us to writing programs that give a consistent interpretation to values. We cannot claim that a particular 32-bits is at one point an `Int` and another a `Float`. When a program type checks, Scala guarantees that all values are used consistently and thus it does not need to record type information in a value's representation. This process of removing type information is called *type erasure*[^type-erasure].
+コンパイル時に存在する型は、値に一貫した解釈を与えるプログラムを書くように制約します。特定の32ビットが、ある時は `Int` で、またある時は `Float` であると断言はできません。プログラムの型が検証されたとき、Scala はすべての値が一貫して使用されることを保証するので、値の表現で型の情報を記録する必要がありません。型の情報を取り除くこの処理を*型消去*[^type-erasure]と呼びます。
 
-[^type-erasure]: This is not entirely true. The Java Virtual Machine, the program that runs Scala code, distinguishes between two kinds of objects. Primitive types don't store any type information along with the value they represent. Object types do store type information. However this type information is not complete and there are occasions where it is lost. Blurring the distinction between compile- and run-time is thus dangerous. If we never rely on type information being around at run-time (and the patterns we will show you do not) we will never run into these issues.
+[^type-erasure]: これは完全に正しくはありません。Scala コードを実行するプログラムである Java 仮想マシンは2種類のオブジェクトを識別します。プリミティブ型は、値の表現と一緒にどんな型の情報も保持しません。オブジェクト型は型の情報を保持します。しかし、この型の情報は完全ではなく失われる場合もあります。それゆえに、コンパイル時と実行時の間にある区別を曖昧にすることは危険です。実行時にある型の情報を頼りにしない（本書ではそういうパターンを明らかにしていきます。）のであれば、それらの問題に遭遇することはないでしょう。
 
-Types necessarily do not contain all possible information about the values that conform to the type. If they did, type checking would be equivalent to running the program. We have already seen that the type system will not prevent us from dividing an `Int` by zero, which causes a run-time error.
+必然的に、型に合致する値について、考え得るすべての情報をその型は含みません。そうしないと、型検証はプログラムを実行することと等価になってしまいます。すでに見てきたように、型システムは `Int` をゼロで割ることを妨げることはなく、それは実行時エラーを引き起こします。
 
-An key part of designing Scala code is deciding which error cases we wish to rule out using the type system. We will see that we can express many useful constraints in the type system, improving the reliability of our programs. We could implement a division operator that used the type system to express the possibility of error, if we decided this was important enough in our program. Using the type system well is one of the main themes of this book.
+Scala コード設計の主要部分は、型システムの利用において、どのエラーケースを無視したいのかを決定することです。型システムでたくさんの便利な制約を表現することで、プログラムの信頼性を向上させられることを見ていきます。もしプログラムにおいて十分に重要であると決定すれば、エラーの可能性を表現する型システムを使用した除算演算子を実装することができます。型システムを上手に使用することは本書における重要なテーマのひとつです。
 
 
 ### Take Home Points
