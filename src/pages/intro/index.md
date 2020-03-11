@@ -34,7 +34,7 @@ Scala コンソールを使用しているとき、プログラムはコンパ�
 
 コンパイルはプログラムが意味をなしているかを検証する工程です。プログラムが「意味をなす」には2つの観点が必要です。
 
-1. プログラムは*文法的に正確*でなければなりません。それはプログラムの部分が言語の文法に従っているということを意味します。"on cat mat sat the"（猫の上敷き物座った）は文法的に正確ではない英文の例です。これは文法的に正確ではない Scala プログラムの例です。
+1. プログラムは*文法的に正確*でなければなりません。それはプログラムの部品が言語の文法に従っているということを意味します。"on cat mat sat the"（猫の上敷き物座った）は文法的に正確ではない英文の例です。これは文法的に正確ではない Scala プログラムの例です。
 
 ```tut:book:fail
 toUpperCase."Hello world!"
@@ -103,15 +103,15 @@ Scala において、すべての値は*オブジェクト*で、のちほど見
 Scala コード設計の主要部分は、型システムの利用において、どのエラーケースを無視したいのかを決定することです。型システムでたくさんの便利な制約を表現することで、プログラムの信頼性を向上させられることを見ていきます。もしプログラムにおいて十分に重要であると決定すれば、エラーの可能性を表現する型システムを使用した除算演算子を実装することができます。型システムを上手に使用することは本書における重要なテーマのひとつです。
 
 
-### Take Home Points
+### 覚えておいてほしいこと
 
-We must build a mental model of Scala programs if we are to use Scala. Three fundamental components of this model are *expressions*, *types*, and *values*.
+Scala を使用するのであれば、Scala プログラムのメンタルモデルを構築しなければなりません。このモデルにおける3つの基本的な構成要素は*式*・*型*・*値*です。
 
-Expressions are the parts of a program that evaluate to a value. They are the major part of a Scala program.
+式は値に評価されるプログラムの部品です。Scala プログラムの主要な部品になります。
 
-Expressions have types, which express some restrictions on programs. During *compile-time* the types of our programs are checked. If they are inconsistent then compilation fails and we cannot evaluate, or run, our program.
+式は型を持ち、プログラムの制約を表現します。*コンパイル時*にプログラムの型は検証されます。型に一貫性がない場合、コンパイルは失敗し、プログラムを評価（実行）することはできません。
 
-Values exist in the computer's memory, and are what a running program manipulates. All values in Scala are *objects*, the meaning of which we will discuss soon.
+値はコンピューターのメモリに存在し、実行中のプログラムが操作するものです。Scala におけるすべての値は*オブジェクト*で、その意味はのちほど議論します。
 
 
 ### Exercises
