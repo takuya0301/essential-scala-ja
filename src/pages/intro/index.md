@@ -114,18 +114,18 @@ Scala を使用するのであれば、Scala プログラムのメンタルモ�
 値はコンピューターのメモリに存在し、実行中のプログラムが操作するものです。Scala におけるすべての値は*オブジェクト*で、その意味はのちほど議論します。
 
 
-### Exercises
+### 練習問題
 
-#### Type and Value
+#### 型と値
 
-Using the Scala console or worksheet, determine the type and value of the following expressions:
+Scala コンソールか Scala ワークシートを使用して、下記の式の型と値を特定してください。
 
 ```tut:book:silent
 1 + 2
 ```
 
 <div class="solution">
-Type is `Int` and value is `3`.
+型は `Int` で値は `3` です.
 </div>
 
 ```tut:book:silent
@@ -133,7 +133,7 @@ Type is `Int` and value is `3`.
 ```
 
 <div class="solution">
-Type is `Int` and value is `3`.
+型は `Int` で値は `3` です.
 </div>
 
 ```tut:book:fail:silent
@@ -141,17 +141,17 @@ Type is `Int` and value is `3`.
 ```
 
 <div class="solution">
-Type is `Int`, but this one doesn't evaluate to a value---it raises an exception instead, and a raised exception is not a value. How can we tell this? We can't continue computing with the result of the expression. For example, we can't print it. Compare
+型は `Int` ですが、これは値に評価されません。その代わりに例外が発生し、発生した例外は値ではありません。これをどう理解すればいいでしょうか？式の結果による計算を続けられないということです。例えば、それを印字することはできません。
 
 ```tut:book
 println("foo")
 ```
 
-and
+と
 
 ```tut:book:fail
 println("foo".toInt)
 ```
 
-In the latter no printing occurs indicating the `println` is never evaluated.
+を比較してみてください。後者でどんな印字も発生しないことは、`println` が評価されないということを示しています。
 </div>
