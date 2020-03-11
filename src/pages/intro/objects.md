@@ -1,7 +1,7 @@
-## Interacting with Objects
+## オブジェクトとの相互作用
 
 
-In the previous section we saw the fundamental components of Scala programs: expressions, types, and values. We learned that *all values are objects*. In this section we will learn more about objects and how we can interact with them.
+前節では Scala プログラムの基本的な構成要素である式・型・値を見てきました。また、*すべての値はオブジェクトである*ことも学びました。本節では、オブジェクトとオブジェクトとどのように相互作用するのかについて学んでいきます。
 
 ### Objects
 
