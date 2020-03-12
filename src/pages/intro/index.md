@@ -125,7 +125,7 @@ Scala コンソールか Scala ワークシートを使用して、下記の式�
 ```
 
 <div class="solution">
-型は `Int` で値は `3` です.
+型は `Int` で値は `3` です。
 </div>
 
 ```tut:book:silent
@@ -133,7 +133,7 @@ Scala コンソールか Scala ワークシートを使用して、下記の式�
 ```
 
 <div class="solution">
-型は `Int` で値は `3` です.
+型は `Int` で値は `3` です。
 </div>
 
 ```tut:book:fail:silent
