@@ -1,13 +1,13 @@
 ## オブジェクトとの相互作用
 
 
-前節では Scala プログラムの基本的な構成要素である式・型・値を見てきました。また、*すべての値はオブジェクトである*ことも学びました。本節では、オブジェクトとオブジェクトとどのように相互作用するのかについて学んでいきます。
+前節では Scala プログラムの基本的な構成要素である式・型・値を見てきました。また、*すべての値はオブジェクトである*ことも学びました。本節では、オブジェクトとオブジェクトに対してどのように相互作用するのかについて学んでいきます。
 
-### Objects
+### オブジェクト
 
-An object is a grouping of data and operations on that data. For example, `2` is an object. The data is the integer 2, and the operations on that data are familiar operations like `+`, `-`, and so on.
+オブジェクトはデータとそのデータへの操作のグループです。例えば、`2` はオブジェクトです。データは整数の2で、データへの操作はなじみのある `+` や `-` などです。
 
-We have some special terminology for the data and operations of an object. The operations are known as *methods*. The data is stored in *fields*.
+オブジェクトのデータと操作について特別な専門用語があります。操作は*メソッド*として知られています。データは*フィールド*に保持されます。
 
 ### Method Calls
 
