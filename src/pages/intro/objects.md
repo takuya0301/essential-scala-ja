@@ -9,15 +9,15 @@
 
 オブジェクトのデータと操作について特別な専門用語があります。操作は*メソッド*として知られています。データは*フィールド*に保持されます。
 
-### Method Calls
+### メソッド呼び出し
 
-We interact with objects by *calling* methods[^patterns]. We have already seen some examples of calling methods. For example, we have seen we can get the uppercase version of a `String` by calling its `toUpperCase` method.
+メソッド*呼び出し*によってオブジェクトを作用させます[^patterns]。メソッド呼び出しの例をいくつかすでに見てきました。例えば、`String` の大文字版をその `toUpperCase` メソッドを呼び出すことによって取得できることを見ました。
 
 ```tut:book
 "hello".toUpperCase
 ```
 
-Some methods accept *parameters* or *arguments*, which control how the method works. The `take` method, for example, takes characters from a `String`. We must pass a parameter to `take` to specify how many characters we want.
+一部のメソッドは*引数*を受け取り、それはメソッドがどのように動作するかを制御します。例えば、`take` メソッドは `String` から文字を取り出します。いくつの文字を取り出したいかを指定する引数を `take` に渡さなければなりません。
 
 ```tut:book
 "abcdef".take(3)
@@ -25,40 +25,42 @@ Some methods accept *parameters* or *arguments*, which control how the method wo
 ```
 
 <div class="callout callout-info">
-#### Method Call Syntax {-}
+#### メソッド呼び出し文法 {-}
 
-The syntax for a method call is
+メソッド呼び出しのための文法は、
 
 ```scala
 anExpression.methodName(param1, ...)
 ```
 
-or
+か
 
 ```scala
 anExpression.methodName
 ```
 
-where
+である。ここで、
 
-- `anExpression` is any expression (which evaluates to an object)
-- `methodName` is the name of the method
-- the optional `param1, ...` is one or more expressions evaluating to the parameters to the method.
+- `anExpression` はオブジェクトに評価される任意の式
+- `methodName` はメソッドの名前
+- `param1, ...` はメソッドの引数に評価される1つ以上の式
+
+とする。
 </div>
 
-A method call is an expression, and thus evaluates to an object. This means we can chain method calls together to make more complex programs:
+メソッド呼び出しは式なのでオブジェクトに評価されます。これは、より複雑なプログラムをつくるために、メソッド呼び出しを連鎖できるということを意味します。
 
 ```tut:book
 "hello".toUpperCase.toLowerCase
 ```
 
-In what order are the various expressions in a method call evaluated? Method parameters are evaluated left-to-right, before the method is called. So in the expression
+メソッド呼び出しにおける様々な式はどの順番で評価されるのでしょうか？メソッド引数は、メソッドが呼び出される前に左から右に評価されます。下記の式では、
 
 ```tut:book
 "Hello world!".take(2 + 3)
 ```
 
-the expression `"Hello world!"` is evaluated first, then `2 + 3` (which requires evaluating `2` and then `3` first), then finally `"Hello world!".take(5)`.
+最初に式 `"Hello world!"` が、次に `2 + 3`（これは、最初に `2` を、次に `3` を評価する必要があります。）が、そして最後に `"Hello world!".take(5)` が評価されます。
 
 ### Operators
 
@@ -171,4 +173,4 @@ As programmers we must develop a mental model of how our code operates. The *sub
 
 [^side-effects]: What exactly is a side-effect? One workable definition is anything that causes substitution to yield an incorrect result. Does substitution *always* work, in the absence of side-effects? To truly have a correct model of Scala we must define the order in which we apply substitutions. There are a number of possible orders. (For example, we perform substitution left-to-right, or right-to-left? Do we substitute as soon as possible or delay until we need a value?) Most of the time order of substitution doesn't matter, but there are cases where it does. Scala always applies substitution from left-to-right and at the earliest possible time.
 
-[^patterns]: There is another way of interacting with objects, called pattern matching. We will introduce pattern matching later.
+[^patterns]: パターンマッチングと呼ばれるオブジェクトを作用させる別の方法があります。パターンマッチングはのちほど紹介します。
