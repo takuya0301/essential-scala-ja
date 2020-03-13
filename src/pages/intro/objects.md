@@ -62,42 +62,42 @@ anExpression.methodName
 
 最初に式 `"Hello world!"` が、次に `2 + 3`（これは、最初に `2` を、次に `3` を評価する必要があります。）が、そして最後に `"Hello world!".take(5)` が評価されます。
 
-### Operators
+### 演算子
 
-Because every value in Scala is an object we can also call methods on primitive types such as `Int` and `Boolean`. This is in contrast to Java where `int` and `boolean` are not objects:
+Scala においてすべての値はオブジェクトであるため、`Int` や `Boolean` のようなプリミティブ型についてもメソッドを呼び出すことができます。これは `int` や `boolean` がオブジェクトではない Java と対照的です。
 
 ```tut:book
-123.toShort // this is how we define a `Short` in Scala
-123.toByte // this is how we define a `Byte`
+123.toShort // これは Scala で `Short` を定義する方法です
+123.toByte // これは `Byte` を定義する方法です
 ```
 
-But if an `Int` is an object, what are the basic mathematical operators such as `+` and `-`? Are they also methods? Yes---Scala methods can have symbolic names as well as alphanumeric ones!
+しかし、`Int` がオブジェクトであれば、`+` や `-` のような基本的な算術演算子は何でしょうか？それらもまたメソッドでしょうか？そうです。Scala のメソッドは英数字の名前と同じようにシンボルの名前を持つことができます。
 
 ```tut:book
 43 - 3 + 2
 43.-(3).+(2)
 ```
 
-(Note that in Scala 2.10 and earlier you would have to write `(43).-(3).+(2)` to prevent `43.` being interpreted as a `Double`.)
+（Scala 2.10 以前においては、`43.` を `Double` として解釈されることを防ぐために、`(43).-(3).+(2)` と書く必要があるので注意してください。）
 
 <div class="callout callout-info">
-#### Infix Operator Notation {-}
+#### 中置演算子記法 {-}
 
-Any Scala expression written `a.b(c)` can also be written `a b c`.
+Scala において `a.b(c)` と書かれた任意の式は `a b c` と書ける。
 
-Note that `a b c d e` is equivalent to `a.b(c).d(e)`, not `a.b(c, d, e)`.
+`a b c d e` が等価であるのは `a.b(c).d(e)` で、`a.b(c, d, e)` ではないことに注意する。
 </div>
 
-We can use *infix operator notation* with any method that takes one parameter, regardless of whether it has a symbolic or alphanumeric name:
+シンボルの名前を持つか、英数字の名前を持つかにかかわらず、1つの引数を受け取るどんなメソッドでも *中置演算子記法* を使用できます。
 
 ```tut:book:silent
 "the quick brown fox" split " "
 // res: Array[String] = Array(the, quick, brown, fox)
 ```
 
-Infix notation is one of several syntactic shorthands that allow us to write simple operator expressions instead of verbose method calls. There are also notations for *prefix*, *postfix*, *right-associative*, and *assignment-style operators*, but there are much less common than infix notation.
+中置記法は、いくつかの文法的速記のひとつで、冗長なメソッド呼び出しの代わりに、簡潔な演算子式を書くことを可能にします。*前置*・*後置*・*右結合*・*代入演算子*という記法もありますが、中置記法に比べると一般的ではありません。
 
-A question poses itself---what precedence rules should we associate with infix operators? Scala uses a set of [precedence rules][link-precedence-rules] derived from the identifiers we use as method names that follow our intuitive understanding from mathematics and logic:
+中置演算子の結合は何の優先順位規則を支持すべきか？という質問はそれ自身をもたらします。Scala は、数学や論理の直観的知識にならい、メソッド名として使用する識別子から得られる [優先順位規則][link-precedence-rules] 一式を使用します。
 
 ```tut:book
 2 * 3 + 4 * 5
