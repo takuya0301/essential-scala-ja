@@ -105,25 +105,27 @@ Scala において `a.b(c)` と書かれた任意の式は `a b c` と書ける�
 2 * (3 + 4) * 5
 ```
 
-### Take home points
+### 覚えておいてほしいこと
 
-All Scala values are objects. We *interact with objects by calling methods* on them. If you come from a Java background note we can call methods on `Int` or any other primitive value.
+Scala のすべての値はオブジェクトです。それらの*メソッド呼び出しによってオブジェクトを作用*させます。Java を背景知識としているのであれば、`Int` や他の任意のプリミティブ値のメソッドを呼び出せることに注意してください。
 
-The syntax for a method call is
+メソッド呼び出しのための文法は、
 
 ```scala
 anExpression.methodName(parameter, ...)
 ```
 
-or
+か
 
 ```scala
 anExpression methodName parameter
 ```
 
-*Scala has very few operators - almost everything is a method call.* We use syntactic conventions like infix operator notation to keep our code simple and readable, but we can always fall back to standard method notation where it makes sense.
+です。
 
-As we will see, Scala's focus on programming with expressions allows us to write much shorter code than we can in Java. It also allows us to reason about code in a very intuitive way using values and types.
+*Scala は非常に少ない演算子を持ち、ほとんどすべてはメソッド呼び出しです*。中置演算子記法のような構文規則をコードを簡潔かつ読みやすくするために使用しますが、標準のメソッド記法の方がわかりやすい場合はいつでもそれに戻すことができます。
+
+のちほど見ていくように、式を伴うプログラミングにおける Scala の焦点は、Java で実現するよりさらに短いコードで書くことを可能にすることです。また、値と型を使用する非常に直観的な方法で、コードについての判断を可能にします。
 
 ### Exercises
 
