@@ -17,7 +17,7 @@
 "hello".toUpperCase
 ```
 
-一部のメソッドは*引数*を受け取り、それはメソッドがどのように動作するかを制御します。例えば、`take` メソッドは `String` から文字を取り出します。いくつの文字を取り出したいかを指定する引数を `take` に渡さなければなりません。
+一部のメソッドは*引数*を受け取り、それはメソッドがどのように動作するかを制御します。例えば、`take` メソッドは `String` から文字を取り出します。いくつの文字を取り出したいかを指定する引数を `take` に渡す必要があります。
 
 ```tut:book
 "abcdef".take(3)
@@ -127,11 +127,11 @@ anExpression methodName parameter
 
 のちほど見ていくように、式を伴うプログラミングにおける Scala の焦点は、Java で実現するよりさらに短いコードで書くことを可能にすることです。また、値と型を使用する非常に直観的な方法で、コードについての判断を可能にします。
 
-### Exercises
+### 練習問題
 
-#### Operator Style
+#### 演算子スタイル
 
-Rewrite in operator-style
+演算子スタイルに書き直してください。
 
 ```tut:book
 "foo".take(1)
@@ -143,7 +143,7 @@ Rewrite in operator-style
 ```
 </div>
 
-Rewrite in method call style
+メソッド呼び出しスタイルに書き直してください。
 
 ```tut:book
 1 + 2 + 3
@@ -155,9 +155,9 @@ Rewrite in method call style
 ```
 </div>
 
-#### Substitution
+#### 置換
 
-What is the difference between the following expressions? What are the similarities?
+下記の2つの式の間にある違いは何ですか？類似点は何ですか？
 
 ```tut:book:silent
 1 + 2 + 3
@@ -166,13 +166,13 @@ What is the difference between the following expressions? What are the similarit
 ```
 
 <div class="solution">
-The expressions have the same result type and return value. However, they arrive at their results in different ways. The first computes its result through a series of additions, while the later is simply a literal.
+2つの式は同じ結果型と同じ返却値を持ちます。しかし、それらは異なった方法でその結果に辿り着きます。前者は一連の加算によってその結果を計算する一方、後者はただ単にリテラルです。
 
-As neither expression has any side-effects, they are interchangeable from a user's point of view. Anywhere you can write `1 + 2 + 3` you can also write `6`, and vice versa, without changing the meaning of any program. This is known as *substitution* and you may remember the principle from simplifying algebraic formulae at school.
+どちらの式も副作用を持たないので、ユーザー視点からそれらは交換可能です。`1 + 2 + 3` と書けるところはどこでも `6` と書け、どんなプログラムの意味も変えることはありません。逆もまた同様です。これは*置換*（訳注：数学だと*代入*という訳語が一般的です。）として知られており、あなたは数式を簡単にする原理として学校で記憶しているかもしれません。
 
-As programmers we must develop a mental model of how our code operates. The *substitution model of evaluation* is a particuarly simple model that says anywhere we see an expression we may substitute its result. In the absence of side-effects, the substitution model always works[^side-effects]. If we know the types and values of each component of an expression, we know the type and value of the expression as a whole. In functional programming we aim to avoid side-effects for this reason: it makes our programs easier to understand.
+プログラマーとしてはコードがどのように動くのかというメンタルモデルを養う必要があります。*評価の置換モデル*は目に入る式はどれでもその結果と置換して構わないというとりわけ単純なモデルです。副作用がないことで、式の置換モデルはいつでも機能します[^side-effects]。式の各構成要素である型と値を知っていれば、式全体としての型と値を知っています。関数型プログラミングにおいて副作用を避けようと努力している理由は、それがプログラムを容易に理解できるようにするからです。
 </div>
 
-[^side-effects]: What exactly is a side-effect? One workable definition is anything that causes substitution to yield an incorrect result. Does substitution *always* work, in the absence of side-effects? To truly have a correct model of Scala we must define the order in which we apply substitutions. There are a number of possible orders. (For example, we perform substitution left-to-right, or right-to-left? Do we substitute as soon as possible or delay until we need a value?) Most of the time order of substitution doesn't matter, but there are cases where it does. Scala always applies substitution from left-to-right and at the earliest possible time.
+[^side-effects]: 副作用とは正確には何でしょうか？ひとつの実用的な定義は、間違った結果を置換によって生じさせてしまう何かのことです。副作用がなければ、置換は*必ず*機能するのでしょうか？Scala の本当に正しいモデルを示すには、置換を適用する順番を定義する必要があります。いくつかの考えうる順番があります。（例えば、置換を左から右へ実行するのか、右から左へ実行するのか？置換をできるだけ早くするのか、値が必要になるまで遅延するのか？）ほとんどいつも置換の順番は問題になりませんが、それが問題になる場合もあります。Scala はいつも「左から右へ」「できるだけ早く」置換を適用します。
 
 [^patterns]: パターンマッチングと呼ばれるオブジェクトを作用させる別の方法があります。パターンマッチングはのちほど紹介します。
