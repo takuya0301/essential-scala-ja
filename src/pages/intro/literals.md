@@ -1,16 +1,16 @@
-## Literal Objects
+## リテラルオブジェクト
 
-We have already covered some of Scala's basic types. In this section we're going to round out that knowledge by covering all of Scala's *literal expressions*. A literal expression represents a fixed value that stands "for itself". Here's an example:
+すでに Scala の基本型のいくつかを取り上げました。本節では、Scala におけるすべての*リテラル式*を扱うことによって、その知識に磨きをかける予定です。リテラル式は「それ自身」が象徴する固定値を表現します。下記はひとつの例です。
 
 ```tut:book
 42
 ```
 
-This interaction at the REPL shows us that the literal `42` evaluates to the `Int` `42`.
+この REPL での相互作用は、リテラル `42` が `Int` `42` に評価されることを示しています。
 
-Don't confuse a literal with the value it evaluates to! The literal expression is the representation in the program text before the program is run, and the value is the representation in the computer's memory after the program has run.
+リテラルとそれが評価された値を混同してはいけません。リテラル式はプログラムを実行する前のプログラムテキストにおける表現で、値はプログラムを実行した後のコンピューターのメモリにおける表現です。
 
-If you have prior programming experience, particularly Java experience, the literals in Scala should be familiar to you.
+これまでにプログラミングの経験、とくに Java の経験があれば、Scala におけるリテラルに見覚えがあるはずです。
 
 ### Numbers
 
