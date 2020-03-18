@@ -27,27 +27,27 @@ Scala は16ビット整数の `Short` と8ビットの `Byte` を持ちますが
 
 ### 真偽値
 
-真偽値は正確に Java と同じで、`true` か `false` です。
+真偽値は Java とまったく同じで、`true` か `false` です。
 
 ```tut:book
 true
 false
 ```
 
-### Characters
+### 文字値
 
-`Chars` are 16-bit Unicode values written as a single character enclosed in single quotes.
+`Chars` は16ビット Unicode 値で、シングルクォートで囲まれた単一の文字として書かれます。
 
 ```tut:book
 'a'
 ```
 
 <div class="callout callout-info">
-#### Scala vs Java's Type Hierarchy {-}
+#### Scala 対 Java の型階層 {-}
 
-Although they are written with initial capitals, Scala's `Int`, `Double`, `Float`, `Long`, `Short`, `Byte`, `Boolen` and `Char` refer to exactly the same things as `int`, `double`, `float`, `long`, `short`, `byte`, `boolean`, and `char` in Java.
+最初の文字が大文字で書かれていますが、Scala の `Int` や `Double`、`Float`、`Long`、`Short`、`Byte`、`Boolean`、`Char` は、Java の `int` や `double`、`float`、`long`、`short`、`byte`、`boolean`、`char` とまったく同じものを参照します。
 
-In Scala all of these types act like objects with methods and fields. However, once your code is compiled, a Scala `Int` is exactly the same as a Java `int`. This makes interoperability between the two languages a breeze.
+Scala において、それらすべての型はメソッドとフィールドを伴うオブジェクトのように振る舞います。しかしながら、一度コードがコンパイルされたら、Scala の `Int` は Java の `int` とまったく同じです。これが2つの言語間の相互運用を簡単にしてくれるのです。
 </div>
 
 ### Strings
