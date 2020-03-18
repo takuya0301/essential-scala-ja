@@ -12,9 +12,9 @@
 
 これまでにプログラミングの経験、とくに Java の経験があれば、Scala におけるリテラルに見覚えがあるはずです。
 
-### Numbers
+### 数値
 
-Numbers share the same types available in Java: `Int` for 32-bit integers, `Double` for 64-bit floating point, `Float` for 32-bit floating point, and `Long` for 64-bit integers.
+数値は Java にある同じ型を共有しており、32ビット整数の `Int`、64ビット浮動小数点数の `Double`、32ビット浮動小数点数の `Float`、そして64ビット整数の `Long` があります。 
 
 ```tut:book
 42
@@ -23,7 +23,7 @@ Numbers share the same types available in Java: `Int` for 32-bit integers, `Doub
 42L
 ```
 
-Scala also has 16-bit `Short` integers and 8-bit `Byte`s, but there is no literal syntax for creating them. Instead, we create them using methods called `toShort` and `toByte`.
+Scala は16ビット整数の `Short` と8ビットの `Byte` を持ちますが、それらを生成するためのリテラル文法はありません。その代わりに、`toShort` や `toByte` と呼ばれるメソッドを使用することで生成できます。
 
 ### Booleans
 
