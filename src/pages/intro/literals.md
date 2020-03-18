@@ -25,9 +25,9 @@
 
 Scala は16ビット整数の `Short` と8ビットの `Byte` を持ちますが、それらを生成するためのリテラル文法はありません。その代わりに、`toShort` や `toByte` と呼ばれるメソッドを使用することで生成できます。
 
-### Booleans
+### 真偽値
 
-Booleans are exactly the same as Java: `true` or `false`.
+真偽値は正確に Java と同じで、`true` か `false` です。
 
 ```tut:book
 true
