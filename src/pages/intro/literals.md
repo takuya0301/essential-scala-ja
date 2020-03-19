@@ -27,7 +27,7 @@ Scala は16ビット整数の `Short` と8ビットの `Byte` を持ちますが
 
 ### 真偽値
 
-真偽値は Java とまったく同じで、`true` か `false` です。
+真偽値は Java とちょうど同じで、`true` か `false` です。
 
 ```tut:book
 true
@@ -45,14 +45,14 @@ false
 <div class="callout callout-info">
 #### Scala 対 Java の型階層 {-}
 
-最初の文字が大文字で書かれていますが、Scala の `Int` や `Double`、`Float`、`Long`、`Short`、`Byte`、`Boolean`、`Char` は、Java の `int` や `double`、`float`、`long`、`short`、`byte`、`boolean`、`char` とまったく同じものを参照します。
+最初の文字が大文字で書かれていますが、Scala の `Int` や `Double`、`Float`、`Long`、`Short`、`Byte`、`Boolean`、`Char` は、Java の `int` や `double`、`float`、`long`、`short`、`byte`、`boolean`、`char` とちょうど同じものを参照します。
 
-Scala において、それらすべての型はメソッドとフィールドを伴うオブジェクトのように振る舞います。しかしながら、一度コードがコンパイルされたら、Scala の `Int` は Java の `int` とまったく同じです。これが2つの言語間の相互運用を簡単にしてくれるのです。
+Scala において、それらすべての型はメソッドとフィールドを伴うオブジェクトのように振る舞います。しかしながら、一度コードがコンパイルされたら、Scala の `Int` は Java の `int` とちょうど同じです。これが2つの言語間の相互運用を簡単にしてくれるのです。
 </div>
 
-### Strings
+### 文字列値
 
-Strings are exactly Java's strings, and are written the same way.
+文字列値はちょうど Java の文字列で、同じ方法で書かれます。
 
 ```tut:book
 "this is a string"
