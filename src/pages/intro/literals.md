@@ -59,22 +59,22 @@ Scala において、それらすべての型はメソッドとフィールド�
 "the\nusual\tescape characters apply"
 ```
 
-### Null
+### Null 値
 
-Null is the same as Java, though not used nearly as often. Scala's `null` also has its own type: `Null`.
+Null 値は Java と同じであるにもかかわらず、ほとんど頻繁には使用されません。また、Scala の `null` は独自の `Null` 型を持ちます。
 
 ```tut:book
 null
 ```
 
 <div class="callout callout-info">
-#### Using Nulls in Scala {-}
+#### Scala で Null 値を使用する {-}
 
-Although `null`s are common in Java code, they are considered very bad practice in Scala.
+`null` は Java コードで一般的ですが、Scala では非常に悪い習慣であると考えられています。
 
-The main use of `null` in Java is to implement *optional* values that have some or no value at different points of a program's execution. However, `null` values cannot be checked by the compiler, leading to possible runtime errors in the form of `NullPointerExceptions`.
+Java における `null` の主な用途は、プログラム実行の異なる時点において、値の有無という**任意**値を実装することです。しかしながら、`null` 値はコンパイラーによってチェックできないため、`NullPointerException` という形で実行時エラーが発生する可能性があります。
 
-Later we will see that Scala has the means to define optional values that *are* checked by the compiler. This removes the necessity of using `null`, making our programs much safer.
+のちほど、コンパイラーによってチェックされる任意値を定義する手段を Scala が持つことを見ていきましょう。これは `null` を使用する必要性を取り除き、プログラムをより安全にしてくれます。
 </div>
 
 ### Unit
