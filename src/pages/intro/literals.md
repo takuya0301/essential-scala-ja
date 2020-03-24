@@ -72,14 +72,14 @@ null
 
 `null` は Java コードで一般的ですが、Scala では非常に悪い習慣であると考えられています。
 
-Java における `null` の主な用途は、プログラム実行の異なる時点において、値の有無という**任意**値を実装することです。しかしながら、`null` 値はコンパイラーによってチェックできないため、`NullPointerException` という形で実行時エラーが発生する可能性があります。
+Java における `null` の主な用途は、プログラム実行の異なる時点において、値の有無という**任意 (optional)** 値を実装することです。しかしながら、`null` 値はコンパイラーによってチェックできないため、`NullPointerException` という形で実行時エラーが発生する可能性があります。
 
 のちほど、コンパイラーによってチェックされる任意値を定義する手段を Scala が持つことを見ていきましょう。これは `null` を使用する必要性を取り除き、プログラムをより安全にしてくれます。
 </div>
 
-### Unit
+### Unit 値
 
-Unit, written `()`, is the Scala equivalent of Java's `void`. Unit is the result of expressions that evaluate to no interesting value, such as printing to standard output using `println`. The console doesn't print unit but we can ask for the type of an expression to see that unit is in fact the result of some expressions.
+Scala で `()` と書かれる Unit 値は、Java の `void` に相当します。Unit 値は、`println` を使用して標準出力に印字するような、何の面白みもない値に評価される式の結果です。コンソールは Unit 値を印字しませんが、式の型を尋ねることで、実際に何らかの式の結果であることがわかります。
 
 ```tut:book
 ()
@@ -99,7 +99,7 @@ println("something")
 // Unit
 ```
 
-Unit is an important concept in Scala. Many of Scala's syntactic constructs are *expressions* that have types and values. We need a placeholder for expressions that don't yield a useful value, and unit provides just that.
+Unit 値は Scala において重要な概念です。Scala の文法構造の多くは、型と値を持つ**式**です。有用な値を得られない式のためのプレイスホルダーが必要で、Unit 値はまさにそれを提供してくれます。
 
 ### Take home points
 
