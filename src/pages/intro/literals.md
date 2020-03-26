@@ -109,11 +109,11 @@ Unit 値は Scala において重要な概念です。Scala の文法構造の�
 
 次節では、独自のオブジェクトリテラルを定義する方法を学びます。
 
-### Exercises
+### 演習
 
-#### Literally Just Literals
+#### 文字通りただのリテラル
 
-What are the values and types of the following Scala literals?
+下記の Scala リテラルの値と型は何ですか？
 
 ```tut:book:silent
 42
@@ -126,14 +126,14 @@ true
 ```
 
 <div class="solution">
-`42` is an `Int`. `true` is a `Boolean`. `123L` is a `Long`. `42.0` is a `Double`.
+`42` は `Int` です。`true` は `Boolean` です。`123L` は `Long` です。`42.0` は `Double` です。
 
-This exercise just gives you some experience using the Scala console or Worksheet.
+この演習は、Scala コンソールや Scala ワークシートを使用した体験をするだけです。
 </div>
 
-#### Quotes and Misquotes
+#### 引用と誤引用
 
-What is the difference between the following literals? What is the type and value of each?
+下記のリテラルの違いは何ですか？それぞれの型と値は？
 
 ```tut:book:silent
 'a'
@@ -142,12 +142,12 @@ What is the difference between the following literals? What is the type and valu
 ```
 
 <div class="solution">
-The first is a literal `Char` and the second is a literal `String`.
+1つ目は `Char` リテラルであり、2つ目は `String` リテラルです。
 </div>
 
-#### An Aside on Side-Effects
+#### 副作用についての余談
 
-What is the difference between the following expressions? What is the type and value of each?
+下記の式の違いは何ですか？それぞれの型と値は？
 
 ```tut:book:silent
 "Hello world!"
@@ -156,19 +156,19 @@ println("Hello world!")
 ```
 
 <div class="solution">
-The literal expression `"Hello world!"` evaluates to a `String` value. The expression `println("Hello world!")` evaluates to `Unit` and, as a side-effect, prints `"Hello world!"` on the console.
+リテラル式 `"Hello world!"` は `String` の値として評価されます。式 `println("Hello world!")` は `Unit` として評価され、副作用としてコンソールに `"Hello world!"` を印字します。
 
-This an important distinction between a program that evaluates to a value and a program that prints a value as a side-effect. The former can be used in a larger expression but the latter cannot.
+これは、値を評価するプログラムと、値を副作用として印字するプログラムとの間の重要な区別です。前者はより大きな式で使用できますが、後者は使用できません。
 </div>
 
-#### Learning By Mistakes
+#### 失敗から学ぶ
 
-What is the type and value of the following literal? Try writing it on the REPL or in a Scala worksheet and see what happens!
+下記のリテラルの型と値は何ですか？REPL や Scala ワークシートに書いてみて、何が起こるか見てみましょう！
 
 ```scala
 'Hello world!'
 ```
 
 <div class="solution">
-You should see an error message. Take the time to read and get used to the error messages in your development environment---you'll see plenty more of them soon!
+エラーメッセージを見ることになるはずです。開発環境のエラーメッセージを読んで慣れることに時間をかけてください。すぐに他にもたくさん見るようになるので！
 </div>
