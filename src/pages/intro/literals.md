@@ -101,13 +101,13 @@ println("something")
 
 Unit 値は Scala において重要な概念です。Scala の文法構造の多くは、型と値を持つ**式**です。有用な値を得られない式のためのプレイスホルダーが必要で、Unit 値はまさにそれを提供してくれます。
 
-### Take home points
+### 覚えておいてほしいこと
 
-In this section we have seen *literal* expressions, which evaluate to basic data types. These basics types are mostly identical to Java, except for `Unit` which has no equivalent.
+本節では、基本的なデータ型を評価する**リテラル**式を見てきました。これらの基本型は、等価なものがない `Unit` を除いて、ほとんど Java と同じです。
 
-We note that every literal expression has a *type*, and evaluates to a *value*---something which is also true for more complex Scala expressions.
+すべてのリテラル式は**型**を持ち、**値**に評価されることに注意してください。これは、より複雑な Scala の式にも当てはまります。
 
-In the next section we will learn how to define our own object literals.
+次節では、独自のオブジェクトリテラルを定義する方法を学びます。
 
 ### Exercises
 
