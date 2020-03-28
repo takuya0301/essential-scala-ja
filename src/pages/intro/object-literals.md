@@ -1,32 +1,31 @@
-## Object Literals
+## オブジェクトリテラル
 
-So far we've seen how to create objects of built-in types like `Int` and `String` and combine them into expressions. In this section we will see how to create objects of our own design using *object literals*.
+ここまでは、`Int` や `String` のような組み込み型のオブジェクトを作成し、それらを式に組み合わせる方法を見てきました。本節では、**オブジェクトリテラル (object literals)** を使用して独自デザインのオブジェクトを作成する方法を見ていきます。
 
-When we write an object literal we use a *declaration*, which is a different kind of program to an expression. A declaration does not evaluate to a value. Instead it associates a name with a value. This name can then be used to refer to the value in other code.
+オブジェクトリテラルを書くとき、式とは別のプログラムの一種である**宣言 (declaration)** を使います。宣言は値を評価しません。その代わりに名前と値を関連付けます。この名前は他のコードで値を参照するために使用できます。
 
-We can declare an empty object as follows:
+下記のように空のオブジェクトを宣言できます。
 
 ```tut:book:silent
 object Test {}
 ```
 
-This is not an expression---it does not evaluate to a value. Rather, it binds a name (`Test`) to a value (an empty object).
+これは値に評価されず式ではありません。むしろ、名前 `Test` を空のオブジェクト値に結び付けます。
 
-Once we have bound the name `Test` we can use it in expressions, where it evaluates to the object we have declared. The simplest expression is just the name on its own, which evaluates to the value itself:
+一度 `Test` という名前に結び付ければ式の中で使用することができ、それは宣言したオブジェクトに評価されます。もっとも単純な式はそれ自身の名前だけで、それ自体が値として評価されます。
 
 ```tut:book
 Test
 ```
 
-This expression is equivalent to writing a literal like `123` or `"abc"`.
-Note that the type of the object is reported as `Test.type`. This is not like any type we've seen before---it's a new type, created just for our object, called a *singleton type*. We cannot create other values of this type.
+この式は `123` や `"abc"` のようなリテラルを書くことと同じです。オブジェクトの型は `Test.type` として報告されることに注意してください。これは、これまで見てきた型とは異なり、オブジェクトのためだけに作成された新しい型で、**シングルトン型 (singleton type)** と呼ばれます。この型における他の値を作成することはできません。
 
-Empty objects are not so useful. Within the body (between the braces) of an object declaration we can put expressions. It is more common, however, to put declarations such as declaring methods, fields, or even more objects.
+空のオブジェクトはあまり便利ではありません。オブジェクト宣言の本体である中括弧の間には式を入れることができます。しかし、メソッドやフィールド、さらなるオブジェクトを宣言するような宣言を入れるのが一般的です。
 
 <div class="callout callout-info">
-#### Object Declaration Syntax {-}
+#### オブジェクト宣言文法 {-}
 
-The syntax for declaring an object is
+オブジェクト宣言のための文法は、
 
 ```scala
 object name {
@@ -34,14 +33,15 @@ object name {
 }
 ```
 
-where
+です。ここで、
 
-- `name` is the name of the object; and
-- the optional `declarationOrExpression`s are declarations or expressions.
+- `name` はオブジェクトの名前
+- `declarationOrExpression` は任意の宣言か任意の式
 
+とします。
 </div>
 
-Let's see how to declare methods and fields.
+それではメソッドとフィールドをどのように宣言するか見ていきましょう。
 
 ### Methods
 
