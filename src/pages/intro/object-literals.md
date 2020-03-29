@@ -36,16 +36,16 @@ object name {
 です。ここで、
 
 - `name` はオブジェクトの名前
-- `declarationOrExpression` は任意の宣言か任意の式
+- `declarationOrExpression` は宣言か式（オプション）
 
 とします。
 </div>
 
 それではメソッドとフィールドをどのように宣言するか見ていきましょう。
 
-### Methods
+### メソッド
 
-We interact with objects via methods so let's create an object with a method.
+メソッドによってオブジェクトを作用させるので、メソッドを伴うオブジェクトを生成してみましょう。
 
 ```tut:book:silent
 object Test2 {
@@ -53,13 +53,13 @@ object Test2 {
 }
 ```
 
-Here we've create a method called `name`. We can call it in the usual way.
+ここでは `name` と呼ばれるメソッドを生成しました。これをいつもの方法で呼び出すことができます。
 
 ```tut:book
 Test2.name
 ```
 
-Here's an object with a more complex method:
+下記はより複雑なメソッドを伴うオブジェクトです。
 
 ```tut:book:silent
 object Test3 {
@@ -73,39 +73,39 @@ Test3.hello("Noel")
 ```
 
 <div class="callout callout-info">
-#### Method Declaration Syntax {-}
+#### メソッド宣言文法 {-}
 
-The syntax for declaring a method is
+メソッドを宣言するための文法は、
 
 ```scala
 def name(parameter: type, ...): resultType =
   bodyExpression
 ```
 
-or
+か
 
 ```scala
 def name: resultType =
   bodyExpression
 ```
 
-where
+です。ここで、
 
-- `name` is the name of the method;
-- the optional `parameter`s are the names given to parameters to the method;
-- the `type`s are the types of the method parameters;
-- the optional `resultType` is the type of the result of the method;
-- the `bodyExpression` is an expression that calling the method evaluates to.
+- `name` はメソッドの名前
+- `parameter` はメソッドに与えられる引数の名前（オプション）
+- `type` はメソッド引数の型
+- `resultType` はメソッドの結果型（オプション）
+- `bodyExpression` はメソッドを呼び出すことで評価される式
 
-Method parameters are optional, but if a method has parameters their type must be given. Although the result type is optional it is good practice to define it as it serves as (machine checked!) documentation.
+とします。メソッド引数はオプションですが、メソッドが引数を持つのであれば、それらの型は与えられなければなりません。結果型はオプションであるにもかかわらず、それを定義することが、機械的に検証されたドキュメントとしての役割を果たすので良い習慣とされます。
 
-The term *argument* may be used interchangeably with *parameter*.
+**引数 (argument)** という用語は**パラメーター (parameter)** と言い換えることができます。（訳注：本書ではどちらの用語も**引数**という訳語に統一しています。）
 </div>
 
 <div class="callout callout-info">
-#### Return is Implicit {-}
+#### 返却は暗黙的 {-}
 
-The return value of the method is determined by evaluating the body---there is no need to write `return` like you would in Java.
+メソッドの返却値は本体を評価することによって決定されます。Java でするように `return` を書く必要はありません。
 </div>
 
 
