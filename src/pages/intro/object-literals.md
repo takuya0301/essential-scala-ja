@@ -109,9 +109,9 @@ def name: resultType =
 </div>
 
 
-### Fields
+### フィールド
 
-An object can also contain other objects, called *fields*. We introduce these using the keywords `val` or `var`, which look similar to `def`:
+オブジェクトは**フィールド (field)** と呼ばれる他のオブジェクトを含めることもできます。`def` によく似た `val` や `var` というキーワードを使用して導入します。
 
 ```tut:book:silent
 object Test4 {
@@ -126,31 +126,32 @@ Test4.hello("Dave")
 ```
 
 <div class="callout callout-info">
-#### Field Declaration Syntax {-}
+#### フィールド宣言文法 {-}
 
-The syntax for declaring a field is
+フィールドを宣言するための文法は、
 
 ```scala
 val name: type = valueExpression
 ```
 
-or
+か
 
 ```scala
 var name: type = valueExpression
 ```
 
-where
+です。ここで、
 
-- `name` is the name of the field;
-- the optional `type` declaration gives the type of the field;
-- the `valueExpression` evaluates to the object that is bound to the `name`.
+- `name` はフィールドの名前
+- `type` はフィールドの型（オプション）
+- `valueExpression` は `name` に束縛されるオブジェクトに評価される式
+
+とします。
 </div>
 
-Using `val` defines an *immutable* field, meaning we cannot change the value bound to the name. A `var` field is *mutable*, allowing us to change the bound value.
+`val` を使用することで**不変 (immutable)** フィールドを定義でき、これは名前に束縛された値の変更ができないことを意味します。`var` は**可変 (mutable)** フィールドで、束縛された値の変更ができます。
 
-*Always prefer `val` to `var`.* Scala programmers prefer to use immutable fields wherever possible, as this maintains substitution. While you will no doubt create the occasional mutable field in your application code, we will stay away from `var` for most of this course and you should do the same in your Scala programming.
-
+**常に `var` より `val` を選びましょう。** 置換を維持するため、Scala プログラマーは可能な限り不変フィールドを使用することを選びます。アプリケーションコードで時折可変フィールドを生成することは間違いありませんが、本書の大部分では `var` を使用しないようにしており、普段の Scala プログラミングにおいてもそれに倣いましょう。
 
 ### Methods versus fields
 
