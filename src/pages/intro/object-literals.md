@@ -153,11 +153,11 @@ var name: type = valueExpression
 
 **常に `var` より `val` を選びましょう。** 置換を維持するため、Scala プログラマーは可能な限り不変フィールドを使用することを選びます。アプリケーションコードで時折可変フィールドを生成することは間違いありませんが、本書の大部分では `var` を使用しないようにしており、普段の Scala プログラミングにおいてもそれに倣いましょう。
 
-### Methods versus fields
+### メソッド対フィールド
 
-You might wonder why we need fields when we can have methods of no arguments that seem to work the same. The difference is subtle---a field gives a name to a value, whereas a method gives a name to a computation that produces a value.
+同じ動作をするように見える引数のないメソッドを持つことができるにも関わらず、なぜフィールドが必要なのか不思議に思うかもしれません。その違いはわずかで、フィールドは値に名前を与えますが、一方のメソッドは値を算出する計算に名前を与えます。
 
-Here's an object that shows the difference:
+その違いを明らかにするオブジェクトがこちらです。
 
 ```tut:book:silent
 object Test7 {
@@ -172,28 +172,28 @@ object Test7 {
 }
 ```
 
-Here we have used a `println` expression to print something to the console, and a block expression (expressions surrounded by `{` and `}`) to group expressions. We'll see more about block expressions in the next section.
+ここでは、コンソールに何かを印字するために `println` 式を、式をグループにするためにブロック式（`{` と `}` によって囲まれた式）を使用しています。なお、ブロック式については、次節でより詳しく見ていきます。
 
-Notice how the console says we've defined an object, but it hasn't run either of our `println` statements? This is due to a quirk of Scala and Java called *lazy loading*.
+オブジェクトを定義したとコンソールに表示されているのに、いずれの `println` 文も実行されていないことに注意してください。これは**遅延読み込み (lazy loading)** と呼ばれる Scala と Java の特性によるものです。
 
-Objects and classes (which we'll see later) aren't loaded until they are referenced by other code. This is what prevents Scala loading the entire standard library into memory to run a simple `"Hello world!"` app.
+オブジェクトやクラス（後述）は、他のコードによって参照されるまで読み込まれません。これが、単純な `"Hello world!"` アプリを実行するために、Scala が標準ライブラリ全体をメモリに読み込むことを防いでいます。
 
-Let's force Scala to evaluate our object body by referencing `Test7` in an expression:
+式の中で `Test7` を参照することで、Scala にオブジェクトの本体を強制的に評価させてみましょう。
 
 ```tut:book
 Test7
 ```
 
-When the object is first loaded, Scala runs through its definitions and calculates the values of each of its fields. This results in the code printing `"Evaluating simpleField"` as a side-effect.
+オブジェクトが最初に読み込まれるとき、Scala はその定義を実行し、各フィールドの値を計算します。その結果、コードの副作用として `"Evaluating simpleField"` が印字されます。
 
-*The body expression of a field is run only once* after which the final value is stored in the object. The expression is never evaluated again---notice the lack of `println` output below.
+**フィールドにおける本体の式は一度だけ実行されます。** その後、オブジェクトにその最終的な値が格納されます。下記で `println` 出力が欠けていることからわかるように、その式は二度と評価されることはありません。
 
 ```tut:book
 Test7.simpleField
 Test7.simpleField
 ```
 
-The body of a method, on the other hand, is evaluated every time we call the method---notice the repeated println output below.
+一方、下記で `println` 出力が繰り返されていることからわかるように、メソッドの本体はメソッドを呼び出すたびに評価されます。
 
 ```tut:book
 Test7.noParameterMethod
