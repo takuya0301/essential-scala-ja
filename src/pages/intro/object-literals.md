@@ -200,11 +200,11 @@ Test7.noParameterMethod
 Test7.noParameterMethod
 ```
 
-### Take home points
+### 覚えておいてほしいこと
 
-In this section we have created our own objects, given them methods and fields, and referenced them in expressions.
+本節では、独自のオブジェクトを作成し、メソッドとフィールドを与え、式の中で参照しました。
 
-We have seen the syntax for declaring objects
+文法としてオブジェクトの宣言、
 
 ```scala
 object name {
@@ -212,22 +212,22 @@ object name {
 }
 ```
 
-for declaring methods
+メソッドの宣言、
 
 ```scala
 def name(parameter: type, ...): resultType = bodyExpression
 ```
 
-and for declaring fields
+そしてフィールドの宣言、
 
 ```scala
 val name = valueExpression
 var name = valueExpression
 ```
 
-All of these are *declarations*, binding names to values. Declarations are different to expressions. They do not evaluate to a value and do not have a type.
+を見てきました。これらすべては**宣言**で、名前と値を束縛します。宣言は式とは異なります。宣言は値を評価しませんし型も持ちません。
 
-We have also seen the difference between methods and fields---fields refer to values stored within an object, whereas methods refer to computations that produce values.
+また、メソッドとフィールドの違いを見てきました。フィールドはオブジェクトの中に格納された値を参照し、一方のメソッドは値を算出する計算を参照します。
 
 ### Exercises
 
