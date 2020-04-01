@@ -229,26 +229,25 @@ var name = valueExpression
 
 また、メソッドとフィールドの違いを見てきました。フィールドはオブジェクトの中に格納された値を参照し、一方のメソッドは値を算出する計算を参照します。
 
-### Exercises
+### 演習
 
-#### Cat-o-matique
+#### キャット・オ・マティック
 
-The table below shows the names, colour, and favourite foods of three cats. Define an object for each cat. (For experienced programmers: we haven't covered classes yet.)
+下記の表は、3匹の猫の名前 (name)・色 (colour)・好きな食べ物 (food) を示しています。それぞれの猫についてのオブジェクトを定義してください。（経験豊富なプログラマーの方へ：クラスについてはまだ説明していません。）
 
-+-----------+-----------------+-------+
-| Name      | Colour          | Food  |
-+===========+=================+=======+
-| Oswald    | Black           | Milk  |
-+-----------+-----------------+-------+
-| Henderson | Ginger          | Chips |
-+-----------+-----------------+-------+
-| Quentin   | Tabby and white | Curry |
-+-----------+-----------------+-------+
-
++--------------------------+------------------------+------------------+
+| 名前 (Name)              | 色 (Colour)            | 食べ物 (Food)    |
++==========================+========================+==================+
+| オズワルド (Oswald)      | 黒 (Black)             | ミルク (Milk)    |
++--------------------------+------------------------+------------------+
+| ヘンダーソン (Henderson) | 茶トラ (Ginger)        | カリカリ (Chips) |
++--------------------------+------------------------+------------------+
+| クエンティン (Quentin)   | トラ (Tabby and white) | カレー (Curry)   |
++--------------------------+------------------------+------------------+
 
 <div class="solution">
 
-This is just a finger exercise to get you used to the syntax of defining objects. You should have a solution similar to the code below.
+これはオブジェクトを定義する文法に慣れるための指の運動にすぎません。下記コードのような解答が得られているはずです。
 
 ```tut:book:silent
 object Oswald {
