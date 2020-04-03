@@ -269,12 +269,12 @@ object Quentin {
 </div>
 
 
-#### Square Dance!
+#### スクウェア・ダンス！
 
-Define an object called `calc` with a method `square` that accepts a `Double` as an argument and... you guessed it... squares its input. Add a method called `cube` that cubes its input *calling `square`* as part of its result calculation.
+`calc` と呼ばれるオブジェクトを定義します。それは、`square` という `Double` を引数として受け取る、あなたが予想するとおり入力を2乗 (square) するメソッドを伴います。そして、計算の一部として **`square` メソッドの呼び出し** を含む `cube` と呼ばれる、入力を3乗 (cube) するメソッドを追加してください。
 
 <div class="solution">
-Here is the solution. `cube(x)` calls `square(x)` and multiplies its value by `x` one more time. The return type of each method is inferred by the compiler as `Double`.
+これが解答です。`cube(x)` は `square(x)` を呼び出し、その値を `x` によってもう一度乗算します。各メソッドの結果型はコンパイラーによって `Double` として推論されます。
 
 ```tut:book:silent
 object calc {
