@@ -284,12 +284,12 @@ object calc {
 ```
 </div>
 
-#### Precise Square Dance!
+#### 精密なスクウェア・ダンス！
 
-Copy and paste `calc` from the previous exercise to create a `calc2` that is generalized to work with `Ints` as well as `Doubles`. If you have Java experience, this should be fairly straightforward. If not, read the solution below.
+前の演習から `calc` をコピー＆ペーストして、`Int` と同様に `Double` でも動作するよう一般化された `calc2` を作成してください。Java の経験を持っていれば、これはかなり簡単にできるはずです。そうでなければ、下記の解答を読んでください。
 
 <div class="solution">
-Like Java, Scala can't generalize particularly well across `Ints` and `Doubles`. However, it will allow us to *"overload"* the `square` and `cube` methods by defining them for each type of parameter.
+Java のように Scala は特に `Int` と `Double` の間でうまく一般化できるわけではありません。しかしながら、引数の型ごとに `square` メソッドと `cube` メソッドを定義することで**オーバーロード (overload)** することができます。
 
 ```tut:book:silent
 object calc2 {
@@ -301,33 +301,33 @@ object calc2 {
 }
 ```
 
-"Overloaded" methods are ones we have defined several times for different argument types. Whenever we call an overloaded method type, Scala automatically determines which variant we need by looking at the type of the argument.
+「オーバーロードされた」メソッドとは、異なる引数型で複数回定義したメソッドのことです。オーバーロードされたメソッド型を呼び出すたびに、Scala は引数の型を見ることによって、どの変種が必要かを自動的に判断します。
 
 ```tut:book
-calc2.square(1.0) // calls the `Double` version of `square`
-calc2.square(1)   // calls the `Int` version `square`
+calc2.square(1.0) // `square` の `Double` 版を呼び出す
+calc2.square(1)   // `square` の `Int` 版を呼び出す
 ```
 
-The Scala compiler is able to insert automatic conversions between numeric types wherever you have a lower precision and require a higher precision. For example, if you write `calc.square(2)`, the compiler determines that the only version of `calc.square` takes a `Double` and automatically infers that you really mean `calc.square(2.toDouble)`.
+Scala コンパイラーは、低い精度から高い精度が必要な場合に、数値型間の自動変換を挿入できます。例えば、`calc.square(2)` と書けば、コンパイラーは `calc.square` の唯一のバージョンが `Double` を受け取ると判断し、本当のところは `calc.square(2.toDouble)` という意図であると自動的に推論します。
 
-Conversions in the opposite direction, from high precision to low precision, are not handled automatically because they can lead to rounding errors. For example, the code below will not compile because `x` is an `Int` and its body expression is a `Double` (try it and see)!
+高い精度から低い精度への逆方向の変換は、丸め誤差につながる可能性があるため、自動的には処理されません。例えば、下記のコードは、`x` が `Int` であり、その本体の式が `Double` であるため、コンパイルされません！（実際に試してみてください。）
 
 ```tut:book:fail
-val x: Int = calc.square(2) // compile error
+val x: Int = calc.square(2) // コンパイルエラー
 ```
 
-You can manually use the `toInt` method of `Double` to work around this:
+これは、`Double` の `toInt` メソッドを手動で使用することで回避できます。
 
 ```tut:book
-val x: Int = calc.square(2).toInt // toInt rounds down
+val x: Int = calc.square(2).toInt // toInt は切り捨て
 ```
 
 <div class="callout callout-warning">
-#### The Dangers of String Concatenation {-}
+#### 文字列連結の危険性 {-}
 
-To maintain similar behaviour to Java, Scala also automatically converts any object to a `String` where required. This is to make it easy to write things like `println("a" + 1)`, which Scala automatically rewrites as `println("a" + 1.toString)`.
+Java と似た振る舞いを維持するために、Scala もまた必要に応じて任意のオブジェクトを自動的に `String` に変換します。これは、`println("a" + 1)` のようなものを簡単に書けるようにするためで、Scala は `println("a" + 1.toString)` に自動的に書き換えます。
 
-The fact that string concatenation and numeric addition share the same `+` method can sometimes cause unexpected bugs, so watch out!
+文字列連結と数値加算が同じ `+` メソッドを共有しているという事実が、予期せぬバグを引き起こすことがあるので注意しましょう！
 </div>
 </div>
 
