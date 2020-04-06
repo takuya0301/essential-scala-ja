@@ -331,9 +331,9 @@ Java と似た振る舞いを維持するために、Scala もまた必要に応
 </div>
 </div>
 
-#### Order of evaluation
+#### 評価の順番
 
-When entered on the console, what does the following program output, and what is the type and value of the final expression? Think carefully about the types, dependencies, and evaluation behaviour of each field and method.
+コンソールで入力したとき、下記プログラムの出力は何で、最終的な式の型と値は何になるでしょうか？各フィールドやメソッドの型や依存関係、評価の振る舞いをよく考えてみてください。
 
 ```tut:book:silent
 object argh {
@@ -360,49 +360,49 @@ argh.c + argh.b + argh.a
 ```
 
 <div class="solution">
-Here is the solution:
+これが解答です。
 
 ```tut:book
 argh.c + argh.b + argh.a
 ```
 
-The full sequence of evaluation is as follows:
+評価の完全な順番は下記のとおりです。
 
 ```
-- We calculate the main sum at the end of the program, which...
-  - Loads `argh`, which...
-    - Calculates all the fields in `argh`, which...
-      - Calculates `b`, which...
-        - Prints `"b"`
-        - Evaluates `a + 2`, which...
-          - Calls `a`, which...
-            - Prints `"a"`
-            - Returns `1`
-          - Returns `1 + 2`
-        - Stores the value `3` in `b`
-  - Calls `argh.c`, which...
-    - Prints `"c"`
-    - Evaluates `a`
-      - Prints `"a"`
-      - Returns `1` - Which we discard
-    - Evaluates `b + "c"`, which...
-      - Retrieves the value `3` from `b`
-        - Retrieves the value `"c"`
-        - Evaluates the `+`, determining that it actually refers to string
-          concatenation and converting `3` to `"3"`
-        - Returns the `String` `"3c"`
-  - Calls `argh.b`, which...
-    - Retrieves the value `3` from `b`
-  - Evaluates the first `+`, determining that it actually refers to string
-    concatentation, and yielding `"3c3"`
-  - Calls `argh.a`, which...
-    - Prints `"a"`
-    - Returns `1`
-  - Evaluates the first `+`, determining that it actually refers to string
-    concatentation, and yielding `"3c31"`
+- プログラムの最後にあるメインの合計を計算するには、
+  - `argh` を読み込み、
+    - `argh` のすべてのフィールドを計算するので、
+      - `b` を計算すると、
+        - `"b"` を印字し、
+        - `a + 2` を評価するので、
+          - `a` を呼び出し、
+            - `"a"` を印字し、
+            - `1` を返却し、
+          - `1 + 2` を返却し、
+        - `b` に値 `3` を格納し、
+  - `argh.c` を呼び出し、
+    - `"c"` を印字し、
+    - `a` を評価し、
+      - `"a"` を印字し、
+      - `1` を返却するのですが、それは破棄され、
+    - `b + "c"` を評価し、
+      - `b` から値 `3` を取得し、
+        - 値 `"c"` を取得し、
+        - `+` を評価し、それが実際のところ文字列の連結を参照していると判断し、
+          `3` を `"3"` に変換し、
+        - 文字列 `"3c"` を返却し、
+  - `argh.b` を呼び出し,
+    - `b` から値 `3` を取得し、
+  - 最初の `+` を評価し、それが実際のところ文字列の連結を参照していると判断し、
+    `"3c3"` を生成し、
+  - `argh.a` を呼び出し、
+    - `"a"` を印字し、
+    - `1` を返却し、
+  - 最初の `+` を評価し、それが実際のところ文字列の連結を参照していると判断し、
+    `"3c31"` を生成する
 ```
 
-Whew! That's a lot for such a simple piece of code.
+ふぅ、こんな簡単なコードにしてはたくさんありますね。
 </div>
 
 #### Greetings, human
