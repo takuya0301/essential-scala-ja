@@ -405,11 +405,11 @@ argh.c + argh.b + argh.a
 ふぅ、こんな簡単なコードにしてはたくさんありますね。
 </div>
 
-#### Greetings, human
+#### やぁ、人間
 
-Define an object called `person` that contains fields called `firstName` and `lastName`. Define a second object called `alien` containing a method called `greet` that takes your person as a parameter and returns a greeting using their `firstName`.
+`person` というオブジェクトを定義します。それは、`firstName` と `lastName` というフィールドを含みます。`alien` という2番目のオブジェクトを定義します。それは、引数として `person` を受け取り、その `firstName` を使用して挨拶する `greet` というメソッドを含みます。
 
-What is the type of the `greet` method? Can we use this method to greet other objects?
+`greet` メソッドの型は何でしょうか？このメソッドを使用して他のオブジェクトに挨拶することはできますか？
 
 <div class="solution">
 ```tut:book:silent
@@ -428,9 +428,9 @@ object alien {
 alien.greet(person)
 ```
 
-Notice the type on the `p` parameter of `greet`: `person.type`. This is one of the *singleton types* we were referring to earlier. In this case it is specific to the object `person`, which prevents us using `greet` on any other object. This is very different from a type such as `Int` that is shared by all Scala integers.
+`greet` の引数 `p` の型 `person.type` に注目してください。これは、先ほど言及した**シングルトン型 (singleton type)** のひとつです。この場合は `person` オブジェクトに固有の型なので、他のオブジェクトで `greet` を使用することはできません。これは、Scala のすべての整数で共有されている `Int` のような型とは大きく異なります。
 
-This imposes a significant limitation on our ability to write programs in Scala. We can only write methods that work with built-in types or single objects of our own creation. In order to build useful programs we need the ability to *define our own types* and create multiple values of each. We can do this using `classes`, which we will cover in the next section.
+これでは、Scala でプログラムを書く能力に大きな制限を課してしまいます。組み込み型か独自に作成した単一のオブジェクトで動作するメソッドしか書けないのです。有用なプログラムを構築するために、**独自の型を定義**し、それぞれの型で多様な値を生成する機能が必要です。クラス (`class`) を使用してこれを実現できるのですが、それは次節で扱います。
 </div>
 
 #### The Value of Methods
