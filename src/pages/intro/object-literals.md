@@ -433,12 +433,12 @@ alien.greet(person)
 これでは、Scala でプログラムを書く能力に大きな制限を課してしまいます。組み込み型か独自に作成した単一のオブジェクトで動作するメソッドしか書けないのです。有用なプログラムを構築するために、**独自の型を定義**し、それぞれの型で多様な値を生成する機能が必要です。クラス (`class`) を使用してこれを実現できるのですが、それは次節で扱います。
 </div>
 
-#### The Value of Methods
+#### メソッドの真価
 
-Are methods values? Are they expressions? Why might this be the case?
+メソッドは値ですか？式ですか？なぜそうなるのでしょうか？
 
 <div class="solution">
-First let's deal with the equivalence between methods and expressions. As we know, expressions are program fragments that produce values. A simple test of whether something is an expression is to see if we can assign it to a field.
+まず、メソッドと式の等価性を扱いましょう。すでに知っているように、式は値を生成するプログラムの断片です。何かが式であるかどうかの簡単なテストは、それをフィールドに代入できるかどうかを確認することです。
 
 ```tut:book:silent
 object calculator {
@@ -450,13 +450,13 @@ object calculator {
 val someField = calculator.square
 ```
 
-Although we don't understand this error message fully yet (we shall learn about "partially applied functions" later), it does show us that `square` *is not an expression*. However, a *call* to `square` *does* yield a value:
+このエラーメッセージをまだ完全に理解はできません（「部分適用関数 (partially applied function)」については後ほど学びます。）が、`square` が**式ではない**ことを示しています。しかしながら、`square` の**呼び出し**は値を生成**する**のです。
 
 ```tut:book
 val someField = calculator.square(2)
 ```
 
-A method with no arguments looks like it behaves differently. However, this is a trick of the syntax.
+引数を持たないメソッドは異なる振る舞いをしているように見えます。しかしながら、これは文法のトリックです。
 
 ```tut:book:silent
 object clock {
@@ -468,13 +468,13 @@ object clock {
 val now = clock.time
 ```
 
-Although it looks like `now` is being assigned `clock.time` as a value, it is actually being assigned the *value returned by calling `clock.time`*. We can demonstrate this by calling the method again:
+`clock.time` を値として `now` に割り当てているように見えるにも関わらず、実際にそれは **`clock.time` の呼び出しによって返された値**を代入しています。これは、もう一度メソッドを呼び出すことで実証できます。
 
 ```tut:book
 val aBitLaterThanNow = clock.time
 ```
 
-As we saw above, references to fields and calls to argumentless methods look identical in Scala. This is by design, to allow us to swap the implementation of a field for a method (and vice versa) without affecting other code. It is a programming language feature called the *[uniform access principle][link-uap]*.
+上で見たように、Scala では「フィールドへの参照」と「引数のないメソッド呼び出し」は同じように見えます。これは、他のコードに影響を与えることなく、フィールドの実装をメソッドに置き換えることができる（逆も然り）ように設計されています。それは、**[統一アクセス原理 (uniform access principle)][link-uap]** と呼ばれるプログラミング言語の機能です。
 
-So, in summary, *calls to methods are expressions* but *methods themselves are not expressions*. In addition to methods, Scala also has a concept called *functions*, which are objects that can be invoked like methods. As we know objects are values, so functions are also values and can be treated as data. As you may have guessed, functions are a critical part of *functional programming*, which is one of Scala's major strengths. We will learn about functions and functional programming in a bit.
+つまり、要約すると、**メソッド呼び出しは式である**が**メソッド自体は式ではない**ということです。Scala は**関数 (function)** と呼ばれる概念を持っており、それはメソッドのように呼び出せるオブジェクトです。オブジェクトが値であることをすでに知っているように、関数は値であり、データとして取り扱うことができます。お気付きのとおり、関数は**関数型プログラミング (functional programming)** の重要な部分であり、Scala の大きな強みのひとつです。関数と関数型プログラミングについては少しずつ学んでいきましょう。
 </div>
