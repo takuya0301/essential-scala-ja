@@ -1,10 +1,10 @@
-## Writing Methods
+## メソッドの書き方
 
-In the previous section we saw the syntax of methods. One of our main goals in this course is to go beyond syntax and give you systematic methods for constructing Scala programs. This is our first section dealing with such matters. In this section we're going to look at a systematic method for constructing methods. As you gain experience with Scala you can drop some of the steps of this method, but we *strongly* suggest you follow this method during the course.
+前節では、メソッドの文法について見てきました。本書の主な目的のひとつは、文法を超えて、Scala プログラムを構築するための体系的な方法を提供することです。本節はそのような問題を扱う最初の節です。本節では、体系的にメソッドを構築する方法を見ていきます。Scala の経験を積んでいくうちに、この方法のいくつかの段階を省略することができますが、本書の中ではこの方法に従うことを**強く**推奨します。
 
-To make the advice concrete we'll use this exercise from the previous section as an example:
+アドバイスを具体的にするために、前節の演習を例として使用していきましょう。
 
-*Define an object called `calc` with a method `square` that accepts a `Double` as an argument and... you guessed it... squares its input. Add a method called `cube` that cubes its input, calling `square` as part of its result calculation.*
+**`calc` と呼ばれるオブジェクトを定義します。それは、`square` という `Double` を引数として受け取る、あなたが予想するとおり入力を2乗 (square) するメソッドを伴います。そして、計算の一部として `square` メソッドの呼び出しを含む `cube` と呼ばれる、入力を3乗 (cube) するメソッドを追加してください。**
 
 ### Identify the Input and Output
 
