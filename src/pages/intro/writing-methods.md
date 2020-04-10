@@ -6,11 +6,11 @@
 
 **`calc` と呼ばれるオブジェクトを定義します。それは、`square` という `Double` を引数として受け取る、あなたが予想するとおり入力を2乗 (square) するメソッドを伴います。そして、計算の一部として `square` メソッドの呼び出しを含む `cube` と呼ばれる、入力を3乗 (cube) するメソッドを追加してください。**
 
-### Identify the Input and Output
+### 入力と出力を特定する
 
-Your first step is to identify the types of the input parameters, if any, and the result of the method.
+最初のステップは、入力となる引数がもしあれば、その型とメソッドの結果型を特定することです。
 
-In many cases the exercises will tell you the types and you can just read them straight from the description. In the example above the input type is given as `Double`. The result type we can infer is also `Double`.
+多くの場合、演習では型を教えてくれるので、説明文からそのまま読み取ることができます。上の例で、入力型は `Double` になっています。結果型もまた `Double` になることが推論できます。
 
 ### Prepare Test Cases
 
