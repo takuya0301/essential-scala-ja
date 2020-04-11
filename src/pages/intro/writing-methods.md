@@ -12,11 +12,11 @@
 
 多くの場合、演習では型を教えてくれるので、説明文からそのまま読み取ることができます。上の例で、入力型は `Double` になっています。結果型もまた `Double` になることが推論できます。
 
-### Prepare Test Cases
+### テストケースを準備する
 
-Types alone don't tell all the story. There are many `Double` to `Double` functions, but few that implement squaring. Thus we should prepare some test cases that illustrate the expected behaviour of the method.
+型だけでは物語のすべてを語れません。`Double` から `Double` への関数はたくさんありますが、2乗を実行しているものは少数です。そのため、メソッドの期待される振る舞いを例証するいくつかのテストケースを準備しましょう。
 
-We're not going to use a testing library in this course, as we're trying to avoid external dependencies. We can implement a poor-man's testing library using the `assert` function that Scala provides. For our `square` example we might have test cases like
+外部依存を避けたいので、本書ではテストライブラリを使用しないことにします。Scala が提供する `assert` 関数を使用することで手軽なテストライブラリを実装できます。`square` の例については、下記のようなテストケースが考えられます。
 
 ```scala
 assert(square(2.0) == 4.0)
