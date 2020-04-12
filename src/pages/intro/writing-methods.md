@@ -8,7 +8,7 @@
 
 ### 入力と出力を特定する
 
-最初のステップは、入力となる引数がもしあれば、その型とメソッドの結果型を特定することです。
+最初の段階は、入力となる引数がもしあれば、その型とメソッドの結果型を特定することです。
 
 多くの場合、演習では型を教えてくれるので、説明文からそのまま読み取ることができます。上の例で、入力型は `Double` になっています。結果型もまた `Double` になることが推論できます。
 
@@ -24,16 +24,16 @@ assert(square(3.0) == 9.0)
 assert(square(-2.0) == 4.0)
 ```
 
-### Write the Declaration
+### 宣言を書く
 
-With types and test cases ready we can now write the method declaration. We haven't developed the body yet so use `???`, another nifty Scala feature, in its place.
+型とテストケースが準備できたので、メソッド宣言を書くことができます。その本体はまだ書けないので、その場所に Scala の便利な機能である `???` を使用しておきます。
 
 ```tut:book:silent
 def square(in: Double): Double =
   ???
 ```
 
-This step should be mechanical given the information gathered in the previous steps.
+この段階は、前の段階で収集した情報から機械的に与えられるべきです。
 
 ### Run the Code
 
