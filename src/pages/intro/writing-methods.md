@@ -35,9 +35,9 @@ def square(in: Double): Double =
 
 この段階は、前の段階で収集した情報から機械的に与えられるべきです。
 
-### Run the Code
+### コードを実行する
 
-Run the code and check it compiles (and thus we haven't made any typos) and also that our tests fail (and thus are testing something). You may need to place the tests after the method declaration.
+コードを実行し、それがコンパイルされていること（つまり、タイプミスをしていないこと）と、また、テストが失敗すること（つまり、何らかのテストが実行されていること）を確認してください。なお、メソッド宣言の後にテストを配置する必要があるかもしれません。
 
 ### Write the Body
 
