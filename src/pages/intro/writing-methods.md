@@ -39,19 +39,19 @@ def square(in: Double): Double =
 
 コードを実行し、それがコンパイルされていること（つまり、タイプミスをしていないこと）と、また、テストが失敗すること（つまり、何らかのテストが実行されていること）を確認してください。なお、メソッド宣言の後にテストを配置する必要があるかもしれません。
 
-### Write the Body
+### 本体を書く
 
-We're now ready to write the body of our method. We will develop a number of techniques for this throughout the course. For now, we're going to look at two techniques.
+メソッドの本体を書く準備が整いました。本書を通じて、いくつかのテクニックを修得していきます。現時点では、2つのテクニックを見ていきましょう。
 
-#### Consider the Result Type
+#### 結果型を考える
 
-The first technique is to look at the result type, in this case `Double`. How can we create `Double` values? We could write a literal, but that obviously won't be correct in this case. The other way we know to create a `Double` is to call a method on some object, which brings us to the next technique.
+最初のテクニックは、結果型を見ることです。この場合は `Double` です。どうやって `Double` の値を生成するのでしょうか？リテラルを書くこともできますが、この場合は明らかに正しくありません。`Double` を生成する他の方法は、何らかのオブジェクトのメソッドを呼び出すことで、それは次のテクニックがもたらします。
 
-#### Consider the Input Type
+#### 入力型を考える
 
-Our next technique is to look at the type of input parameters to the method. In this case we have a `Double`. We have established we need to create a `Double`, so what methods can we call to create a `Double` from our input? There are many such methods, and here we have to use our domain knowledge to select `*` as the correct method to call.
+次のテクニックは、メソッドの入力引数の型を見ることです。この場合は `Double` です。`Double` を生成する必要があることは確立していますが、入力から `Double` を生成するためにはどのようなメソッドを呼び出せばいいのでしょうか？そのようなメソッドはたくさんありますが、ここで呼び出すべき正しいメソッドとして `*` を選択するためにはドメイン知識を活用しなければなりません。
 
-We can now write our complete method as
+完全なメソッドは下記のように書くことができます。
 
 ```tut:book:silent
 def square(in: Double): Double =
