@@ -58,28 +58,28 @@ def square(in: Double): Double =
   in * in
 ```
 
-### Run the Code, Again
+### コードを再実行する
 
-Finally we should run the code again and check that the tests all pass in this case.
+最後に、コードを再実行して、テストがすべて通過することを確認します。
 
-This is very simple example but practicing the process now will serve you well for the more complicated examples we will encounter later.
+これはとても単純な例でしたが、今のプロセスを実践することで、今後遭遇するであろうより複雑な例にうまく対応できるようになります。
 
 <div class="callout callout-info">
-#### Process for Writing Methods {-}
+#### メソッドを書く方法 {-}
 
-We have a six-step process for writing methods in a systematic way.
+体系的にメソッドを書くための6段階の方法があります。
 
-1. Identify the type of the inputs and output of the method.
-2. Write some test cases for the expected output of the method given example input. We can use the `assert` function to write down these cases.
-3. Write the method declaration using `???` for the body like so:
+1. メソッドの入力型と出力型を特定する。
+2. 入力例を与えられたメソッドの期待される出力について、いくつかのテストケースを書く。これらのケースを書き出すために `assert` 関数を使用することができる。
+3. 下記のようにメソッドの本体に `???` を使用してメソッドの宣言を書く。
 
 ```scala
 def name(parameter: type, ...): resultType =
  ???
 ```
-4. Run the code to check the test cases do in fact fail.
-5. Write the body of the method. We currently have two techniques to apply here:
-   - consider the result type and how we can create an instance of it; and
-   - consider the input type and methods we can call to transform it to the result type.
-6. Run the code again and check the test cases pass.
+4. コードを実行し、テストケースが実際に失敗することを確認する。
+5. メソッドの本体を書く。現在のところ、ここで2つのテクニックを適用することができる。
+   - 結果型とそのインスタンスをどのように生成できるかを考える
+   - 入力型とそれを結果型に変化させるために呼び出せるメソッドを考える
+6. コードを再実行し、テストケースが通過することを確認する。
 </div>
