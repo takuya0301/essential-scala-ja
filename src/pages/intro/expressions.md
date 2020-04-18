@@ -1,6 +1,6 @@
-## Compound Expressions
+## 複合式
 
-We have almost finished our basic introduction to Scala. In this section we are going to look at two special kinds of expressions, *conditionals* and *blocks*, we will need in more complicated programs.
+これで Scala の基本的な入門編はほぼ終了しました。本節では、より複雑なプログラムで必要になるであろう、**条件式 (conditional)** と **ブロック (block)** という2種類の特別な式について見ていきます。
 
 ### Conditionals
 
