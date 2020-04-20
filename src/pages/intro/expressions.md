@@ -105,9 +105,9 @@ name
 とします。
 </div>
 
-### Take home points
+### 覚えておいてほしいこと
 
-Conditional expressions allow us to choose an expression to evaluate based on a `Boolean` condition. The syntax is
+条件式は `Boolean` の条件にもとづいて評価する式を選択することを可能にします。その文法は下記のとおりです。
 
 ```scala
 if(condition)
@@ -116,10 +116,10 @@ else
   falseExpression
 ```
 
-A conditional, being an expression, has a type and evaluates to an object.
+式である条件式は、型を持ち、オブジェクトに評価されます。
 
 
-A block allows us to sequence expressions and declarations. It is commonly used when we want to sequence expressions with side-effects, or name intermediate results in a computation. The syntax is
+ブロックは、式や宣言を順番に並べることを可能にします。それは、副作用を伴う式を順番に並べたり、計算における中間結果に名前をつけたりしたいときによく使用されます。その文法は下記のとおりです。
 
 ```scala
 {
@@ -128,7 +128,7 @@ A block allows us to sequence expressions and declarations. It is commonly used 
 }
 ```
 
-The type and value of a block is that of the last expression in the block.
+ブロックの型と値は、ブロックにおける最後の式になります。
 
 
 ### Exercises
