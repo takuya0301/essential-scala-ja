@@ -2,32 +2,32 @@
 
 これで Scala の基本的な入門編はほぼ終了しました。本節では、より複雑なプログラムで必要になるであろう、**条件式 (conditional)** と **ブロック (block)** という2種類の特別な式について見ていきます。
 
-### Conditionals
+### 条件式
 
-A conditional allows us to choose an expression to evaluate based on some condition. For example, we can choose a string based on which of two numbers is the smallest.
+条件式は、ある条件にもとづいて評価する式を選択することを可能にします。例えば、2つの数値のうちどちらが小さいかにもとづいて文字列を選択することができます。
 
 ```tut:book
 if(1 < 2) "Yes" else "No"
 ```
 
 <div class="callout callout-info">
-#### Conditionals are Expressions {-}
+#### 条件式は式である {-}
 
-Scala's `if` statement has the same syntax as Java's. One important difference is that *Scala's conditional is an expression*---it has a type and returns a value.
+Scala における `if` の記述は Java と同じ構文を持ちます。重要な違いのひとつは、**Scala の条件式は式である**ということで、それは型と返却値を持ちます。
 </div>
 
-The expression that is not selected does not get evaluated. This is apparent if we use an expression with a side-effect.
+選択されない式は評価されません。これは、副作用を伴う式を使用すると明らかです。
 
 ```tut:book
 if(1 < 2) println("Yes") else println("No")
 ```
 
-We can tell the expression `println("No")` is not evaluated because `No` is not output to the console.
+`No` がコンソールに出力されないので、`println("No")` という式は評価されていないことがわかります。
 
 <div class="callout callout-info">
-#### Conditional Expression Syntax {-}
+#### 条件式文法 {-}
 
-The syntax for a conditional expression is
+条件式のための文法は、
 
 ```scala
 if(condition)
@@ -36,29 +36,31 @@ else
   falseExpression
 ```
 
-where
+です。ここで、
 
-- `condition` is an expression with `Boolean` type;
-- `trueExpression` is the expression evaluated if `condition` evaluates to `true`; and
-- `falseExpression` is the expression evaluated if `condition` evaluates to `false`.
+- `condition` は `Boolean` 型の式
+- `trueExpression` は `condition` が `true` に評価されるときに評価される式
+- `falseExpression` は `condition` が `false` に評価されるときに評価される式
+
+とします。
 </div>
 
 
-### Blocks
+### ブロック
 
-Blocks are expressions that allow us to sequence computations together. They are written as a pair of braces containing sub-expressions separated by semicolons or newlines.
+ブロックは、計算をまとめて並べることができる式のことです。それは、セミコロンもしくは改行によって区切られた部分式を含む中括弧のペアとして書かれます。
 
 ```tut:book:fail
 { 1; 2; 3 }
 ```
 
-As you can see, executing this code causes the console to raise a number of warnings and return the `Int` value `3`.
+ご覧のように、このコードを実行すると、コンソールはいくつかの警告を発生させ、`Int` 値 `3` を返します。
 
-A block is a sequence of expressions or declarations surrounded by braces. A block is also an expression: it executes each of its sub-expressions in order and returns the value of the last expression.
+ブロックは、中括弧によって囲まれた一連の式や宣言のことです。ブロックもまた式であり、各部分式を順番に実行し、最後の式の値を返します。
 
-Why execute `1` and `2` if we're going to throw their values away? This is a good question, and is the reason the Scala compiler raised those warnings above.
+`1` と `2` の値を捨ててしまうなら、なぜそれらを実行するのでしょうか？これはいい質問で、上記で Scala コンパイラーが警告を発生させた理由にもなります。
 
-One reason to use a block is to use code that produces side-effects before calculating a final value:
+ブロックを使用するひとつの理由は、最終的な値を計算する前に副作用を生成するコードを使用したいからです。
 
 ```tut:book
 {
@@ -68,7 +70,7 @@ One reason to use a block is to use code that produces side-effects before calcu
 }
 ```
 
-We can also use a block when we want to name intermediate results, such as
+また、下記のように中間結果に名前をつけたいときにブロックを使用することもできます。
 
 ```tut:book:silent
 def name: String = {
@@ -84,9 +86,9 @@ name
 
 <div class="callout callout-info">
 
-#### Block Expression Syntax {-}
+#### ブロック式文法 {-}
 
-The syntax of a block expression is
+ブロック式の文法は、
 
 ```scala
 {
@@ -95,10 +97,12 @@ The syntax of a block expression is
 }
 ```
 
-where
+です。ここで、
 
-- the optional `declarationOrExpression`s are declarations or expression; and
-- `expression` is an expression determining the type and value of the block expression.
+- `declarationOrExpression` は宣言か式（オプション）
+- `expression` はブロック式の型と値を決定する式
+
+とします。
 </div>
 
 ### Take home points
