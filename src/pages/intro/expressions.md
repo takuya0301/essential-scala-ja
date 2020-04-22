@@ -153,26 +153,26 @@ if(1 > 2) "alien" else "predator"
 値は実行時に決まります。`2` は `1` より大きいので、条件式は **else** 式の値を評価します。
 </div>
 
-#### A Less Well Known Rivalry
+#### あまり知られていないライバル関係
 
-What about this conditional?
+この条件式はどうでしょうか？
 
 ```tut:book:silent
 if(1 > 2) "alien" else 2001
 ```
 
 <div class="solution">
-It's a value of type `Any` with value `2001`:
+それは値 `2001` を伴う `Any` です。
 
 ```tut:book
 if(1 > 2) "alien" else 2001
 ```
 
-This is similar to the previous exercise---the difference is the type of the result. We saw earlier that the type is the *upper bound* of the positive and negative arms of the expression. `"alien"` and `2001` are completely different types - their closest common ancestor is `Any`, which is the grand supertype of all Scala types.
+これは前の演習と似ていますが、その違いは結果型です。先ほど、型は真偽両式の**上限境界 (upper bound)** であることを見ました。`"alien"` と `2001` は全く異なる型なので、最も近い共通の祖先は、すべての Scala 型における最高位の基底型 `Any` になります。
 
-This is an important observation: types are determined at compile time, before the program is run. The compiler doesn't know which of `1` and `2` is greater before running the program, so it can only make a best guess at the type of the result of the conditional. `Any` is as close as it can get in this program, whereas in the previous exercise it can get all the way down to `String`.
+これは、型がプログラムを実行する前のコンパイル時に決まるという重要な観測結果です。コンパイラーはプログラムを実行する前に `1` と `2` のどちらが大きいかを知らないので、条件式の結果型から最良の推量をするしかないのです。前の演習では `String` に至るまでの道のりを得ることができましたが、このプログラムでは `Any` が限りなく近いものになっています。
 
-We'll learn more about `Any` in the following sections. Java programmers shouldn't confuse it with `Object` because it subsumes value types like `Int` and `Boolean` as well.
+`Any` については以降の節で詳しく説明します。なお、それは `Int` や `Boolean` のような値型を包含するので、Java プログラマーは `Object` と混同してはいけません。
 </div>
 
 #### An if Without an else
