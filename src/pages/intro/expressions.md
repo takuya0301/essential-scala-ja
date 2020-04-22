@@ -131,26 +131,26 @@ else
 ブロックの型と値は、ブロックにおける最後の式になります。
 
 
-### Exercises
+### 演習
 
-#### A Classic Rivalry
+#### 模範的なライバル関係
 
-What is the type and value of the following conditional?
+下記の条件式における型と値は何ですか？
 
 ```tut:book:silent
 if(1 > 2) "alien" else "predator"
 ```
 
 <div class="solution">
-It's a `String` with value `"predator"`. Predators are clearly best:
+それは、値 `"predator"` を伴う `String` です。明らかにプレデターは最高です。
 
 ```tut:book
 if(1 > 2) "alien" else "predator"
 ```
 
-The type is determined by the upper bound of the types in the *then* and *else* expressions. In this case both expressions are `Strings` so the result is also a `String`.
+型は **then** 式と **else** 式における型の上限境界によって決まります。この場合、両式は `String` なので、その結果もまた `String` になります。
 
-The value is determined at runtime. `2` is greater than `1` so the conditional evaluates to the value of the *else* expression.
+値は実行時に決まります。`2` は `1` より大きいので、条件式は **else** 式の値を評価します。
 </div>
 
 #### A Less Well Known Rivalry
