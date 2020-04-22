@@ -175,20 +175,20 @@ if(1 > 2) "alien" else 2001
 `Any` については以降の節で詳しく説明します。なお、それは `Int` や `Boolean` のような値型を包含するので、Java プログラマーは `Object` と混同してはいけません。
 </div>
 
-#### An if Without an else
+#### else のない if
 
-What about this conditional?
+この条件式はどうでしょうか？
 
 ```tut:book:silent
 if(false) "hello"
 ```
 
 <div class="solution">
-The result type and value are `Any` and `()` respectively:
+結果の型と値はそれぞれ `Any` と `()` です。
 
 ```tut:book
 if(false) "hello"
 ```
 
-All code being equal, conditionals without `else` expressions only evaluate to a value half of the time. Scala works around this by returning the `Unit` value if the `else` branch should be evaluated. We would usually only use these expressions for their side-effects.
+すべてのコードが等しくあるべきですが、`else` 式のない条件式の半数のみ値に評価されます。Scala は、`else` への分岐が評価されるべき場合に `Unit` 値を返すことでこの問題を回避しています。これらの式はたいてい副作用がある場合にのみ使用します。
 </div>
