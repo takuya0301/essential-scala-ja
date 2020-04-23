@@ -1,12 +1,12 @@
-## Conclusion
+## まとめ
 
-We have had a very brief introduction to the fundamentals of Scala:
+本章では、Scala の基礎をとても簡単に紹介しました。
 
-* expressions, which evaluate to values; and
-* declarations, which gives names to values.
+* 値に評価される式
+* 値に名前を与える宣言
 
-We've seen how we can write literals for many objects, and use method calls and compound expressions to create new objects from existing ones.
+たくさんのオブジェクトについてリテラルで書く方法や、既存のオブジェクトから新しいオブジェクトを生成するためにメソッド呼び出しや複合式を使用する方法を見てきました。
 
-We have also declared our own objects, and constructed methods and fields.
+また、独自のオブジェクトを宣言し、メソッドやフィールドを構築しました。
 
-Next we're going to see how a new kind of declaration, a class, provides a template for creating objects. Classes allow us to reuse code and unify similar objects with a common type.
+次章では、新しい種類の宣言であるクラスが、どのようにオブジェクトを生成するためのテンプレートを提供するのかを見ていきます。クラスは、コードを再利用したり、共通の型で類似のオブジェクトを統一したりすることを可能にします。
