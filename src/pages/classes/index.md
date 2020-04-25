@@ -1,3 +1,3 @@
-# Objects and Classes
+# オブジェクトとクラス
 
-In the previous chapter we saw how to create objects and interact with them via method calls. In this section we're going to see how we can abstract over objects using *classes*. Classes are a template for constructing objects. Given a class we can make many objects that have the same type and share common properties.
+前章では、オブジェクトを作成し、メソッド呼び出しを通じてオブジェクトを作用させる方法を見ました。本章では、**クラス (class)** を使用してオブジェクトを抽象化する方法を見ていきます。クラスはオブジェクトを構築するためのテンプレートです。クラスが与えられれば、同じ型を持ち、共通のプロパティを持つ多くのオブジェクトをつくることができます。
