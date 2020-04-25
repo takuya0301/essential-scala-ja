@@ -1,60 +1,60 @@
-# Foreword #{-}
+# 序文 {-}
 
-This book is aimed to programmer learning Scala for the first time. We assume you have some familiarity with an object-oriented programming language such as Java, but little or no experience with functional programming.
+本書は、はじめて Scala を学ぶプログラマーを対象にしています。Java のようなオブジェクト指向プログラミング言語にある程度精通していることを前提としていますが、関数型プログラミングについての経験は前提としていません。
 
-Our goal is to describe how to use Scala in-the-small. To this end our focus is on the core patterns used in idiomatic Scala code, and we introduce Scala's features in the context of the patterns they enable. We are not aiming for exhaustive coverage of Scala's features, and this text is not a reference manual.
+本書のゴールは最小限の Scala の使い方を説明することです。そのため、Scala コードにおいてイディオムとして使用される重要パターンに焦点をあて、Scala の機能が実現可能にするそれらパターンの文脈で、Scala の機能自体を紹介していきます。Scala の機能を網羅することを目的とはしていませんし、本書はリファレンスマニュアルでもありません。
 
-Except for a few exercises we don't rely on any external libraries. You should be able to complete all the problems inside with only a text editor and Scala's REPL, or an IDE such as the [Scala IDE for Eclipse](http://scala-ide.org/) or [IntelliJ IDEA](http://www.jetbrains.com/idea/).
+いくつかの演習を除いて、外部ライブラリには一切依存していません。本書に含まれるすべての問題は、テキストエディターと Scala の REPL、もしくは、[Scala IDE for Eclipse](http://scala-ide.org/) や [IntelliJ IDEA](http://www.jetbrains.com/idea/) のような IDE で完成させることができます。
 
-Essential Scala was created by [Noel Welsh](http://noelwelsh.com) and [Dave Gurnell](http://davegurnell.com/) of [Underscore](http://underscore.io). It was built using [Underscore's eBook Template](https://github.com/underscoreio/underscore-ebook-template), plain text, and a deep and profound love of functional programming.
+Scala 入門 (Essential Scala) は、[Underscore](http://underscore.io) の [Noel Welsh](http://noelwelsh.com) と [Dave Gurnell](http://davegurnell.com/) によって生み出されました。それは、[Underscore's eBook Template](https://github.com/underscoreio/underscore-ebook-template) とプレーンテキスト、関数型プログラミングへの深い愛情を使用して構築されました。
 
-## Conventions Used in This Book #{-}
+## 本書で使用している規則 {-}
 
-This book contains a lot of technical information and program code. We use the following typographical conventions to reduce ambiguity and highlight important concepts:
+本書には、たくさんの技術情報とプログラムコードが含まれます。曖昧さを減らし、重要な概念を強調するために、下記のような組版規則を使用します。
 
-### Typographical Conventions #{-}
+### 組版規則 {-}
 
-New terms and phrases are introduced in *italics*. After their initial introduction they are written in normal roman font.
+新しい用語やフレーズは太字で紹介されます。（訳注：原書では斜体ですが、訳書では視認性の高い太字を使用します。）最初に紹介されたあとは、通常の字体で書かれます。
 
-Terms from program code, filenames, and file contents, are written in `monospace font`. Note that we do not distinguish between singular and plural forms. For example, might write `String` or `Strings` to refer to the `java.util.String` class or objects of that type.
+プログラムコード由来の用語やファイル名、ファイルの内容は`等幅フォント`で記述します。単数形と複数形を区別しないことに注意してください。例えば、`String` や `Stirngs` と書いたものは `java.util.String` クラスやその型のオブジェクトを参照します。（訳注：日本語訳ではすべて単数形に統一しています。）
 
-References to external resources are written as [hyperlinks][link-underscore]. References to API documentation are written using a combination of hyperlinks and monospace font, for example: [`Option`][scala.Option].
+外部リソースへの参照は[ハイパーリンク][link-underscore]として記述します。API ドキュメントへの参照は、[`Option`][scala.Option] のように、ハイパーリンクと等幅フォントの組み合わせを使用して記述します。
 
-### Source Code #{-}
+### ソースコード {-}
 
-Source code blocks are written as follows. Syntax is highlighted appropriately where applicable:
+ソースコードブロックは下記のように記述されます。文法は必要に応じて適切にハイライトされます。
 
 ```scala
 object MyApp extends App {
-  println("Hello world!") // Print a fine message to the user!
+  println("Hello world!") // ユーザーへの素晴らしいメッセージを印字する！
 }
 ```
 
-Some lines of program code are too wide to fit on the page. In these cases we use a *continuation character* (curly arrow) to indicate that longer code should all be written on one line. For example, the following code:
+プログラムコードのいくつかの行は、ページに収めるには広すぎるものがあります。そのような場合には、すべてを1行で書かれるべき長いコードであることを示すために、折れた矢印の**継続文字 (continuation character)** を使用します。例えば、下記のようなコードを、
 
 ```scala
 println("This code should all be written ↩
   on one line.")
 ```
 
-should actually be written as follows:
+実際は、下記のように書かれなければなりません。
 
 ```scala
 println("This code should all be written on one line.")
 ```
 
-### Callout Boxes #{-}
+### コールアウトボックス {-}
 
-We use three types of *callout box* to highlight particular content:
+本書では、特別な内容を強調するために、3種類の**コールアウトボックス (callout box)** を使用します。
 
 <div class="callout callout-info">
-Tip callouts indicate handy summaries, recipes, or best practices.
+情報コールアウトは、要約やレシピ、ベストプラクティスを示します。
 </div>
 
 <div class="callout callout-warning">
-Advanced callouts provide additional information on corner cases or underlying mechanisms. Feel free to skip these on your first read-through---come back to them later for extra information.
+警告コールアウトは、コーナーケースや根本的な仕組みに関する追加情報を提供します。本書を最初に読むときはこれらの情報を読み飛ばして構いません。のちほど、追加情報が必要なときに戻ってきましょう。
 </div>
 
 <div class="callout callout-danger">
-Warning callouts indicate common pitfalls and gotchas. Make sure you read these to avoid problems, and come back to them if you're having trouble getting your code to run.
+危険コールアウトは、よくある落とし穴や罠を示します。問題を回避するために確実にこれを読んでください。もし、コードを実行するとき問題に見舞われたら、ここに戻ってきましょう。
 </div>
