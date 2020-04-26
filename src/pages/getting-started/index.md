@@ -1,65 +1,64 @@
-# Getting Started
+# はじめに
 
-Throughout this book we will be working with short examples of Scala code. There are two recommended ways of doing this:
+本書では、Scala コードの短い例を使って学んでいきます。それには2つの推奨される方法があります。（訳注：訳書において Scala IDE を使用する方法は非推奨です。理由は「Scala IDE を準備する」の節に記載しています。）
 
- 1. Using the *Scala console* (better for people who like command lines)
+ 1. **Scala コンソール (Scala console)** を使用する（コマンドラインが好きな人にはよいでしょう）
 
- 2. Using *Worksheets* feature of *Scala IDE* (better for people who like IDEs)
+ 2. **Scala IDE** の **ワークシート (worksheet)** を使用する（IDE が好きな人にはよいでしょう）
 
-We'll walk through the setup for each process here.
+ここでは、それらを準備するための各工程を一通り説明していきます。
 
-## Setting up the Scala Console
+## Scala コンソールを準備する
 
-Follow the instructions on [http://scala-lang.org](http://scala-lang.org) to set Scala up on your computer. Once Scala is installed, you should be able to run an interactive console by typing `scala` at your command line prompt. Here's an example from OS X:
+[http://scala-lang.org](http://scala-lang.org) の手順に従って、コンピューターに Scala を設定します。一度 Scala がインストールされれば、コマンドラインプロンプトで `scala` と入力することで、対話的なコンソールを実行できるようになるはずです。これは macOS の例です。（訳注：内容を2020年現在のものに修正しています。）
 
 ```bash
 dave@Jade ~> scala
-Welcome to Scala version 2.11.4 (Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_45).
-Type in expressions to have them evaluated.
-Type :help for more information.
+Welcome to Scala 2.13.1 (OpenJDK 64-Bit Server VM, Java 1.8.0_242).
+Type in expressions for evaluation. Or try :help.
 
 scala>
 ```
 
-You can enter individual expressions at the `scala>` prompt and press *Enter* to compile and execute them:
+`scala>` プロンプトで個々の式を入力し、**Enter** キーを押下することで、それらをコンパイルし、実行することができます。
 
 ```tut
 "Hello world!"
 ```
 
-### Entering Single-Line Expressions
+### 一行の式を入力する
 
-Let's try entering a simple expression:
+単純な式を入力してみましょう。
 
 ```tut
 1 + 2 + 3
 ```
 
-When we press Enter, the console responds with three things:
+Enter キーを押下したとき、コンソールは3つのことを応答します。
 
- - an *identifier* `res1`;
- - a *type* `Int`;
- - a *value* `6`.
+ - **識別子 (identifier)** `res1`
+ - **型 (type)** `Int`
+ - **値 (value)** `6`
 
-As we will see in the next chapter, every expression in Scala has a *type* and a *value*. The type is determined at compile time and the value is determined by executing the expression. Both of these are reported here.
+次章で見ていくように、Scala のすべての式は **型** と **値** を持ちます。型はコンパイル時に決定され、値は式を実行するときに決定されます。ここでは、その両方が報告されています。
 
-The identifier `res1` is a convenience provided by the console to allow us to refer to the result of the expression in future expressions. For example, we can multiply our result by two as follows:
+識別子 `res1` は、式の結果を将来の式の中で参照できるように、コンソールが提供する便利なものです。例えば、下記のように先ほどの結果を2倍することができます。
 
 ```tut
 res1 * 2
 ```
 
-If we enter an expression that doesn't yield a useful value, the console won't print anything in response:
+有用な値を生成しない式を入力すると、コンソールは応答として何も印字しません。
 
 ```tut
 println("Hello world!")
 ```
 
-Here, the output `"Hello world!"` is from our `println` statement---the expression we entered doesn't actually return a value. The console doesn't provide output similar to the output we saw above.
+ここで、`"Hello world!"` という出力は `println` という記述に由来しています。入力した式は実際のところ値を返しません。コンソールは上記で見た出力に類するものを提供していないのです。
 
-### Entering Multi-Line Expressions
+### 複数行の式を入力する
 
-We can split long expressions across multiple lines quite simply. If we press enter before the end of an expression, the console will print a `|` character to indicate that we can continue on the next line:
+簡単に複数行に渡る長い式を分割することができます。式が終わる前に Enter キーを入力すると、コンソールは次の行に継続していることを示す `|` という文字を印字します。
 
 ```tut
 for(i <- 1 to 3) {
@@ -67,7 +66,7 @@ for(i <- 1 to 3) {
 }
 ```
 
-Sometimes we want to enter multiple expressions at once. In these cases we can use the `:paste` command. We simply type `:paste`, press Enter, and write (or copy-and-paste) our code. When we're done we press `Ctrl+D` to compile and execute the code as normal. The console prints output for every expression in one big block at the end of the input:
+一度に複数行の式を入力したいことがあります。このような場合、`:paste` コマンドを使用することができます。単純に `:paste` と入力し、Enter キーを押下し、コードを記述もしくはコピー＆ペーストしてください。すべてを入力し終わったら `Ctrl+D` を押下してください。通常のようにコードのコンパイルと実行がされます。
 
 ```scala
 scala> :paste
@@ -84,7 +83,7 @@ y: Int = 2
 res6: Int = 3
 ```
 
-If we have Scala code in a file, we can use `:paste` to paste the contents of the file into the console. This is much more convenient than re-entering expressions in the console. For example, with a file named `example.scala` containing `1 + 2 + 3` we can use `:paste` like so:
+ファイルに Scala コードがあるのであれば、ファイルの内容をコンソールの中に貼り付けるために `:paste` を使用できます。これは、コンソールに式を再入力するよりはるかに便利です。例えば、`1 + 2 + 3` を含む `example.scala` という名前のファイルがあるとき、下記のように `:paste` を使用できます。
 
 ```scala
 scala> :paste example.scala
@@ -92,20 +91,28 @@ Pasting file example.scala...
 res0: Int = 6
 ```
 
-### Printing the Type of an Expression
+### 式の型を印字する
 
-One final tip for using the console. Occasionally we want to know the *type* of an expression without actually running it. To do this we can use the `:type` command:
+コンソールを使用する上での最後のテクニックです。時々、式を実際に実行せずに、その**型**を知りたいことがあります。それをするために、`:type` コマンドを使用することができます。
 
 ```scala
 scala> :type println("Hello world!")
 Unit
 ```
 
-Notice that the console doesn't execute our `println` statement in this expression. It simply compiles it and prints out its type, which in this case is something called `Unit`.
+コンソールは、この式の `println` という記述を実行しないことに注意してください。コードをコンパイルし、この場合は `Unit` と呼ばれる何らかの型を印字しているだけです。
 
-`Unit` is Scala's equivalent of `void` from Java and C. Read Chapter 1 to find out more.
+Scala の `Unit` は Java や C の `void` と同じです。詳細は第2章を読んでください。
 
-## Setting up Scala IDE
+## Scala IDE を準備する
+
+<div class="callout callout-warning">
+#### Scala IDE は非推奨です（訳者追記） {-}
+
+Scala IDE は、2018年1月に 4.7.1 RC3 がリリースされたのを最後に更新がありません。そのため、訳書においては Scala IDE の利用を非推奨とし、本節を翻訳していません。
+
+なお、Scala の IDE としては [IntelliJ IDEA](http://www.jetbrains.com/idea/) が主流になっています。**ワークシート**の機能もありますので、IDE を利用したい場合は IntelliJ IDEA をインストールすることで代替できると思います。しかし、訳書においては Scala コンソールでのみ検証しておりますので、Scala コンソールの利用を強く推奨します。
+</div>
 
 *Scala IDE* is a plugin that adds Scala language support to [Eclipse](http://eclipse.org). A complete version of Scala IDE with Eclipse is also available as a standalone bundle from [http://scala-ide.org](). This is the easiest way to install the software so we recommend you install the standalone bundle for this course.
 
