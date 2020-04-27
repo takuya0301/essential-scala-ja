@@ -1,6 +1,6 @@
-## Classes
+## クラス
 
-A class is a template for creating objects that have similar methods and fields. In Scala a class also defines a type, and objects created from a class all share the same type. This allows us to overcome the problem we had in the *Greetings, Human* exercise in the last chapter.
+クラスは、似たようなメソッドやフィールドを持つオブジェクトを生成するためのテンプレートです。Scala では、クラスもまた型を定義し、クラスから生成されたすべてのオブジェクトは同じ型を共有します。これによって、前章の演習「やぁ、人間」が持つ問題を克服することができます。
 
 ### Defining a Class
 
