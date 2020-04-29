@@ -2,9 +2,9 @@
 
 クラスは、似たようなメソッドやフィールドを持つオブジェクトを生成するためのテンプレートです。Scala では、クラスもまた型を定義し、クラスから生成されたすべてのオブジェクトは同じ型を共有します。これによって、前章の演習「やぁ、人間」が持つ問題を克服することができます。
 
-### Defining a Class
+### クラスを定義する
 
-Here is a declaration for a simple `Person` class:
+これは、シンプルな `Person` クラスの宣言です。
 
 ```tut:book:silent
 class Person {
@@ -14,20 +14,20 @@ class Person {
 }
 ```
 
-Like an object declaration, a class declaration binds a name (in this case `Person`) and is not an expression. However, unlike an object name, we cannot use a class name in an expression. A class is not a value, and there is a different *namespace* in which classes live.
+オブジェクト宣言のように、クラス宣言は名前（この場合 `Person`）を束縛し、また式ではありません。しかしながら、オブジェクト名と違って、式の中でクラス名を使用することはできません。クラスは値ではなく、クラスは異なる**名前空間 (namespace)** に住んでいます。
 
 ```tut:book:fail
 Person
 ```
 
-We can create a new `Person` object using the `new` operator. Objects are values and we access their methods and fields in the usual way:
+`new` 演算子を使用して、新しい `Person` オブジェクトを生成できます。オブジェクトは値なので、通常の方法でそれらのメソッドやフィールドにアクセスできます。
 
 ```tut:book
 val noel = new Person
 noel.firstName
 ```
 
-Notice the type of the object is `Person`. The printed value contains a code in the format `@xxxxxxxx`, which is a unique identifier for that particular object. Each call to `new` creates a distinct object of the same type:
+オブジェクトの型が `Person` であることに注意してください。印字された値には、`@xxxxxxxx` という形式のコードが含まれており、そのオブジェクトを特定する一意の識別子です。`new` を呼び出すたびに、同じ型の別オブジェクトが生成されます。
 
 ```tut:book
 noel
@@ -35,7 +35,7 @@ val newNoel = new Person
 val anotherNewNoel = new Person
 ```
 
-This means we can write a method that takes any `Person` as a parameter:
+これは、引数として任意の `Person` を受け取るメソッドを書けることを意味します。
 
 ```tut:book:silent
 object alien {
@@ -50,9 +50,9 @@ alien.greet(newNoel)
 ```
 
 <div class="callout callout-info">
-#### Java Tip {-}
+#### Java ヒント {-}
 
-Scala classes are all subclasses of `java.lang.Object` and are, for the most part, usable from Java as well as Scala. The default printing behaviour of `Person` comes from the `toString` method defined in `java.lang.Object`.
+Scala クラスはすべて `java.lang.Object` の派生クラスであり、ほとんどの場合、Scala と同様に Java からも使用できます。`Person` におけるデフォルト印字の振る舞いは、`java.lang.Object` に定義されている `toString` メソッドに由来しています。
 </div>
 
 ### Constructors
