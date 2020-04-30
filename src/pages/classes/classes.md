@@ -169,26 +169,26 @@ greet(firstName = "Busy") // これは正しいままです
 これは、多数の引数を伴うメソッドやコンストラクターを作成するとき、特に便利です。
 </div>
 
-### Scala's Type Hierarchy
+### Scala の型階層
 
-Unlike Java, which separates primitive and object types, everything in Scala is an object. As a result, "primitive" value types like `Int` and `Boolean` form part of the same type hierarchy as classes and traits.
+プリミティブ型とオブジェクト型を区別する Java とは異なり、Scala ではすべてがオブジェクトです。その結果、`Int` や `Boolean` のような「プリミティブ」値の型は、クラスやトレイトと同じ型階層の一部を構成しています。
 
 
 \makebox[\linewidth]{\includegraphics[width=0.8\textwidth]{src/pages/classes/scala-type-hierarchy.pdf}}
 
 <div class="figure">
 <div class="text-center">
-<img src="src/pages/classes/scala-type-hierarchy.svg" alt="Scala type hierarchy" />
+<img src="src/pages/classes/scala-type-hierarchy.svg" alt="Scala 型階層" />
 </div>
 </div>
 
-Scala has a grand supertype called `Any`, under which there are two types, `AnyVal` and `AnyRef`. `AnyVal` is the supertype of all value types, which `AnyRef` is the supertype of all "reference types" or classes. All Scala and Java classes are subtypes of `AnyRef`[^value-classes].
+Scala は `Any` と呼ばれる最上位の基底型を持ち、その下に `AnyVal` と `AnyRef` という2つの型があります。`AnyVal` はすべての値型の基底型で、`AnyRef` はすべての参照型やクラスの基底型です。Scala や Java におけるすべてのクラスは `AnyRef` の派生型です[^value-classes]。
 
-[^value-classes]: We can actually define subtypes of `AnyVal`, which are known as [value classes](http://docs.scala-lang.org/overviews/core/value-classes.html). These are useful in a few specialised circumstances and we're not going to discuss them here.
+[^value-classes]: 実際には `AnyVal` の派生型を定義でき、それは[値クラス](http://docs.scala-lang.org/overviews/core/value-classes.html)として知られています。これらはいくつかの特殊な状況で有用なのですが、ここでは議論しません。
 
-Some of these types are simply Scala aliases for types that exist in Java: `Int` is `int`, `Boolean` is `boolean`, and `AnyRef` is `java.lang.Object`.
+それらの型のいくつかは、単純に Java に存在する型の Scala における別名で、`Int` は `int`、`Boolean` は `boolean`、`AnyRef` は `java.lang.Object` です。
 
-There are two special types at the *bottom* of the hierarchy. `Nothing` is the type of `throw` expressions, and `Null` is the type of the value `null`. These special types are subtypes of everything else, which helps us assign types to `throw` and `null` while keeping other types in our code sane. The following code illustrates this:
+階層の**最下位 (bottom)** に2つの特別な型があります。`Nothing` は `throw` 式の型で、`Null` は `null` 値の型です。それらの特別な型は、他のすべての型の派生型で、コードにおける他の型を健全に保ちながらも、`throw` や `null` に型を割り当てることを補助します。下記のコードはこのことを説明しています。
 
 ```tut:book
 def badness = throw new Exception("Error")
@@ -197,7 +197,7 @@ val bar = if(true) 123 else badness
 val baz = if(false) "it worked" else otherbadness
 ```
 
-Although the types of `badness` and `res` are `Nothing` and `Null` respectively, the types of `bar` and `baz` are still sensible. This is because `Int` is the least common supertype of `Int` and `Nothing`, and `String` is the least common supertype of `String` and `Null`.
+`badness` と `otherbadness` の型はそれぞれ `Nothing` と `Null` であるにも関わらず、`bar` と `baz` の型は実用的なままです。なぜならば、`Int` は `Int` と `Nothing` の最小共通基底型で、`String` は `String` と `Null` の最小共通基底型であるからです。
 
 ### Take Home Points
 
