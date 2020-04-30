@@ -122,39 +122,39 @@ class Name(val parameter: type, ...) {
 とします。
 </div>
 
-### Default and Keyword Parameters
+### デフォルト引数とキーワード引数
 
-All Scala methods and constructors support *keyword parameters* and *default parameter values*.
+Scala のすべてのメソッドとコンストラクターは、**キーワード引数 (keyword parameter)** と**デフォルト引数値 (default parameter value)** に対応しています。
 
-When we call a method or constructor, we can *use parameter names as keywords* to specify the parameters in an arbitrary order:
+メソッドやコンストラクターを呼び出すときに、任意の順番で引数を指定するための**キーワードとして引数名を使用する**ことができます。
 
 ```tut:book
 new Person(lastName = "Last", firstName = "First")
 ```
 
-This comes in doubly useful when used in combination with *default parameter values*, defined like this:
+これは、下記のように定義された**デフォルト引数値**と組み合わせて使用するといっそう便利です。
 
 ```tut:book:silent
 def greet(firstName: String = "Some", lastName: String = "Body") =
   "Greetings, " + firstName + " " + lastName + "!"
 ```
 
-If a parameter has a default value we can omit it in the method call:
+引数がデフォルト値を持つのであれば、メソッド呼び出しでその引数を省略できます。
 
 ```tut:book
 greet("Busy")
 ```
 
-Combining keywords with default parameter values let us skip earlier parameters and just provide values for later ones:
+デフォルト引数値とキーワードを組み合わせることで、前の引数を省略し、後の引数だけに値を渡すこともできます。
 
 ```tut:book
 greet(lastName = "Dave")
 ```
 
 <div class="callout callout-info">
-#### Keyword Parameters {-}
+#### キーワード引数 {-}
 
-*Keyword parameters are robust to changes in the number and order of parameters.* For example, if we add a `title` parameter to the `greet` method, the meaning of keywordless method calls changes but keyworded calls remain the same:
+**キーワード引数は、引数の数や順番の変更に対して堅牢です。**例えば、`greet` メソッドに `title` 引数を追加すると、キーワードなしのメソッド呼び出しにおいて意味が変化してしまいますが、キーワードありの呼び出しでは同じままです。
 
 ```tut:book:silent
 def greet(title: String = "Citizen", firstName: String = "Some", lastName: String = "Body") =
@@ -162,11 +162,11 @@ def greet(title: String = "Citizen", firstName: String = "Some", lastName: Strin
 ```
 
 ```tut:book
-greet("Busy") // this is now incorrect
-greet(firstName = "Busy") // this is still correct
+greet("Busy") // これは正しくなくなりました
+greet(firstName = "Busy") // これは正しいままです
 ```
 
-This is particularly useful when creating methods and constructors with a large number of parameters.
+これは、多数の引数を伴うメソッドやコンストラクターを作成するとき、特に便利です。
 </div>
 
 ### Scala's Type Hierarchy
