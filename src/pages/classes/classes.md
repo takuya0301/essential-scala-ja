@@ -55,11 +55,11 @@ alien.greet(newNoel)
 Scala クラスはすべて `java.lang.Object` の派生クラスであり、ほとんどの場合、Scala と同様に Java からも使用できます。`Person` におけるデフォルト印字の振る舞いは、`java.lang.Object` に定義されている `toString` メソッドに由来しています。
 </div>
 
-### Constructors
+### コンストラクター
 
-As it stands our `Person` class is rather useless: we can create as many new objects as we want but they all have the same `firstName` and `lastName`. What if we want to give each person a different name?
+現状、`Person` クラスは全然役に立ちません。新しいオブジェクトを好きなだけ生成することができますが、すべて同じ `firstName` と `lastName` を持つためです。それでは、それぞれの人に異なる名前を与えるにはどうすればいいのでしょうか？
 
-The solution is to introduce a *constructor*, which allows us to pass parameters to new objects as we create them:
+その解決策は、**コンストラクター (constructor)** を導入することで、それは新しいオブジェクトを生成するときに引数を渡すことを可能にします。
 
 ```tut:book:silent
 class Person(first: String, last: String) {
@@ -74,9 +74,9 @@ val dave = new Person("Dave", "Gurnell")
 dave.name
 ```
 
-The constructor parameters `first` and `last` can only be used within the body of the class. We must declare a field or method using `val` or `def` to access data from outside the object.
+コンストラクター引数 `first` と `last` はクラスの本体でのみ使用できます。オブジェクトの外側からデータにアクセスするには、`val` や `def` を使用してフィールドやメソッドを宣言しなければなりません。
 
-Constructor arguments and fields are often redundant. Fortunately, Scala provides us a useful short-hand way of declaring both in one go. We can prefix constructor parameters with the `val` keyword to have Scala define fields for them automatically:
+コンストラクター引数とフィールドはしばしば冗長です。幸運なことに、Scala は両方を一度に宣言する便利な略記法を提供してくれています。コンストラクター引数の前に `val` キーワードをつけることで、Scala はそれらのフィールドを自動的に定義してくれるようになります。
 
 ```tut:book:silent
 class Person(val firstName: String, val lastName: String) {
@@ -88,15 +88,15 @@ class Person(val firstName: String, val lastName: String) {
 new Person("Dave", "Gurnell").firstName
 ```
 
-`val` fields are *immutable*---they are initialized once after which we cannot change their values. Scala also provides the `var` keyword for defining *mutable* fields.
+`val` フィールドは**不変 (immutable)** で、一度初期化された後にそれらの値を変更することはできません。Scala は**可変 (mutable)** フィールドを定義するために `var` キーワードも提供しています。
 
-Scala programmers tend to prefer to write immutability and side-effect-free code so we can reason about it using the substitution model. In this course we will concentrate almost exclusively on immutable `val` fields.
+Scala プログラマーは、不変かつ副作用のないコードを書くことを好む傾向があるので、置換モデルを使用してそれらを導出することができます。本書では、もっぱら不変な `val` フィールドに焦点を当てていきます。
 
 <div class="callout callout-info">
 
-#### Class Declaration Syntax {-}
+#### クラス宣言文法 {-}
 
-The syntax for declaring a class is
+クラスを宣言するための文法は、
 
 ```scala
 class Name(parameter: type, ...) {
@@ -104,7 +104,7 @@ class Name(parameter: type, ...) {
 }
 ```
 
-or
+か
 
 ```scala
 class Name(val parameter: type, ...) {
@@ -112,12 +112,14 @@ class Name(val parameter: type, ...) {
 }
 ```
 
-where
+です。ここで、
 
-- `Name` is the name of the class;
-- the optional `parameter`s are the names given to constructor parameters;
-- the `type`s are the types of the constructor parameters;
-- the optional `declarationOrExpression`s are declarations or expressions.
+- `Name` はクラスの名前
+- `parameter` はコンストラクター引数に与えられた名前（オプション）
+- `type` はコンストラクター引数の型
+- `declarationOrExpression` は宣言や式（オプション）
+
+とします。
 </div>
 
 ### Default and Keyword Parameters
