@@ -225,25 +225,25 @@ class Name(parameter: type, ...) {
 
 今ではクラスで楽しく遊ぶために十分な機構を手に入れました。
 
-#### Cats, Again
+#### 猫、再び
 
-Recall the cats from a previous exercise:
+以前の演習に登場した猫を思い出しましょう。
 
-+-----------+-----------------+-------+
-| Name      | Colour          | Food  |
-+===========+=================+=======+
-| Oswald    | Black           | Milk  |
-+-----------+-----------------+-------+
-| Henderson | Ginger          | Chips |
-+-----------+-----------------+-------+
-| Quentin   | Tabby and white | Curry |
-+-----------+-----------------+-------+
++--------------------------+------------------------+------------------+
+| 名前 (Name)              | 色 (Colour)            | 食べ物 (Food)    |
++==========================+========================+==================+
+| オズワルド (Oswald)      | 黒 (Black)             | ミルク (Milk)    |
++--------------------------+------------------------+------------------+
+| ヘンダーソン (Henderson) | 茶トラ (Ginger)        | カリカリ (Chips) |
++--------------------------+------------------------+------------------+
+| クエンティン (Quentin)   | トラ (Tabby and white) | カレー (Curry)   |
++--------------------------+------------------------+------------------+
 
 
-Define a class `Cat` and then create an object for each cat in the table above.
+`Cat` クラスを定義し、上の表の各猫についてオブジェクトを生成してください。
 
 <div class="solution">
-This is a finger exercise to get you used to the syntax of defining classes.
+これはクラスを定義する文法に慣れるための指の運動です。
 
 ```tut:book:silent
 class Cat(val colour: String, val food: String)
