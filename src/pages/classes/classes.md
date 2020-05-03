@@ -221,9 +221,9 @@ class Name(parameter: type, ...) {
 
 最後に、Scala の型階層について、Java の型階層との重複や、特殊な型である `Any` や `AnyRef`、`AnyVal`、`Nothing`、`Null`、`Unit` を含むこと、そして Java のクラスと Scala のクラスは、どちらも型階層の同じサブツリーを占有するという事実を学びました。
 
-### Exercises
+### 演習
 
-We now have enough machinery to have some fun playing with classes.
+今ではクラスで楽しく遊ぶために十分な機構を手に入れました。
 
 #### Cats, Again
 
