@@ -199,13 +199,13 @@ val baz = if(false) "it worked" else otherbadness
 
 `badness` と `otherbadness` の型はそれぞれ `Nothing` と `Null` であるにも関わらず、`bar` と `baz` の型は実用的なままです。なぜならば、`Int` は `Int` と `Nothing` の最小共通基底型で、`String` は `String` と `Null` の最小共通基底型であるからです。
 
-### Take Home Points
+### 覚えておいてほしいこと
 
-In this section we learned how to define *classes*, which allow us to create many objects with the same *type*. Thus, classes let us *abstract across objects* that have similar properties.
+本節では、同じ**型**を持つ様々なオブジェクトの生成を可能にする**クラス**を定義する方法を学びました。このように、クラスを使うことで、似たような性質を持つ**オブジェクトを横断的に抽象化**することができます。
 
-The properties of the objects of a class take the form of *fields* and *methods*. Fields are pre-computed values stored within the object and methods are computations we can call.
+クラスにおいてもオブジェクトの性質は、**フィールド**と**メソッド**の形をとります。フィールドはオブジェクトに格納される事前に計算された値で、メソッドは呼び出すことができる計算です。
 
-The syntax for declaring classes is
+クラスを宣言するための文法は、
 
 ```scala
 class Name(parameter: type, ...) {
@@ -213,11 +213,13 @@ class Name(parameter: type, ...) {
 }
 ```
 
-We create objects from a class by calling the constructor using the keyword `new`.
+です。
 
-We also learned about *keyword parameters* and *default parameters*.
+`new` キーワードを使用し、コンストラクターを呼び出すことによって、クラスからオブジェクトを生成します。
 
-Finally we learned about Scala's type hierarchy, including the overlap with Java's type hierarchy, the special types `Any`, `AnyRef`, `AnyVal`, `Nothing`, `Null`, and `Unit`, and the fact that Java and Scala classes both occupy the same subtree of the type hierarchy.
+また、**キーワード引数**と**デフォルト引数**についても学びました。
+
+最後に、Scala の型階層について、Java の型階層との重複や、特殊な型である `Any` や `AnyRef`、`AnyVal`、`Nothing`、`Null`、`Unit` を含むこと、そして Java のクラスと Scala のクラスは、どちらも型階層の同じサブツリーを占有するという事実を学びました。
 
 ### Exercises
 
