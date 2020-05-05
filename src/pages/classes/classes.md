@@ -256,9 +256,9 @@ val quentin = new Cat("Tabby and white", "Curry")
 </div>
 
 
-#### Cats on the Prowl
+#### 猫、ぶらぶらする
 
-Define an object `ChipShop` with a method `willServe`. This method should accept a `Cat` and return `true` if the cat's favourite food is chips, and false otherwise.
+`willServe` メソッドを伴う `ChipShop` オブジェクトを定義してください。このメソッドは `Cat` を受け取り、猫の好きな食べ物がカリカリ (chips) であれば `true` を返し、そうでなければ `false` を返します。
 
 <div class="solution">
 ```tut:book:silent
