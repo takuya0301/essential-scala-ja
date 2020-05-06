@@ -273,26 +273,23 @@ object ChipShop {
 </div>
 
 
-#### Directorial Debut
+#### 監督デビュー
 
-Write two classes, `Director` and `Film`, with fields and methods as follows:
+下記のフィールドとメソッドを伴う、`Director` と `Film` の2つのクラスを書いてください。
 
- - `Director` should contain:
-    - a field `firstName` of type `String`
-    - a field `lastName` of type `String`
-    - a field `yearOfBirth` of type `Int`
-    - a method called `name` that accepts no parameters
-      and returns the full name
+ - `Director` に含まれる：
+    - `String` 型の `firstName` フィールド
+    - `String` 型の `lastName` フィールド
+    - `Int` 型の `yearOfBirth` フィールド
+    - 無引数で、フルネームを返す `name` メソッド
 
- - `Film` should contain:
-    - a field `name` of type `String`
-    - a field `yearOfRelease` of type `Int`
-    - a field `imdbRating` of type `Double`
-    - a field `director` of type `Director`
-    - a method `directorsAge` that returns
-      the age of the director at the time of release
-    - a method `isDirectedBy` that accepts a `Director`
-      as a parameter and returns a `Boolean`
+ - `Film` に含まれる：
+    - `String` 型の `name` フィールド
+    - `Int` 型の `yearOfRelease` フィールド
+    - `Double` 型の `imdbRating` フィールド
+    - `Director` 型の `director` フィールド
+    - 公開時における監督の年齢を返す `directorsAge` メソッド
+    - 引数として `Director` を受け取り、`Boolean` を返す `isDirectedBy` メソッド
 
 ```tut:book:invisible
 case class Director(firstName: String, lastName: String, yearOfBirth: Int) {
@@ -307,7 +304,7 @@ case class Film(name: String, yearOfRelease: Int, imdbRating: Double, director: 
 }
 ```
 
-Copy-and-paste the following demo data into your code and adjust your constructors so that the code works without modification:
+下記のデモデータをコードにコピー＆ペーストし、そのコードを変更せずに動作するようコンストラクターを調整してください。
 
 ```tut:book:silent
 val eastwood          = new Director("Clint", "Eastwood", 1930)
@@ -337,7 +334,7 @@ dieHard.director.name
 invictus.isDirectedBy(nolan)
 ```
 
-Implement a method of `Film` called `copy`. This method should accept the same parameters as the constructor and create a new copy of the film. Give each parameter a default value so you can copy a film changing any subset of its values:
+さらに、`copy` と呼ばれる `Film` のメソッドを実装します。このメソッドは、コンストラクターと同じ引数を受け取り、映画の新しいコピーを生成します。各引数にデフォルト値を与えて、映画の値の一部を変更してコピーできるようにします。
 
 
 ```tut:book:invisible
@@ -395,7 +392,7 @@ inception.copy().copy().copy()
 ```
 
 <div class="solution">
-This exercise provides some hands on experience writing Scala classes, fields and methods. The model solution is as follows:
+この演習は、Scala のクラスやフィールド、メソッドの記述をいくつかのハンズオンによる体験として提供します。模範解答は下記のようになります。
 
 ```tut:book:silent
 class Director(
