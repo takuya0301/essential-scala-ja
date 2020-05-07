@@ -432,9 +432,9 @@ class Film(
 ```
 </div>
 
-#### A Simple Counter
+#### シンプル・カウンター
 
-Implement a `Counter` class. The constructor should take an `Int`. The methods `inc` and `dec` should increment and decrement the counter respectively returning a new `Counter`. Here's an example of the usage:
+`Counter` クラスを実装してください。コンストラクターは `Int` を受け取るようにしてください。カウンターを増加させる `inc` メソッドとカウンターを減少させる `dec` メソッドを、それぞれ新しい `Counter` を返すように実装してください。こちらが利用例です。
 
 ```tut:book:invisible
 class Counter(val count: Int) {
@@ -455,11 +455,11 @@ class Counter(val count: Int) {
 }
 ```
 
-Aside from practicing with classes and objects, this exercise has a second goal---to think about why `inc` and `dec` return a new `Counter`, rather than updating the same counter directly.
+クラスやオブジェクトによる実践の傍ら、この演習には2つ目の目的があります。それは、なぜ `inc` と `dec` が、同じカウンターを直接更新する代わりに、新しい `Counter` を返すのかを考えることです。
 
-Because `val` fields are immutable, we need to come up with some other way of propagating the new value of `count`. Methods that return new `Counter` objects give us a way of returning new state without the side-effects of assignment. They also permit *method chaining*, allowing us to write whole sequences of updates in a single expression
+`val` フィールドは不変なので、`count` の新しい値を伝える他の方法を思い付く必要があります。新しい `Counter` オブジェクトを返すメソッドは、代入による副作用なしに新しい状態を返す方法を与えてくれます。それはまた**メソッドチェーン (method chaining)** を可能にし、一連の更新全体をひとつの式で書くことを可能にします。
 
-The use-case `new Counter(10).inc.dec.inc.inc.count` actually creates 5 instances of `Counter` before returning its final `Int` value. You may be concerned about the extra memory and CPU overhead for such a simple calculation, but don't be. Modern execution environments like the JVM render the extra overhead of this style of programming negligible in all but the most performance critical code.
+実際のところ、利用例 `new Counter(10).inc.dec.inc.inc.count` は、最後の `Int` 値を返すまでに `Counter` のインスタンスを5つ生成します。このような単純計算のための、余分なメモリと CPU のオーバーヘッドを気にするかもしれませんが、その心配はありません。JVM のような最新の実行環境では、このスタイルのプログラミングにおける余分なオーバーヘッドは、性能が最重要なコードを除き、無視して構わないものになっています。
 </div>
 
 #### Counting Faster
