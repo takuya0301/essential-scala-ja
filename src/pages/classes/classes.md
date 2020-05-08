@@ -462,12 +462,12 @@ class Counter(val count: Int) {
 実際のところ、利用例 `new Counter(10).inc.dec.inc.inc.count` は、最後の `Int` 値を返すまでに `Counter` のインスタンスを5つ生成します。このような単純計算のための、余分なメモリと CPU のオーバーヘッドを気にするかもしれませんが、その心配はありません。JVM のような最新の実行環境では、このスタイルのプログラミングにおける余分なオーバーヘッドは、性能が最重要なコードを除き、無視して構わないものになっています。
 </div>
 
-#### Counting Faster
+#### 高速カウント
 
-Augment the `Counter` from the previous exercise to allow the user can optionally pass an `Int` parameter to `inc` and `dec`. If the parameter is omitted it should default to `1`.
+前の演習に登場した `Counter` を拡張し、ユーザーが `inc` と `dec` に `Int` 引数を任意に渡せるようにしてください。引数が省略されたときは、`1` をデフォルトにしてください。
 
 <div class="solution">
-The simplest solution is this:
+最も単純な解答はこのようになります。
 
 ```tut:book:silent
 class Counter(val count: Int) {
@@ -476,13 +476,13 @@ class Counter(val count: Int) {
 }
 ```
 
-However, this adds parentheses to `inc` and `dec`. If we omit the parameter we now have to provide an empty pair of parentheses:
+しかし、これは `inc` と `dec` に丸括弧を追加します。引数を省略したときにも、空の丸括弧を付与しなければなりません。
 
 ```tut:book:fail
 new Counter(10).inc
 ```
 
-We can work around this using *method overloading* to recreate our original parenthesis-free methods. Note that overloading methods requires us to specify the return types:
+本来の丸括弧なしのメソッドを再現するには、**メソッドのオーバーロード (method overloading)** を使用して、丸括弧の付与を回避します。
 
 ```tut:book:silent
 class Counter(val count: Int) {
