@@ -498,9 +498,9 @@ new Counter(10).inc.inc(10).count
 ```
 </div>
 
-#### Additional Counting
+#### 追加カウント
 
-Here is a simple class called `Adder`.
+こちらは `Adder` と呼ばれるシンプルなクラスです。
 
 ```tut:book:silent
 class Adder(amount: Int) {
@@ -508,7 +508,7 @@ class Adder(amount: Int) {
 }
 ```
 
-Extend `Counter` to add a method called `adjust`. This method should accept an `Adder` and return a new `Counter` with the result of applying the `Adder` to the `count`.
+`Counter` を拡張し、`adjust` と呼ばれるメソッドを追加してください。このメソッドは `Adder` を受け入れ、`count` に `Adder` を適用した結果を伴う新しい `Counter` を返します。
 
 <div class="solution">
 ```tut:book:silent
@@ -520,17 +520,17 @@ class Counter(val count: Int) {
 }
 ```
 
-This is an interesting pattern that will become more powerful as we learn more features of Scala. *We are using `Adders` to capture computations* and pass them to `Counter`. Remember from our earlier discussion that *methods are not expressions*---they cannot be stored in fields or passed around as data. However, *`Adders` are both objects and computations*.
+これは興味深いパターンで、Scala の機能を学ぶにつれて、より強力になっていくでしょう。**計算を表現するために `Adder` を使用**し、それを `Counter` に受け渡しています。**メソッドは式ではない**という先の議論を思い出してください。それらはフィールドに格納したり、データとして受け渡したりできません。しかしながら、**`Adder` はオブジェクトであると同時に計算でもある**のです。
 
-Using objects as computations is a common paradigm in object oriented programming languages. Consider, for example, the classic `ActionListener` from Java's Swing:
+オブジェクト指向プログラミング言語において、計算としてオブジェクトを使用することは一般的なパラダイムです。例えば、Java の Swing における古典的な `ActionListener` を考えてみてください。
 
 ```java
 public class MyActionListener implements ActionListener {
   public void actionPerformed(ActionEvent evt) {
-    // Do some computation
+    // 何か計算を実行する
   }
 }
 ```
 
-The disadvantage of objects like `Adders` and `ActionListeners` is that they are limited to use in one particular circumstance. Scala includes a much more general concept called *functions* that allow us to represent any kind of computation as an object. We will be introduced to some of the concepts behind functions in this chapter.
+`Adders` や `ActionListener` のようなオブジェクトの欠点は、特定の状況での使用に限定されることです。Scala には、オブジェクトとして様々な計算の表現を可能にする、**関数 (function)** と呼ばれるより一般的な概念が含まれています。本章では、関数の背後にある概念のいくつかを紹介していきます。
 </div>
