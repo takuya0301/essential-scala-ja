@@ -1,6 +1,6 @@
-## Objects as Functions
+## 関数としてのオブジェクト
 
-In the final exercise of the previous section, we defined a class called `Adder`:
+前節、最後の演習で `Adder` と呼ばれるクラスを定義しました。
 
 ```tut:book:silent
 class Adder(amount: Int) {
@@ -8,9 +8,9 @@ class Adder(amount: Int) {
 }
 ```
 
-In the discussion we described an `Adder` as an object representing a computation---a bit like having a method that we can pass around as a value.
+議論の中で、計算を表現するオブジェクトとしての `Adder` を説明しました。それは、値として渡すことのできるメソッドを得られたようなものでした。
 
-This is such a powerful concept that Scala has a fully blown set of language features for creating objects that behave like computations. These objects are called *functions*, and are the basis of *functional programming*.
+計算のように振る舞うオブジェクトは強力な概念で、Scala にはそれを生成するための言語機能が完全に備わっています。それらのオブジェクトは**関数 (function)** と呼ばれ、**関数型プログラミング (functional programming)** の基礎を成します。
 
 ### The apply method
 
