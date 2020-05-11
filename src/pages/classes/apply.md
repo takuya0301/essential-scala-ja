@@ -12,13 +12,13 @@ class Adder(amount: Int) {
 
 計算のように振る舞うオブジェクトは強力な概念で、Scala にはそれを生成するための言語機能が完全に備わっています。それらのオブジェクトは**関数 (function)** と呼ばれ、**関数型プログラミング (functional programming)** の基礎を成します。
 
-### The apply method
+### apply メソッド
 
-For now we are going to look at just one of Scala's features supporting functional programming---*function application syntax*.
+ここでは、関数型プログラミングをサポートする Scala の一機能**関数適用文法 (function application syntax)** を見ていきましょう。
 
-In Scala, by convention, an object can be "called" like a function if it has a method called `apply`. Naming a method `apply` affords us a special shortened call syntax: `foo.apply(args)` becomes `foo(args)`.
+Scala では、慣例によって、`apply` と呼ばれるメソッドを持つオブジェクトを関数のように「呼び出す」ことができます。`apply` と名付けられたメソッドによって、呼び出し文法 `foo.apply(args)` が `foo(args)` になるという特別な略記法が与えられます。
 
-For example, let's rename the `add` method in `Adder` to `apply`:
+例えば、`Adder` の `add` メソッドを `apply` に改名してみましょう。
 
 ```tut:book:silent
 class Adder(amount: Int) {
@@ -29,16 +29,16 @@ class Adder(amount: Int) {
 ```tut:book
 val add3 = new Adder(3)
 add3.apply(2)
-add3(4) // shorthand for add3.apply(4)
+add3(4) // add3.apply(4) の略記法
 ```
 
-With this one simple trick, objects can "look" syntactically like functions. There are lots of things that we can do with objects that we can't do with methods, including assign them to variables and pass them around as arguments.
+この簡単なトリックによって、オブジェクトは文法的に関数らしく「見える」ようになります。オブジェクトを、変数に代入したり、引数として受け渡したり、メソッドではできなかったことがたくさんできます。
 
 <div class="callout callout-info">
 
-#### Function Application Syntax {-}
+#### 関数適用文法 {-}
 
-The method call `object.apply(parameter, ...)` can also be written as `object(parameter, ...)`
+メソッド呼び出し `object.apply(parameter, ...)` は `object(parameter, ...)` と書くこともできる。
 
 </div>
 
