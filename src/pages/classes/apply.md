@@ -42,13 +42,13 @@ add3(4) // add3.apply(4) の略記法
 
 </div>
 
-### Take home points
+### 覚えておいてほしいこと
 
-In this section we looked at *function application syntax*, which lets us "call" an object as if it is a function.
+本節では、オブジェクトを関数であるかのように「呼び出す」ための**関数適用文法**を見ました。
 
-Function application syntax is available for any object defining an `apply` method.
+関数適用文法は、`apply` メソッドが定義されたどんなオブジェクトでも利用可能です。
 
-With function application syntax, we now have first class values that behave like computations. Unlike methods, objects can be passed around as data. This takes us one step closer towards true functional programming in Scala.
+関数適用文法によって、計算のように振る舞う第一級値（訳注：[第一級関数](https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E7%B4%9A%E9%96%A2%E6%95%B0)）を持てるようになりました。メソッドと違って、オブジェクトはデータとして受け渡すことができます。これで、Scala における真の関数型プログラミングに一歩近付きました。
 
 ### Exercises
 
