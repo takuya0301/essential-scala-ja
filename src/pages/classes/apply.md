@@ -50,20 +50,20 @@ add3(4) // add3.apply(4) の略記法
 
 関数適用文法によって、計算のように振る舞う第一級値（訳注：[第一級関数](https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E7%B4%9A%E9%96%A2%E6%95%B0)）を持てるようになりました。メソッドと違って、オブジェクトはデータとして受け渡すことができます。これで、Scala における真の関数型プログラミングに一歩近付きました。
 
-### Exercises
+### 演習
 
-#### When is a Function not a Function?
+#### 関数が関数でないのはどんなとき？
 
-We'll get a chance to write some code at the end of the next section. For now we should think about an important theoretical question:
+次節の最後に、いくつかのコードを書く機会があります。ここで、重要な理論上の疑問について考えてみましょう。
 
-How close does function application syntax get us to creating truly reusable objects to do computations for us? What are we missing?
+関数適用文法は、計算を実行する真に再利用可能なオブジェクトを生成できることに、どのくらい近付いているのでしょうか？何が足りないのでしょうか？
 
 <div class="solution">
-The main thing we're missing is *types*, which are the way we properly abstract across values.
+主に足りていないものは、値を横断的に抽象化する方法である**型**です。
 
-At the moment we can define a class called `Adder` to capture the idea of adding to a number, but that code isn't properly portable across codebases---other developers need to know about our specific class to use it.
+現時点では、数値を加算するという知識を捕捉するために `Adder` と呼ばれるクラスを定義できますが、他の開発者はその知識を使用するために、この特定のクラスについて知っている必要があるため、そのコードはコードベースを横断して可搬であるとは言えません。
 
-We could define a library of common function types with names like `Handler`, `Callback`, `Adder`, `BinaryAdder`, and so on, but this quickly becomes impractical.
+`Handler` や `Callback`、`Adder`、`BinaryAdder` などのような名前で共通する関数型のライブラリを定義できますが、これはすぐに非現実的になってしまいます。
 
-Later on we will see how Scala copes with this problem by defining a generic set of function types that we can use in a wide variety of situations.
+後ほど、様々な状況で使用できる一般的な関数型一式を定義することで、Scala がこの問題にどのように対処しているのかを見ていきましょう。
 </div>
