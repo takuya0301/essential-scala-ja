@@ -1,8 +1,8 @@
-## Companion Objects
+## コンパニオンオブジェクト
 
-Sometimes we want to create a method that logically belongs to a class but is independent of any particular object. In Java we would use a *static method* for this, but Scala has a simpler solution that we've seen already: singleton objects.
+論理的にはクラスに所属していても、どの特定のオブジェクトからも独立しているメソッドを作成したいことがあります。そのために Java では**静的メソッド (static method)** を使用しますが、Scala にはシングルトンオブジェクトというもっと単純な解決策があります。
 
-One common use case is auxiliary constructors. Although Scala does have syntax that lets us define multiple constructors for a class, Scala programmers almost always prefer to implement additional constructors as `apply` methods on an object with the same name as the class. We refer to the object as the *companion object* of the class. For example:
+一般的な使用例は補助コンストラクターです。Scala がクラスについて複数のコンストラクターを定義できる文法を持つにも関わらず、Scala プログラマーはほとんどの場合、クラスと同じ名前を持つオブジェクトに、追加のコンストラクターとして `apply` メソッドを実装することを好みます。そのオブジェクトをクラスの**コンパニオンオブジェクト (companion object)** と呼びます。例えば、下記のようになります。
 
 ```tut:book:silent
 class Timestamp(val seconds: Long)
@@ -18,25 +18,25 @@ Timestamp(1, 1, 1).seconds
 ```
 
 <div class="callout callout-info">
-#### Using the Console Effectively {-}
+#### コンソールを有効活用する {-}
 
-Note our use of the `:paste` command in the transcript above. Companion objects must be defined in the same compilation unit as the classes they support. In a normal codebase this simply means defining the class and object in the same file, but on the REPL we have to enter then in one command using `:paste`.
+上記の例は、`:paste` コマンドを使用することに注意してください。コンパニオンオブジェクトは、後援するクラスと同じコンパイル単位で定義されなければなりません。通常のコードベースで、これはクラスとオブジェクトを同じファイルの中に定義することを意味しますが、REPL 上では `:paste` を使用し、それらをひとつのコマンドとして入力しなければなりません。
 
-You can enter `:help` on the REPL to find out more.
+REPL 上に `:help` と入力することでより詳細を知ることができます。
 </div>
 
-As we saw earlier, Scala has two namespaces: a space of *type names* and a space of *value names*. This separation allows us to name our class and companion object the same thing without conflict.
+前述のように、Scala は、**型名 (type name)** 空間と**値名 (value name)** 空間の2つの名前空間を持ちます。このように分離することで、衝突なくクラスとコンパニオンオブジェクトに同じ名前を付けることができます。
 
-It is important to note that *the companion object is not an instance of the class*---it is a singleton object with its own type:
+シングルトンオブジェクトは独自の型を伴うので、**コンパニオンオブジェクトはクラスのインスタンスではない**という重要なことに注意してください。
 
 ```tut:book
-Timestamp // note that the type is `Timestamp.type`, not `Timestamp`
+Timestamp // 型は `Timestamp.type` であり `Timestamp` ではないことに注意
 ```
 
 <div class="callout callout-info">
-#### Companion Object Syntax {-}
+#### コンパニオンオブジェクト文法 {-}
 
-To define a companion object for a class, in the *same file* as the class define an object with the same name.
+クラスのためにコンパニオンオブジェクトを定義するには、同じ名前のオブジェクトをクラスと**同じファイル**に定義します。
 
 ```scala
 class Name {
