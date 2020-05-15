@@ -49,15 +49,15 @@ object Name {
 ```
 </div>
 
-### Take home points
+### 覚えておいてほしいこと
 
-*Companion objects* provide us with a means to associate functionality with a class without associating it with any instance of that class. They are commonly used to provide additional constructors.
+**コンパニオンオブジェクト**は、機能をクラスのインスタンスに関連付けることなく、クラスに関連付ける手段を提供します。一般的に、それらは追加のコンストラクターを提供するために使用されます。
 
-Companion objects *replace Java's static methods*. They provide equivalent functionality and are more flexible.
+コンパニオンオブジェクトは **Java の静的メソッドを代替します**。それらは等価な機能を提供し、より柔軟です。
 
-*A companion object has the same name as its associated class.* This doesn't cause a naming conflict because Scala has two namespaces: the namespace of values and the namespace of types.
+**コンパニオンオブジェクトは、関連付けられたクラスと同じ名前を持ちます。** これは、値の名前空間と型の名前空間という2つの名前空間を Scala が持つため、名前の衝突を引き起こしません。
 
-*A companion object must be defined in the same file as the associated class.* When typing on the REPL, the class and companion object must be entered in the same block of code using `:paste` mode.
+**コンパニオンオブジェクトは、関連付けられたクラスと同じファイルに定義されなければいけません。** REPL 上で入力するときは `:paste` モードを使用して、クラスとコンパニオンオブジェクトが同じコードブロックで入力されなければいけません。
 
 ### Exercises
 
