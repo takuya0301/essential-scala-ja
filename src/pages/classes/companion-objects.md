@@ -59,13 +59,13 @@ object Name {
 
 **コンパニオンオブジェクトは、関連付けられたクラスと同じファイルに定義されなければいけません。** REPL 上で入力するときは `:paste` モードを使用して、クラスとコンパニオンオブジェクトが同じコードブロックで入力されなければいけません。
 
-### Exercises
+### 演習
 
-#### Friendly Person Factory
+#### フレンドリーな人ファクトリ
 
-Implement a companion object for `Person` containing an `apply` method that accepts a whole name as a single string rather than individual first and last names.
+姓と名を個別にではなく、姓名全体をひとつの文字列として受け取る `apply` メソッドを含む、`Person` のコンパニオンオブジェクトを実装してください。
 
-Tip: you can split a `String` into an `Array` of components as follows:
+ヒント：下記のようにして `String` を `Array` の要素に分割できます。
 
 ```tut:book
 val parts = "John Doe".split(" ")
@@ -73,7 +73,7 @@ parts(0)
 ```
 
 <div class="solution">
-Here is the code:
+こちらがコードです。
 
 ```tut:book:silent
 class Person(val firstName: String, val lastName: String) {
@@ -89,11 +89,11 @@ object Person {
 }
 ```
 
-And here it is in use:
+こちらが使用例です。
 
 ```tut:book
-Person.apply("John Doe").firstName // full method call
-Person("John Doe").firstName // sugared apply syntax
+Person.apply("John Doe").firstName // 完全なメソッド呼び出し
+Person("John Doe").firstName // 糖衣適用文法
 ```
 </div>
 
