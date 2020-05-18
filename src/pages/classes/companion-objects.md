@@ -97,26 +97,22 @@ Person("John Doe").firstName // 糖衣適用文法
 ```
 </div>
 
-#### Extended Body of Work
+#### 業績の派生的な内容
 
-Write companion objects for `Director` and `Film` as follows:
+下記のように、`Director` と `Film` のためのコンパニオンオブジェクトを記述してください。
 
- - the `Director` companion object should contain:
-    - an `apply` method that accepts the same parameters as the constructor of the class
-      and returns a new `Director`;
-    - a method `older` that accepts two `Directors` and returns the oldest of the two.
+ - `Director` コンパニオンオブジェクトに含まれる：
+    - クラスのコンストラクターと同じ引数を受け取り、新しい `Director` を返す `apply` メソッド
+    - 2つの `Director` を受け取り、2つのうち年齢が上の方を返す `older` メソッド
 
- - the `Film` companion object should contain:
-    - an `apply` method that accepts the same parameters as the constructor of the class
-      and returns a new `Film`;
-    - a method `highestRating` that accepts two `Films` and returns the highest
-      `imdbRating` of the two;
-    - a method `oldestDirectorAtTheTime` that accepts two `Films` and returns the `Director`
-      who was oldest at the respective time of filming.
+ - `Film` コンパニオンオブジェクトに含まれる：
+    - クラスのコンストラクターと同じ引数を受け取り、新しい `Film` を返す `apply` メソッド
+    - 2つの `Film` を受け取り、2つのうち `imdbRating` が高い方を返す `highestRating` メソッド
+    - 2つの `Film` を受け取り、それぞれの撮影時に年齢が上の `Director` を返す`oldestDirectorAtTheTime` メソッド
 
 <div class="solution">
 
-This exercise is inteded to provide more practice writing code. The model solution, including the class definitions from the previous section, is now:
+この演習は、たくさんのコードを書く練習を提供することを意図しています。前節のクラス定義を含む模範回答はこのようになります。
 
 ```tut:book:silent
 class Director(
