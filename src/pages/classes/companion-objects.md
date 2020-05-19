@@ -182,18 +182,18 @@ object Film {
 
 </div>
 
-#### Type or Value?
+#### 型か値か？
 
-The similarity in naming of classes and companion objects tends to cause confusion for new Scala developers. When reading a block of code it is important to know which parts refer to a class or *type* and which parts refer to a singleton object or *value*.
+クラスとコンパニオンオブジェクトの名前付けによる類似は、新しい Scala 開発者の混乱を引き起こしがちです。コードのブロックを読んでいるとき、その部分がクラス（**型**）を示しているのか、シングルトンオブジェクト（**値**）を示しているのかについて知っていることが重要です。
 
-This is the inspiration for the new hit quiz, *Type or Value?*, which we will be piloting below. In each case identify whether the word `Film` refers to the type or value:
+**「型か値か？」** という新しくヒットしそうなクイズを思いついたので、これから試してみましょう。単語 `Film` の参照しているものが型か値かをそれぞれの事例で特定してください。
 
 ```scala
 val prestige: Film = bestFilmByChristopherNolan()
 ```
 
 <div class="solution">
-**Type!**---this code is defining a value `prestige` of type `Film`.
+**型！**このコードは、型 `Film` の値 `prestige` を定義しています。
 </div>
 
 ```scala
@@ -201,7 +201,7 @@ new Film("Last Action Hero", 1993, mcTiernan)
 ```
 
 <div class="solution">
-*Type!*---this is a reference to the *constructor* of `Film`. The constructor is part of the *class* `Film`, which is a *type*.
+**型！**これは、`Film` の**コンストラクター**への参照です。このコンストラクターは、**型**である**クラス** `Film` の一部です。
 </div>
 
 ```scala
@@ -209,13 +209,13 @@ Film("Last Action Hero", 1993, mcTiernan)
 ```
 
 <div class="solution">
-*Value!*---this is shorthand for:
+**値！**これは、下記の略記法です。
 
 ```scala
 Film.apply("Last Action Hero", 1993, mcTiernan)
 ```
 
-`apply` is a method defined on the *singleton object* (or value) `Film`.
+`apply` は、**シングルトンオブジェクト**（値）`Film` に定義されたメソッドです。
 </div>
 
 ```scala
@@ -223,17 +223,17 @@ Film.newer(highPlainsDrifter, thomasCrownAffair)
 ```
 
 <div class="solution">
-*Value!*---`newer` is another method defined on the *singleton object* `Film`.
+**値！**`newer` は、**シングルトンオブジェクト** `Film` に定義された別のメソッドです。
 </div>
 
-Finally a tough one...
+最後は難しいものを……
 
 ```scala
 Film.type
 ```
 
 <div class="solution">
-*Value!*---This is tricky! You'd be forgiven for getting this one wrong.
+**値！**これは巧妙です！これを間違えたとしても許されるでしょう。
 
-`Film.type` refers to the type of the singleton object `Film`, so in this case `Film` is a reference to a value. However, the whole fragment of code is a type.
+`Film.type` は、シングルトンオブジェクト `Film` の型を参照するので、この場合の `Film` は値への参照です。しかしながら、コードの断片全体は型になります。
 </div>
