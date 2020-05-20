@@ -1,8 +1,8 @@
-## Case Classes
+## ケースクラス
 
-*Case classes* are an exceptionally useful shorthand for defining a class, a companion object, and a lot of sensible defaults in one go. They are ideal for creating lightweight data-holding classes with the minimum of hassle.
+**ケースクラス (case class)** は、クラスやコンパニオンオブジェクト、たくさんの実用的なデフォルト機能をまとめて定義してくれる非常に便利な略記法です。それは、やっかいごとを最小限にして、軽量なデータ保持クラスを生成するための理想的な方法になります。
 
-Case classes are created simply by prepending a class definition with the keyword `case`:
+ケースクラスは、クラス定義にキーワード `case` を前置するだけで生成されます。
 
 ```tut:book:silent
 case class Person(firstName: String, lastName: String) {
@@ -10,14 +10,14 @@ case class Person(firstName: String, lastName: String) {
 }
 ```
 
-Whenever we declare a case class, Scala automatically generates a *class and companion object*:
+ケースクラスを定義するとき、いつでも Scala は自動的に**クラスとコンパニオンオブジェクト**を生成します。
 
 ```tut:book
-val dave = new Person("Dave", "Gurnell") // we have a class
-Person // and a companion object too
+val dave = new Person("Dave", "Gurnell") // クラスを持つ
+Person // コンパニオンオブジェクトも
 ```
 
-What's more, the class and companion are pre-populated with some very useful features.
+さらに、クラスとコンパニオンオブジェクトには、とても便利ないくつかの機能があらかじめ用意されています。
 
 ### Features of a case class
 
