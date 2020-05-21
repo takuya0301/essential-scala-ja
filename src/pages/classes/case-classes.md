@@ -19,38 +19,38 @@ Person // コンパニオンオブジェクトも
 
 さらに、クラスとコンパニオンオブジェクトには、とても便利ないくつかの機能があらかじめ用意されています。
 
-### Features of a case class
+### ケースクラスの機能
 
-1. *A field for each constructor argument*---we don't even need to write `val` in our constructor definition, although there's no harm in doing so.
+1. **各コンストラクター引数のフィールド**。コンストラクター定義に `val` と書く必要はありませんし、明示的に書いても悪影響はありません。
 
 ```tut:book
 dave.firstName
 ```
 
-2. *A default `toString` method* that prints a sensible constructor-like representation of the class (no more `@` signs and cryptic hex numbers):
+2. **デフォルト `toString` メソッド**。それは、クラスのコンストラクターに似た実用的な表現を印字します。もう `@` 記号と謎めいた16進数とはおさらばです。
 
 ```tut:book
 dave
 ```
 
-3. *Sensible `equals`, and `hashCode` methods* that operate on the field values in the object.
+3. **実用的な `equals` メソッドと `hashCode` メソッド**。それらは、オブジェクトのフィールド値に基づいて動作します。
 
-   This makes it easy to use case classes with collections like `Lists`, `Sets` and `Maps`. It also means we can compare objects on the basis of their contents rather than their reference identity:
+   これは、`List` や `Set`、`Map` のようなコレクションでケースクラスを使いやすくします。また、オブジェクトを参照 ID の代わりに、それらの内容に基づいて比較できるようになります。
 
 ```tut:book
 new Person("Noel", "Welsh").equals(new Person("Noel", "Welsh"))
 new Person("Noel", "Welsh") == new Person("Noel", "Welsh")
 ```
 
-4. *A `copy` method* that creates a new object with the same field values as the current one:
+4. **`copy` メソッド**。`copy` メソッドは、現在のオブジェクトと同じフィールド値を伴う新しいオブジェクトを生成します。
 
 ```tut:book
 dave.copy()
 ```
 
-   Note that the `copy` method creates and returns a *new object* of the class rather than returning the current one.
+   `copy` メソッドは、現在のオブジェクトの代わりに、クラスの**新しいオブジェクト**を生成して返すことに注意してください。
 
-   The `copy` method actually accepts optional parameters matching each of the constructor parameters. If a parameter is specified the new object uses that value instead of the existing value from the current object. This is ideal for use with keyword parameters to let us copy an object while changing the values of one or more fields:
+   実のところ、`copy` メソッドは、それぞれのコンストラクター引数と一致する任意の引数を受け取ります。引数が指定されれば、新しいオブジェクトは、既存のオブジェクトに存在する値の代わりにその値を使用します。これは、1つ以上のフィールド値を変更してオブジェクトをコピーするときに、キーワード引数と一緒に使用するのが理想的です。
 
 ```tut:book
 dave.copy(firstName = "Dave2")
@@ -59,11 +59,11 @@ dave.copy(lastName = "Gurnell2")
 
 <div class="callout callout-info">
 
-#### Value and Reference Equality {-}
+#### 値と参照の等価性 {-}
 
-Scala's `==` operator is different from Java's---it delegates to `equals` rather than comparing values on reference identity.
+Scala の `==` 演算子は Java のものとは異なります。それは、参照 ID を値として比較する代わりに `equals` に委譲します。
 
-Scala has an operator called `eq` with the same behaviour as Java's `==`. However, it is rarely used in application code:
+Scala は、Java の `==` と同じ振る舞いをする `eq` と呼ばれる演算子を持ちます。しかしながら、それをアプリケーションコードで使用することはめったにありません。
 
 ```tut:book
 new Person("Noel", "Welsh") eq (new Person("Noel", "Welsh"))
@@ -71,7 +71,7 @@ dave eq dave
 ```
 </div>
 
-5. Case classes implement two traits: `java.io.Serializable` and `scala.Product`. Neither are used directly. The latter provides methods for inspecting the number of fields and the name of the case class.
+5. ケースクラスは `java.io.Serializable` と `scala.Product` という2つのトレイトを実装します。どちらも直接使用されることはありません。後者は、ケースクラスの名前とフィールド数を調べるためのメソッドを提供します。
 
 ### Features of a case class companion object
 
