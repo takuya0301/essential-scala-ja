@@ -73,21 +73,21 @@ dave eq dave
 
 5. ケースクラスは `java.io.Serializable` と `scala.Product` という2つのトレイトを実装します。どちらも直接使用されることはありません。後者は、ケースクラスの名前とフィールド数を調べるためのメソッドを提供します。
 
-### Features of a case class companion object
+### ケースクラスコンパニオンオブジェクトの機能
 
-The companion object contains an `apply` method with the same arguments as the class constructor. Scala programmers tend to prefer the `apply` method over the constructor for the brevity of omitting `new`, which makes constructors much easier to read inside expressions:
+コンパニオンオブジェクトは、クラスのコンストラクターと同じ引数を持つ `apply` メソッドを含みます。Scala プログラマーは、`new` を省略できる簡潔さのために、コンストラクターより `apply` メソッドを好む傾向があり、コンストラクターが式の中で読み易くなるようにします。
 
 ```tut:book
 Person("Dave", "Gurnell") == Person("Noel", "Welsh")
 Person("Dave", "Gurnell") == Person("Dave", "Gurnell")
 ```
 
-Finally, the companion object also contains code to implement an *extractor pattern* for use in *pattern matching*. We'll see this later this chapter.
+最後に、コンパニオンオブジェクトは、**パターンマッチング (pattern matching)** に使用する**抽出子パターン (extractor pattern)** を実装するコードも含みます。本章で後ほど見ていきます。
 
 <div class="callout callout-info">
-#### Case Class Declaration Syntax {-}
+#### ケースクラス宣言文法 {-}
 
-The syntax to declare a case class is
+ケースクラスを宣言するための文法は、
 
 ```scala
 case class Name(parameter: type, ...) {
@@ -95,12 +95,14 @@ case class Name(parameter: type, ...) {
 }
 ```
 
-where
+です。ここで、
 
-- `Name` is the name of the case class;
-- the optional `parameter`s are the names given to constructor parameters;
-- the `type`s are the types of the constructor parameters;
-- the optional `declarationOrExpression`s are declarations or expressions.
+- `Name` はケースクラスの名前
+- `parameter` はコンストラクター引数として与えられた名前（オプション）
+- `type` はコンストラクター引数の型
+- `declarationOrExpression` は宣言か式（オプション）
+
+とします。
 </div>
 
 ### Case objects
