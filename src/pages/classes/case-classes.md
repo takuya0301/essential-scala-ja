@@ -105,9 +105,9 @@ case class Name(parameter: type, ...) {
 とします。
 </div>
 
-### Case objects
+### ケースオブジェクト
 
-A final note. If you find yourself defining a case class with no constructor arguments you can instead a define a *case object*. A case object is defined just like a regular singleton object, but has a more meaningful `toString` method and extends the `Product` and `Serializable` traits:
+最後の覚え書きです。コンストラクター引数なしでケースクラスを定義しているものをみつけたら、その代わりに**ケースオブジェクト (case object)** を定義できます。ケースオブジェクトは、単に通常のシングルトンオブジェクトのように定義されますが、もっと意味のある `toString` メソッドを持ち、`Product` と `Serializable` トレイトを継承しています。
 
 ```tut:book:silent
 case object Citizen {
