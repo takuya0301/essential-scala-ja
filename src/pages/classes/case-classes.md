@@ -121,11 +121,11 @@ case object Citizen {
 Citizen.toString
 ```
 
-### Take Home Points
+### 覚えておいてほしいこと
 
-Case classes are the *bread and butter of Scala data types*. Use them, learn them, love them.
+ケースクラスは **Scala データ型の真髄**です。それを使って、学んで、好きになってください。
 
-The syntax for declaring a case class is the same as for declaring a class, but with `case` appended
+ケースクラスを宣言するための文法は、`case` を付与すること以外はクラスを宣言するためのものと同じです。
 
 ```scala
 case class Name(parameter: type, ...) {
@@ -134,9 +134,9 @@ case class Name(parameter: type, ...) {
 ```
 
 
-Case classes have numerous auto-generated methods and features that save typing. We can override this behaviour on a piece-by-piece basis by implementing the relevant methods ourselves.
+ケースクラスは、タイピングの手間を省く、たくさんの自動生成されたメソッドと機能を持ちます。関連するメソッドを実装することによって、その動作を個別にオーバーライドできます。
 
-In Scala 2.10 and earlier we can define case classes containing 0 to 22 fields. In Scala 2.11 we gain the ability to define arbitrarily-sized case classes.
+Scala 2.10 以前は、0〜22のフィールドを含むケースクラスしか定義できませんでした。Scala 2.11 で、任意サイズのケースクラスを定義する能力を獲得しました。
 
 ### Exercises
 
