@@ -138,14 +138,14 @@ case class Name(parameter: type, ...) {
 
 Scala 2.10 以前は、0〜22のフィールドを含むケースクラスしか定義できませんでした。Scala 2.11 で、任意サイズのケースクラスを定義する能力を獲得しました。
 
-### Exercises
+### 演習
 
-#### Case Cats
+#### ケースキャット
 
-Recall that a `Cat` has a `String` colour and food. Define a case class to represent a `Cat`.
+`Cat` が色と食べ物を `String` で持っていることを思い出してください。`Cat` を表現するケースクラスを定義しましょう。
 
 <div class="solution">
-Another simple finger exercise.
+もうひとつの簡単な指の運動です。
 
 ```tut:book:silent
 case class Cat(colour: String, food: String)
