@@ -152,15 +152,15 @@ case class Cat(colour: String, food: String)
 ```
 </div>
 
-#### Roger Ebert Said it Best...
+#### ロジャー・イーバートは言う、一番いい……
 
-> No good movie is too long and no bad movie is short enough.
+> 良くない映画は長すぎるが、悪くない映画は十分に短い。
 
-The same can't always be said for code, but in this case we can get rid of a lot of boilerplate by converting `Director` and `Film` to case classes. Do this conversion and work out what code we can cut.
+コードについては必ずしも同じことを言えませんが、この場合、`Director` と `Film` をケースクラスに変換することによって、多くの定型文を取り除くことができます。この変換を実行し、どのコードを削除できるか試してみましょう。
 
 <div class="solution">
 
-Case classes provide our `copy` methods and our `apply` methods and remove the need to write val` before each constructor argument. The final codebase looks like this:
+ケースクラスは `copy` メソッドと `apply` メソッドを提供し、各コンストラクター引数の前にある `val` を記述する必要性を取り除きます。最終的なコードベースは下記のようになります。
 
 ```tut:book:silent
 case class Director(firstName: String, lastName: String, yearOfBirth: Int) {
@@ -201,7 +201,7 @@ object Film {
 }
 ```
 
-Not only is this code significantly shorter, it also provides us with `equals` methods, `toString` methods, and pattern matching functionality that will set us up for later exercises.
+このコードはかなり短くなっただけでなく、`equals` メソッドや `toString` メソッド、後ほどの演習の準備にもなるパターンマッチング機能を提供します。
 </div>
 
 #### Case Class Counter
