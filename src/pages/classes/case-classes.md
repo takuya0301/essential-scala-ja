@@ -152,7 +152,7 @@ case class Cat(colour: String, food: String)
 ```
 </div>
 
-#### ロジャー・イーバートは言う、一番いい……
+#### ロジャー・イーバートは言う……
 
 > 良くない映画は長すぎるが、悪くない映画は十分に短い。
 
@@ -204,9 +204,9 @@ object Film {
 このコードはかなり短くなっただけでなく、`equals` メソッドや `toString` メソッド、後ほどの演習の準備にもなるパターンマッチング機能を提供します。
 </div>
 
-#### Case Class Counter
+#### ケースクラスカウンター
 
-Reimplement `Counter` as a case class, using `copy` where appropriate. Additionally initialise `count` to a default value of `0`.
+ケースクラスとして `Counter` を再実装し、適切なところで `copy` を使用してください。さらに、`0` をデフォルト値として `count` を初期化しましょう。
 
 <div class="solution">
 ```tut:book:silent
@@ -216,12 +216,12 @@ case class Counter(count: Int = 0) {
 }
 ```
 
-This is almost a trick exercise---there are very few differences with the previous implementation However, notice the extra functionality we got for free:
+これは、ほとんど引っ掛け問題です。前回の実装と、ほんの少しの違いしかありません。しかしながら、無料で得られている追加の機能に注目してください。
 
 ```tut:book
-Counter(0) // construct objects without `new`
-Counter().inc // printout shows the value of `count`
-Counter().inc.dec == Counter().dec.inc // semantic equality check
+Counter(0) // `new` なしでオブジェクトを構築
+Counter().inc // 印字で `count` の値を表示
+Counter().inc.dec == Counter().dec.inc // 意味のある等価性を検証
 ```
 </div>
 
