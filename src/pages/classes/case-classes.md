@@ -225,14 +225,14 @@ Counter().inc.dec == Counter().dec.inc // 意味のある等価性を検証
 ```
 </div>
 
-#### Application, Application, Application
+#### 適用、適用、適用
 
-What happens when we define a companion object for a case class? Let's see.
+ケースクラスにコンパニオンオブジェクトを定義すると何が起こるでしょうか？見てみましょう。
 
-Take our `Person` class from the previous section and turn it into a case class (hint: the code is above). Make sure you still have the companion object with the alternate `apply` method as well.
+前節の `Person` クラスを題材に、ケースクラスへの変換を試してみましょう。（ヒント：コードは上にあります。）代替 `apply` メソッドを伴うコンパニオンオブジェクトを依然として持っていることを確認してください。
 
 <div class="solution">
-Here's the code:
+こちらがコードです。
 
 ```tut:book:silent
 case class Person(firstName: String, lastName: String) {
@@ -249,9 +249,9 @@ object Person {
 }
 ```
 
-Even though we are defining a companion object for `Person`, Scala's case class code generator is still working as expected---it adds the auto-generated companion methods to the object we have defined, which is why we need to place the class and companion in a single compilation unit.
+`Person` のためにコンパニオンオブジェクトを定義しているにも関わらず、依然として Scala のケースクラスのコードは期待どおりに動作します。自動生成されたメソッドを定義したコンパニオンオブジェクトに追加するので、ひとつのコンパイル単位にクラスとコンパニオンオブジェクトを配置する必要があります。
 
-This means we end up with a companion object with an overloaded `apply` method with two possible type signatures:
+これは、最終的に `apply` メソッドのオーバーロードによって、2つの型シグネチャをコンパニオンオブジェクトが持つこと意味します。
 
 ```scala
 def apply(name: String): Person =
