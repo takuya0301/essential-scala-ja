@@ -1,14 +1,14 @@
-## Pattern Matching
+## パターンマッチング
 
-Until now we have interacted with objects by calling methods or accessing fields. With case classes we can interact in another way, via *pattern matching*.
+これまでは、メソッドを呼び出したり、フィールドにアクセスしたりしてオブジェクトを作用させてきました。ケースクラスを使用すると、**パターンマッチング (pattern matching)** を通じた別の方法で作用させることができます。
 
-Pattern matching is like an extended `if` expression that allows us to evaluate an expression depending on the "shape" of the data. Recall the `Person` case class we've seen in previous examples:
+パターンマッチングは、データの「形」に応じて式を評価できるように拡張した `if` 式のようなものです。前の例で見た `Person` ケースクラスを思い出してください。
 
 ```tut:book:silent
 case class Person(firstName: String, lastName: String)
 ```
 
-Now imagine we wanted to implement a `Stormtrooper` that is looking for members of the rebellion. We could use pattern matching like this:
+反乱軍のメンバーを探している `Stormtrooper` を実装したいとしましょう。下記のようにパターンマッチングを使用することができます。
 
 ```tut:book:silent
 object Stormtrooper {
@@ -21,9 +21,9 @@ object Stormtrooper {
 }
 ```
 
-Notice the syntax for a pattern (`Person("Luke", "Skywalker")`) matches the syntax for constructing the object the pattern matches (`Person("Luke", "Skywalker")`).
+パターンの文法 `Person("Luke", "Skywalker")` は、パターンマッチングするオブジェクトを構築するための文法 `Person("Luke", "Skywalker")` と一致していることに注意してください。
 
-Here it is in use:
+使用例はこちらです。
 
 ```tut:book
 Stormtrooper.inspect(Person("Noel", "Welsh"))
@@ -31,9 +31,9 @@ Stormtrooper.inspect(Person("Han", "Solo"))
 ```
 
 <div class="callout callout-info">
-#### Pattern Matching Syntax {-}
+#### パターンマッチング文法 {-}
 
-The syntax of a pattern matching expression is
+パターンマッチング式の文法は、
 
 ```scala
 expr0 match {
@@ -43,16 +43,16 @@ expr0 match {
 }
 ```
 
-where
+です。ここで、
 
-- the expression `expr0` evaluates to the value we match;
-- the patterns, or *guards*, `pattern1`, `pattern2`, and so on are checked against this value in order; and
-- the right-hand side expression (`expr1`, `expr2`, and so on) of the first pattern that matches is evaluated[^compilation].
+- `expr0` はパターンマッチングする値に評価される式
+- `pattern1`、`pattern2` などは値に対して順番に検証されるパターンもしくは**ガード (guard)**
+- `expr1`、`expr2` などは式で、最初にマッチングしたパターンの右辺式が評価される[^compilation]
 
-Pattern matching is itself an expression and thus evaluates to a value---the value of the matched expression.
+とします。パターンマッチング自体は式であるため、マッチングしたパターンの右辺式の値に評価されます。
 </div>
 
-[^compilation]: In reality patterns are compiled to a more efficient form than a sequence of tests, but the semantics are the same.
+[^compilation]: 実際のところ、パターンは逐次的な検証より効率的な形にコンパイルされますが、それが意味するところは変わりません。
 
 
 ### Pattern Syntax
