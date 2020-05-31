@@ -55,31 +55,31 @@ expr0 match {
 [^compilation]: 実際のところ、パターンは逐次的な検証より効率的な形にコンパイルされますが、それが意味するところは変わりません。
 
 
-### Pattern Syntax
+### パターン文法
 
-Scala has an expressive syntax for writing patterns or guards. For case classes the pattern syntax matches the constructor syntax. Take the data
+Scala は、パターンやガードを記述するための表現力豊かな文法を持っています。ケースクラスの場合、パターン文法はコンストラクター文法と一致します。データを取り上げてみましょう。
 
 ```tut:book
 Person("Noel", "Welsh")
 ```
 
-A pattern to match against the `Person` type is written
+`Person` 型に対してマッチするパターンは、下記のように記述されます。
 
 ```scala
 Person(pat0, pat1)
 ```
 
-where `pat0` and `pat1` are patterns to match against the `firstName` and `lastName` respectively. There are four possible patterns we could use in place of `pat0` or `pat1`:
+ここで、`pat0` と `pat1` は、それぞれ `firstName` と `lastName` に対してマッチするパターンです。`pat0` と `pat1` の位置に使用できるパターンは4つあります。
 
-1. A name, which matches any value at that position and binds it to the given name. For example, the pattern `Person(first, last)` binds the name `first` to the value `"Noel"`, and the name `last` to the value `"Welsh"`.
+1. 名前。それは、その位置にある任意の値にマッチし、与えられた名前に束縛されます。例えば、パターン `Person(first, last)` は、名前 `first` に値 `"Noel"` を、名前 `last` に値 `"Welsh"` を束縛します。
 
-2. An underscore (`_`), which matches any value and ignores it. For example, as Stormtroopers only care about the first name of ordinary citizens we could just write `Person(first, _)` to avoid binding a name to the value of the `lastName`.
+2. アンダースコア (`_`)。それは、任意の値にマッチし、その値を無視します。例えば、ストームトルーパーが一般市民の名についてのみ気にするのであれば、`lastName` の値を名前に束縛することを避け、単に `Person(first, _)` と書くことができます。
 
-3. A literal, which successfully matches only the value the literal respresents. So , for example, the pattern `Person("Han", "Solo")` matches the `Person` with first name `"Han"` and last name `"Solo"`.
+3. リテラル。それは、単にリテラルが表現する値に首尾よくマッチします。例えば、パターン `Person("Han", "Solo")` は、名が `"Han"` で、姓が `"Solo"` である `Person` にマッチするというわけです。
 
-4. Another case class using the same constructor style syntax.
+4. 同様のコンストラクタースタイル文法を使用している別のケースクラス。（訳注：ケースクラスを入れ子にできるということです。本節の演習に例があります。）
 
-Note there is a lot more we can do with pattern matching, and pattern matching is actually extensible. We'll look at these features in a later section.
+パターンマッチングでできることは他にもたくさんあり、パターンマッチングは拡張可能であることも覚えておいてください。後ほどの節でそれらの機能を見ていきます。
 
 
 ### Take Home Points
