@@ -82,11 +82,11 @@ Person(pat0, pat1)
 パターンマッチングでできることは他にもたくさんあり、パターンマッチングは拡張可能であることも覚えておいてください。後ほどの節でそれらの機能を見ていきます。
 
 
-### Take Home Points
+### 覚えておいてほしいこと
 
-Case classes allow a new form of interaction, called *pattern matching*. Pattern matching allows us to take apart a case class, and evaluate different expressions depending on what the case class contains.
+ケースクラスは、**パターンマッチング**と呼ばれる相互作用の新しい形を可能にします。パターンマッチングでは、ケースクラスによって分析し、ケースクラスに含まれる内容に応じて異なる式を評価することができます。
 
-The syntax for pattern matching is
+パターンマッチングのための文法は、
 
 ```scala
 expr0 match {
@@ -96,12 +96,12 @@ expr0 match {
 }
 ```
 
-A pattern can be one of
+です。パターンは、下記のいずれかになります。
 
-1. a name, binding any value to that name;
-2. an underscore, matching any value and ignoring it;
-3. a literal, matching the value the literal denotes; or
-4. a constructor-style pattern for a case class.
+1. 名前。その名前に任意の値が束縛される
+2. アンダースコア。任意の値がマッチし、その値は無視される
+3. リテラル。リテラルが意味する値にマッチする
+4. ケースクラスによるコンストラクタースタイルパターン
 
 ### Exercises
 
