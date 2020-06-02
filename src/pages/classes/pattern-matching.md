@@ -103,14 +103,14 @@ expr0 match {
 3. リテラル。リテラルが意味する値にマッチする
 4. ケースクラスによるコンストラクタースタイルパターン
 
-### Exercises
+### 演習
 
-#### Feed the Cats
+#### 猫にエサをあげる
 
-Define an object `ChipShop` with a method `willServe`. This method should accept a `Cat` and return true if the cat’s favourite food is chips, and false otherwise. Use pattern matching.
+`willServe` メソッドを伴う `ChipShop` オブジェクトを定義してください。このメソッドは `Cat` を受け取り、猫の好きなエサがカリカリ (chips) であれば `true` を、そうでなければ `false` を返します。パターンマッチングを使用してください。
 
 <div class="solution">
-We can start by writing the skeleton suggested by the problem text.
+問題文が示唆しているスケルトンを記述することから始めましょう。
 
 ```tut:book:silent
 case class Cat(name: String, colour: String, food: String)
@@ -125,7 +125,7 @@ object ChipShop {
 }
 ```
 
-As the return type is `Boolean` we know we need at least two cases, one for true and one for false. The text of the exercise tells us what they should be: cats that prefer chips, and all other cats. We can implement this with a literal pattern and an `_` pattern.
+返却型は `Boolean` なので、少なくとも2つのケース、ひとつは `true`、もうひとつは `false` が必要であることがわかります。演習の文章は、それがカリカリが好きな猫とそれ以外の猫であることを示しています。これをリテラルパターンと `_` パターンで実装することができます。
 
 ```tut:book:silent
 object ChipShop {
