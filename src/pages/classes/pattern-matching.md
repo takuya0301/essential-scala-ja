@@ -107,7 +107,7 @@ expr0 match {
 
 #### 猫にエサをあげる
 
-`willServe` メソッドを伴う `ChipShop` オブジェクトを定義してください。このメソッドは `Cat` を受け取り、猫の好きなエサがカリカリ (chips) であれば `true` を、そうでなければ `false` を返します。パターンマッチングを使用してください。
+`willServe` メソッドを伴う `ChipShop` オブジェクトを定義してください。このメソッドは `Cat` を受け取り、猫の好きなエサがカリカリ (chips) であれば `true` を、そうでなければ `false` を返します。パターンマッチングを使用しましょう。
 
 <div class="solution">
 問題文が示唆しているスケルトンを記述することから始めましょう。
@@ -139,9 +139,9 @@ object ChipShop {
 </div>
 
 
-#### Get Off My Lawn!
+#### 私の芝生から出ていけ！
 
-In this exercise we're going to write a simulator of my Dad, the movie critic. It's quite simple: any movie directed by Clint Eastwood gets a rating 10.0, any movie directed by John McTiernan gets a 7.0, while any other movie gets a 3.0. Implement an object called `Dad` with a method `rate` which accepts a `Film` and returns a `Double`. Use pattern matching.
+この演習では、映画評論家である私の父のシミュレーターを書こうと思います。それはとても単純で、クリント・イーストウッドが監督した映画はどれでも10.0、ジョン・マクティアナンが監督した映画はどれでも7.0、ほかの映画はどれでも3.0に評価されます。`Film` を受け取り、`Double` を返す `rate` メソッドを伴う `Dad` と呼ばれるオブジェクトを実装してください。パターンマッチングを使用しましょう。
 
 <div class="solution">
 ```scala
@@ -155,5 +155,5 @@ object Dad {
 }
 ```
 
-Pattern matching is becoming quite verbose in this case. Later on we'll learn how we can use pattern matching to match a particular value, called a *constant pattern*.
+この場合、パターンマッチングはいささか冗長になります。後ほど、**定数パターン (constant pattern)** と呼ばれる特定の値にマッチするパターンマッチングを使用する方法を学びます。
 </div>
