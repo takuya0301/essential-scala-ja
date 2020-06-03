@@ -1,7 +1,7 @@
-## Conclusions
+## まとめ
 
-In this section we've explored *classes*. We have seen that classes allow us to abstract over objects. That is, to define objects that share properties in common and have a common type.
+本章では**クラス**を探求しました。そのクラスが、オブジェクトを超えた抽象化を可能にすることも見てきました。それによって、共通のプロパティを共有し、共通の型を持つオブジェクトを定義できます。
 
-We also looked at *companion objects*, which are used in Scala to define auxillary constructors and other utility methods that don't belong on a class.
+**コンパニオンオブジェクト**についてもまた見てきました。それは、Scala において、補助コンストラクターや、クラスに属さないユーティリティメソッドを定義するために使用されます。
 
-Finally, we introduced *case classes*, which greatly reduce boilerplate code and allow *pattern-matching*, a new way of interacting with objects, in addition to method calls.
+最後に、**ケースクラス**を紹介しました。それは、ボイラープレートコードを大いに削減し、メソッド呼び出しに加えて、**パターンマッチング**というオブジェクトとの新しい相互作用の方法を可能にしました。
