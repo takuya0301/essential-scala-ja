@@ -1,9 +1,9 @@
-# Modelling Data with Traits
+# トレイトによるデータモデリング
 
-We looked in depth at classes in the previous chapter. Classes provide us with a way to abstract over objects that have similar properties, allowing us to write code that works with any object in a class.
+前章では、クラスについて詳細に見てきました。クラスは、同じ形のプロパティを持つオブジェクトを横断的に抽象化する方法を提供し、クラス内のどのようなオブジェクトでも動作するコードを書くことを可能にします。
 
-In this chapter we explore *abstraction over classes*, allowing us to write code that works with objects of different classes. We achieve this with a mechanism called *traits*.
+本章では、**クラスを横断的に抽象化する**ことを探求します。それは、異なるクラスのオブジェクトで動作するコードを書くことを可能にします。これを、**トレイト (trait)** と呼ばれる機構で実現します。
 
-This chapter also marks a change in our focus. In previous chapters we have addressed the technical aspects of constructing Scala code. In this chapter we will initially focus on the technical aspects of traits. Our focus will then change to using Scala as a *medium to express our thoughts*.
+また、本章は視点を変更する章になります。以前の章では、Scala コードを構築するための技術的側面に取り組んできました。本章の最初こそトレイトの技術的側面に焦点を当てますが、その焦点は**思考を表現するための手段**として Scala を使用することに変化していきます。
 
-We will see how we can mechanically transform a description of data, called an *algebraic datatype*, into code. Using *structural recursion* we can mechanically write code that transforms an algebraic datatype.
+さらに、**代数的データ型 (algebraic datatype)** と呼ばれるデータの記述をどのように機械的にコードに変換できるかを見ていきます。また、**構造的再帰 (structural recursion)** を使用して、代数的データ型を変換するコードを機械的に書けることも合わせて見ていきます。
