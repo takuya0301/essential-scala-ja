@@ -1,11 +1,11 @@
-## Traits
+## トレイト
 
-Traits are templates for creating classes, in the same way that classes are templates for creating objects. Traits allow us to express that two or more classes can be considered the same, and thus both implement the same operations. In other words, traits allow us to express that multiple classes share a common super-type (outside of the `Any` super-type that all classes share).
+オブジェクトを生成するためのテンプレートであるクラスと同じように、トレイトはクラスを生成するためのテンプレートです。トレイトは、2つ以上のクラスを同じものとみなし、同じ操作を実装するという表現を可能にします。言い換えれば、トレイトは、すべてのクラスが共有している `Any` 基底型の外側で、共通の基底型を共有する複数のクラスを表現できるということです。
 
 <div class="callout callout-info">
-#### Traits vs Java Interfaces {-}
+#### トレイト対 Java インターフェイス {-}
 
-Traits are very much like Java 8's *interfaces* with *default methods*. If you have not used Java 8, you can think of traits as being like a cross between interfaces and *abstract classes*.
+トレイトは、Java 8 の**デフォルトメソッド (default method)** を伴う**インターフェイス (interface)** にとてもよく似ています。Java 8 を使用したことがなければ、インターフェイスと**抽象クラス (abstract class)** を掛け合わせたようなものがトレイトであると考えてください。
 </div>
 
 
