@@ -9,9 +9,9 @@
 </div>
 
 
-### An Example of Traits
+### トレイトの例
 
-Let's start with an example of a trait. Imagine we're modelling visitors to a website. There are two types of visitor: those who have registered on our site and those who are anonymous. We can model this with two classes:
+トレイトの例から始めましょう。Web サイトの訪問者をモデリングすることを想像してください。訪問者には2つのタイプがあり、ひとつはサイトに登録済みの訪問者で、もうひとつは匿名の訪問者です。2つのクラスでこれをモデル化します。
 
 ```tut:book:silent
 import java.util.Date
@@ -25,18 +25,18 @@ case class User(
 )
 ```
 
-With these class definitions we're saying that both anonymous and registered visitors have an id and a creation date. But we only know the email address of registered visitors.
+これらのクラス定義で、匿名訪問者と登録済み訪問者は、ID と作成日を持つと言えます。しかし、私たちは登録済み訪問者のメールアドレスしかわかりません。
 
-There is obvious duplication here, and it would be nice to not have to write the same definitions twice. More important though, is to create some common type for the two kinds of visitors. If they had some type in common (other than `AnyRef` and `Any`) we could write methods that worked on any kind of visitor. We can do this with a trait like so:
+ここには明らかな重複があり、同じ定義を2回書かない方が望ましいです。しかし、もっと重要なのは、2種類の訪問者のために何らかの共通の型を作るということです。`AnyRef` や `Any` ではない、何らかの共通の型を持てれば、どんな種類の訪問者でも動作するメソッドを書くことができます。それは、下記のようにトレイトで実現できます。
 
 ```tut:book:silent
 import java.util.Date
 
 trait Visitor {
-  def id: String      // Unique id assigned to each user
-  def createdAt: Date // Date this user first visited the site
+  def id: String      // 各ユーザーに付与される一意の ID
+  def createdAt: Date // ユーザーがサイトに初めて訪れた日付
 
-  // How long has this visitor been around?
+  // この訪問者が初めて訪れてからどのくらいになるのか？
   def age: Long = new Date().getTime - createdAt.getTime
 }
 
@@ -52,14 +52,14 @@ case class User(
 ) extends Visitor
 ```
 
-Note the two changes:
+2つの変更に注目してください。
 
-- we defined the trait `Visitor`; and
-- we declared that `Anonymous` and `User` are subtypes of the `Visitor` trait by using the `extends` keyword.
+- `Visitor` トレイトを定義しました
+- `extends` キーワードを使用することによって `Visitor` トレイトの派生型として `Anonymous` と `User` を宣言しました
 
-The `Visitor` trait expresses an interface that any subtype must implement: they must implement a `String` called `id` and a `createdAt` `Date`. Any sub-type of `Visitor` also automatically has a method `age` as defined in `Visitor`.
+`Visitor` トレイトは、どんな派生型でも必ず実装しなければならないインターフェイスを表現するので、`String` 型の `id` と `Date` 型の `createdAt` を実装しなければなりません。また、`Visitor` のどんな派生型でも、自動的に `Visitor` で定義されている `age` メソッドを持ちます。
 
-By defining the `Visitor` trait we can write methods that work with any subtype of visitor, like so:
+`Visitor` トレイトを定義することによって、下記のように訪問者のどんな派生型でも動作するメソッドを書くことができます。
 
 ```tut:book:silent
 def older(v1: Visitor, v2: Visitor): Boolean =
@@ -70,12 +70,12 @@ def older(v1: Visitor, v2: Visitor): Boolean =
 older(Anonymous("1"), User("2", "test@example.com"))
 ```
 
-Here the method `older` can be called with either an `Anonymous` or a `User` as they are both subtypes of `Visitor`.
+こちらの `older` メソッドは、`Visitor` の派生型である `Anonymous` と `User` のいずれでも呼び出すことができます。
 
 <div class="callout callout-info">
-#### Trait Syntax {-}
+#### トレイト文法 {-}
 
-To declare a trait we write
+トレイトを宣言するには、
 
 ```scala
 trait TraitName {
@@ -83,7 +83,7 @@ trait TraitName {
 }
 ```
 
-To declare that a class is a subtype of a trait we write
+と書きます。トレイトの派生型であるクラスを宣言するには、
 
 ```scala
 class Name(...) extends TraitName {
@@ -91,7 +91,7 @@ class Name(...) extends TraitName {
 }
 ```
 
-More commonly we'll use case classes, but the syntax is the same
+と書きます。より一般的には、ケースクラスを使用しますが、その文法は同じです。
 
 ```scala
 case class Name(...) extends TraitName {
