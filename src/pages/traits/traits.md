@@ -100,31 +100,31 @@ case class Name(...) extends TraitName {
 ```
 </div>
 
-### Traits Compared to Classes
+### トレイトとクラスの比較
 
-Like a class, a trait is a named set of field and method definitions. However, it differs from a class in a few important ways:
+クラスのように、トレイトはフィールド定義とメソッド定義の名前付き集合です。しかしながら、いくつかの重要な点においてトレイトはクラスと異なっています。
 
- - *A trait cannot have a constructor*---we can't create objects directly from a trait. Instead we can use a trait to create a class, and then create objects from that class. We can base as many classes as we like on a trait.
+ - **トレイトはコンストラクターを持てません**。トレイトから直接オブジェクトを生成することはできません。その代わりにトレイトを使用してクラスを作ることができ、そのクラスからオブジェクトを生成します。トレイトに基づいたたくさんのクラスを構築できます。
 
- - Traits can define *abstract methods* that have names and type signatures but no implementation. We saw this in the `Visitor` trait. We must specify the implementation when we create a class that extends the trait, but until that point we're free to leave definitions abstract.
+ - トレイトは**抽象メソッド** を定義でき、それは名前と型シグネチャを持ちますが実装は持ちません。これを `Visitor` トレイトで見ました。トレイトを継承したクラスを作成するときは必ず実装を記述する必要があります。しかし、継承したクラスを作成するときまでは定義を抽象的なままにしておけます。
 
-Let's return to the `Visitor` trait to further explore abstract definitions. Recall the definition of `Visitor` is
+抽象的な定義のより深く探索するために `Visitor` トレイトに立ち返ってみましょう。`Visitor` の定義を思い出してください。
 
 ```tut:book:silent
 import java.util.Date
 
 trait Visitor {
-  def id: String      // Unique id assigned to each user
-  def createdAt: Date // Date this user first visited the site
+  def id: String      // 各ユーザーに付与される一意の ID
+  def createdAt: Date // ユーザーがサイトに初めて訪れた日付
 
-  // How long has this visitor been around?
+  // この訪問者が初めて訪れてからどのくらいになるのか？
   def age: Long = new Date().getTime - createdAt.getTime
 }
 ```
 
-`Visitor` prescribes two abstract methods. That is, methods which do not have an implementation but must be implemented by extending classes. These are `id` and `createdAt`. It also defines a concrete method, `age`, that is defined in terms of one of the abstract methods.
+`Visitor` は2つの抽象メソッドを規定しています。そのメソッドは実装を持っていませんが、派生クラスでは必ず実装しなければなりません。それらは `id` と `createdAt` です。また、`age` という具象メソッドも定義しており、それは抽象メソッドのひとつを使用して定義されています。
 
-`Visitor` is used as a building block for two classes: `Anonymous` and `User`. Each class `extends Visitor`, meaning it inherits all of its fields and methods:
+`Visitor` は、`Anonymous` と `User` の2つのクラスの構成要素として使用されています。`Visitor` を継承 (`extends`) した各クラスは、そのすべてのフィールドとメソッドを継承していることを意味します。
 
 ```tut:book
 val anon = Anonymous("anon1")
@@ -132,9 +132,9 @@ anon.createdAt
 anon.age
 ```
 
-`id` and `createdAt` are abstract so they must be defined in extending classes. Our classes implement them as `vals` rather than `defs`. This is legal in Scala, which sees `def` as a more general version of `val`[^uap]. It is good practice to never define `val`s in a trait, but rather to use `def`. A concrete implementation can then implement it using using a `def` or `val` as appropriate.
+`id` と `createdAt` は抽象なので、派生クラスにおいて必ず定義されなければなりません。私たちのクラスでは、`def` の代わりに `val` によってそれらを実装しています。Scala においてこれは認められており、`def` を `val` のより一般的なバージョンと見なしています[^uap]。これはよい習慣で、トレイトにおいては `val` で絶対に定義せず、`def` を使用してください。これによって、具象実装では適切に `def` か `val` を使用して実装できます。
 
-[^uap]: This is all part of the [uniform access principle][link-uap] we saw in the exercises for [Object Literals](object-literals.html).
+[^uap]: [オブジェクトリテラル](#オブジェクトリテラル)の演習で見たように、これはすべて[統一アクセス原理 (uniform access principle)][link-uap] の一部です。
 
 ### Take Home Points
 
