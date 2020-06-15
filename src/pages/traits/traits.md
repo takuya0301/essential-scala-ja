@@ -136,11 +136,11 @@ anon.age
 
 [^uap]: [オブジェクトリテラル](#オブジェクトリテラル)の演習で見たように、これはすべて[統一アクセス原理 (uniform access principle)][link-uap] の一部です。
 
-### Take Home Points
+### 覚えておいてほしいこと
 
-Traits are a way of *abstracting over classes* that have similar properties, just like classes are a way of abstracting over objects.
+トレイトは、クラスがオブジェクトを横断的に抽象化するための方法であるように、類似のプロパティを持つ**クラスを横断的に抽象化する**方法です。
 
-Using a traits has two parts. Declaring the trait
+トレイトを使用するには、2つの段階があります。まずは、トレイトを宣言します。
 
 ```scala
 trait TraitName {
@@ -148,7 +148,7 @@ trait TraitName {
 }
 ```
 
-and extending the trait from a class (usually a case class)
+そして、クラス（普通はケースクラス）でトレイトを継承します。
 
 ```scala
 case class Name(...) extends TraitName {
