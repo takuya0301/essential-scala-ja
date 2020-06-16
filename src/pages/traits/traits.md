@@ -156,19 +156,21 @@ case class Name(...) extends TraitName {
 }
 ```
 
-### Exercises
+### 演習
 
-#### Cats, and More Cats
+#### 猫、もっと猫
 
-Demand for Cat Simulator 1.0 is exploding! For v2 we're going to go beyond the domestic cat to model `Tiger`s, `Lion`s, and `Panther`s in addition to the `Cat`. Define a trait `Feline` and then define all the different species as subtypes of `Feline`. To make things interesting, define:
+Cat Simulator 1.0 への需要が爆発的に高まっています！バージョン2では、家庭の猫を越えて、トラ (`Tiger`) やライオン (`Lion`)、パンサー (`Panther`) をイエネコ (`Cat`) に加えてモデル化します。`Feline` トレイトを定義し、ネコ科 (`Feline`) の派生型として、すべての異なる種を定義します。面白くするために、
 
-- on `Feline` a `colour` as before;
-- on `Feline` a `String` `sound`, which for a cat is `"meow"` and is `"roar"` for all other felines;
-- only `Cat` has a favourite food; and
-- `Lion`s have an `Int` `maneSize`.
+- これまでのように、`Feline` に `colour` を
+- `Feline` に、イエネコであれば `"meow"`、それ以外すべてのネコ科であれば `"roar"` である鳴き声 (`sound`) を `String` で
+- `Cat` には好きな食べ物を
+- `Lion` にはタテガミの大きさ (`maneSize`) を `Int` で
+
+定義します。
 
 <div class="solution">
-This is mostly a finger exercise to get you used to trait syntax but there are a few interesting things in the solution.
+これは、ほぼトレイト文法に慣れるための指の運動ですが、解答にはいくつかの面白い点があります。
 
 ```tut:book:silent
 trait Feline {
@@ -193,7 +195,7 @@ case class Cat(colour: String, food: String) extends Feline {
 }
 ```
 
-Notice that `sound` is not defined as a constructor argument. Since it is a constant, it doesn't make sense to give users a chance to modify it. There is a lot of duplication in the definition of `sound`. We could define a default value in `Feline` like so
+`sound` がコンストラクター引数として定義されていないことに注意してください。それが定数である以上、それを変更する機会がユーザーに与えられることは妥当ではありません。`sound` の定義にはたくさんの重複があります。このように、`Feline` の中でデフォルト値を定義できます。
 
 ```tut:book:silent
 trait Feline {
@@ -202,9 +204,9 @@ trait Feline {
 }
 ```
 
-This is generally a bad practice. If we define a default implementation it should be an implementation that is suitable for all subtypes.
+これは、一般的にはよくない習慣です。デフォルト実装を定義するのであれば、それはすべての派生型にふさわしい実装であるべきです。
 
-Another alternative to define an intermediate type, perhaps called `BigCat` that defines sound as `"roar"`. This is a better solution.
+`"roar"` という鳴き声を定義する、おそらく `BigCat` と呼ばれる中間型を定義するという別の選択肢があります。これは、よりよい解決策です。
 
 ```tut:book:silent
 trait BigCat extends Feline {
