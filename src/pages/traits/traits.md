@@ -221,17 +221,17 @@ case class Panther(...) extends BigCat
 ```
 </div>
 
-#### Shaping Up With Traits
+#### トレイトでシェイプアップ
 
-Define a trait called `Shape` and give it three abstract methods:
+`Shape` と呼ばれるトレイトを定義し、3つの抽象メソッドをそれに持たせます。
 
- - `sides` returns the number of sides;
- - `perimeter` returns the total length of the sides;
- - `area` returns the area.
+ - `sides` は、辺 (side) の数を返す
+ - `perimeter` は、周の長さ (perimeter) を返す
+ - `area` は、面積 (area) を返す
 
-Implement `Shape` with three classes: `Circle`, `Rectangle`, and `Square`. In each case provide implementations of each of the three methods. Ensure that the main constructor parameters of each shape (e.g. the radius of the circle) are accessible as fields.
+図形 (`Shape`) を3つのクラス、円 (`Circle`) ・四角形 (`Rectangle`)・正方形 (`Square`) で実装します。それぞれの場合で、3つのメソッドについての実装をそれぞれ提供します。各図形のメインコンストラクターの引数（例えば、円の半径）は、フィールドとしてアクセス可能であることを確実にしてください。
 
-**Tip:** The value of &pi; is accessible as `math.Pi`.
+**ヒント：** &pi; の値は `math.Pi` として参照します。
 
 <div class="solution">
 ```tut:book:silent
