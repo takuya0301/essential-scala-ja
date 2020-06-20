@@ -229,7 +229,7 @@ case class Panther(...) extends BigCat
  - `perimeter` は、周の長さ (perimeter) を返す
  - `area` は、面積 (area) を返す
 
-図形 (`Shape`) を3つのクラス、円 (`Circle`) ・四角形 (`Rectangle`)・正方形 (`Square`) で実装します。それぞれの場合で、3つのメソッドについての実装をそれぞれ提供します。各図形のメインコンストラクターの引数（例えば、円の半径）は、フィールドとしてアクセス可能であることを確実にしてください。
+図形 (`Shape`) を3つのクラス、円 (`Circle`) ・長方形 (`Rectangle`)・正方形 (`Square`) で実装します。それぞれの場合で、3つのメソッドについての実装をそれぞれ提供します。各図形のメインコンストラクターの引数（例えば、円の半径）は、フィールドとしてアクセス可能であることを確実にしてください。
 
 **ヒント：** &pi; の値は `math.Pi` として参照します。
 
@@ -264,16 +264,16 @@ case class Square(size: Double) extends Shape {
 ```
 </div>
 
-#### Shaping Up 2 (Da Streets) {#sec:traits:shaping-up-2}
+#### トレイトでシェイプアップ 2
 
-The solution from the last exercise delivered three distinct types of shape. However, it doesn't model the relationships between the three correctly. A `Square` isn't just a `Shape`---it's also a type of `Rectangle` where the width and height are the same.
+前回の演習の解答は、図形について別々の3つの型を与えました。しかしながら、それは3つの間にある関係性を正しくモデル化できていません。正方形 (`Square`) は、単に図形 (`Shape`) ではなく、幅と高さが同じ長方形の型でもあります。
 
-Refactor the solution to the last exercise so that `Square` and `Rectangle` are subtypes of a common type `Rectangular`.
+前回の演習の解答を、正方形 (`Square`) と長方形 (`Rectangle`) が共通の型、方形 (`Rectangular`) の派生型であるようにリファクタリングしてみましょう。
 
-**Tip:** A trait can extend another trait.
+**ヒント：**トレイトは別のトレイトを継承できます。
 
 <div class="solution">
-The new code looks like this:
+新しいコードはこのようになります。
 
 ```tut:book:silent
 // trait Shape ...
@@ -299,7 +299,5 @@ case class Rectangle(
 ) extends Rectangular
 ```
 
-Ensure your trait is `sealed` so the compiler can
-check the exhaustiveness of any code you write
-that handles objects of type `Rectangular` or `Shape`.
+確実にトレイトを `sealed` であるようにすることで、`Rectangular` 型や `Shape` 型のオブジェクトを取り扱うどんなコードを書いたときでも、コンパイラーが徹底的に検証してくれます。
 </div>
